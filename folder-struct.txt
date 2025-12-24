@@ -10,21 +10,6 @@ recipe-system/
 │   ├── recipe-detail.xsl            # Individual recipe view
 │   └── recipe-list.xsl              # Recipe list/index view
 ├── recipes/
-│   ├── main-courses/
-│   │   ├── beef/
-│   │   │   ├── classic-chili.xml
-│   │   │   └── beef-stew.xml
-│   │   ├── chicken/
-│   │   │   ├── chicken-curry.xml
-│   │   │   └── roasted-chicken.xml
-│   │   ├── pork/
-│   │   └── seafood/
-│   ├── appetizers/
-│   ├── desserts/
-│   ├── soups/
-│   ├── salads/
-│   ├── vegetarian/
-│   └── vegan/
 ├── assets/
 │   ├── css/
 │   │   └── styles.css               # Additional styling
