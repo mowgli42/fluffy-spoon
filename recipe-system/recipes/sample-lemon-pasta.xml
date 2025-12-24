@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<recipe xmlns="http://www.example.com/recipe">
+  <title>Sample Lemon Pasta</title>
+  <description>
+    <summary>Bright lemon pasta with parmesan and herbs.</summary>
+    <tags>
+      <tag>pasta</tag>
+      <tag>quick</tag>
+      <tag>vegetarian</tag>
+    </tags>
+  </description>
+  <metadata>
+    <servings>2</servings>
+    <totalTime>20 minutes</totalTime>
+    <difficulty>easy</difficulty>
+  </metadata>
+
+  <category>main-course</category>
+
+  <ingredients>
+    <ingredient>200g spaghetti</ingredient>
+    <ingredient>1 lemon, zested and juiced</ingredient>
+    <ingredient>2 tbsp butter</ingredient>
+    <ingredient>50g parmesan, grated</ingredient>
+    <ingredient>Salt and pepper to taste</ingredient>
+  </ingredients>
+
+  <preparation>
+    <step number="1">Cook pasta according to package instructions.</step>
+    <step number="2">Reserve some pasta water.</step>
+    <step number="3">Combine lemon, butter, and cheese off heat.</step>
+    <step number="4">Toss pasta with sauce, adding pasta water to loosen.</step>
+  </preparation>
+  <created>2025-12-24T19:37:54.697841Z</created>
+</recipe>

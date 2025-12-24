@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<recipe xmlns="http://www.example.com/recipe">
+  <title>white rice</title>
+  <description>
+    <summary>good rice</summary>
+  </description>
+  <metadata>
+    <servings>4</servings>
+    <totalTime/>
+    <difficulty>easy</difficulty>
+  </metadata>
+  <category>uncategorized</category>
+  <ingredients>
+    <ingredient>2 cups of rice</ingredient>
+    <ingredient>water</ingredient>
+  </ingredients>
+  <preparation>
+    <step number="1">pour rice into pot</step>
+    <step number="2">cover rice with water to a knuckle</step>
+  </preparation>
+  <created>2025-12-24T19:20:20.621383Z</created>
+</recipe>
