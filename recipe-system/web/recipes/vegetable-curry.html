@@ -1,0 +1,306 @@
+<html xmlns:r="http://www.example.com/recipe">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Creamy Vegetable Curry</title>
+<style>
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+max-width: 900px;
+margin: 40px auto;
+padding: 0 20px;
+background-color: #f8f9fa;
+color: #333;
+line-height: 1.6;
+}
+
+.recipe-container {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+}
+
+h1 {
+  color: #667eea;
+  margin-bottom: 10px;
+  font-size: 1.8em;
+  border-bottom: 3px solid #667eea;
+  padding-bottom: 8px;
+}
+
+.description {
+  background-color: #f0f1ff;
+  padding: 12px;
+  border-radius: 8px;
+  margin: 10px 0;
+  border-left: 4px solid #667eea;
+  font-size: 0.9em;
+  line-height: 1.4;
+}
+
+.tags {
+  margin-top: 8px;
+}
+
+.tag {
+  display: inline-block;
+  background-color: #e8ebff;
+  color: #667eea;
+  padding: 3px 8px;
+  border-radius: 20px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  font-size: 0.75em;
+  font-weight: 500;
+}
+
+.metadata {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 10px;
+  margin: 15px 0;
+  padding: 12px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+}
+
+.metadata-item {
+  text-align: center;
+}
+
+.metadata-label {
+  font-weight: bold;
+  color: #666;
+  font-size: 0.75em;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.metadata-value {
+  font-size: 0.9em;
+  color: #667eea;
+  margin-top: 3px;
+}
+
+h2 {
+  color: #667eea;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  font-size: 1.3em;
+  border-bottom: 2px solid #e8ebff;
+  padding-bottom: 6px;
+}
+
+.ingredients {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+.ingredient {
+  padding: 5px 0;
+  border-bottom: 1px dotted #ddd;
+  font-size: 0.95em;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.ingredient:last-child {
+  border-bottom: none;
+}
+
+.ingredient input[type="checkbox"] {
+  margin-top: 4px;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  accent-color: #667eea;
+}
+
+.ingredient label {
+  cursor: pointer;
+  flex: 1;
+}
+
+.ingredient input[type="checkbox"]:checked + label {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.preparation {
+  margin: 10px 0;
+}
+
+.step {
+  margin: 8px 0;
+  padding: 10px 12px;
+  background-color: #fafafa;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+  position: relative;
+  padding-left: 45px;
+}
+
+.step-number {
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.8em;
+}
+
+.step-text {
+  font-size: 0.95em;
+  line-height: 1.5;
+}
+
+.ingredients-and-steps {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.ingredients-section,
+.preparation-section {
+  min-width: 0;
+}
+
+@media (max-width: 900px) {
+  .ingredients-and-steps {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+<body><div class="recipe-container">
+<h1>Creamy Vegetable Curry</h1>
+<div class="description">A fragrant and creamy vegetable curry made with coconut milk, aromatic spices, and fresh vegetables. This vegetarian dish is flavorful, satisfying, and naturally gluten-free.<div class="tags">
+<span class="tag">vegetarian</span><span class="tag">indian</span><span class="tag">curry</span><span class="tag">dinner</span><span class="tag">gluten-free</span>
+</div>
+</div>
+<div class="metadata">
+<div class="metadata-item">
+<div class="metadata-label">Servings</div>
+<div class="metadata-value">4</div>
+</div>
+<div class="metadata-item">
+<div class="metadata-label">Prep Time</div>
+<div class="metadata-value">20 minutes</div>
+</div>
+<div class="metadata-item">
+<div class="metadata-label">Cook Time</div>
+<div class="metadata-value">30 minutes</div>
+</div>
+<div class="metadata-item">
+<div class="metadata-label">Total Time</div>
+<div class="metadata-value">50 minutes</div>
+</div>
+<div class="metadata-item">
+<div class="metadata-label">Difficulty</div>
+<div class="metadata-value">medium</div>
+</div>
+</div>
+<div class="ingredients-and-steps">
+<div class="ingredients-section">
+<h2>Ingredients</h2>
+<div class="ingredients">
+<div class="ingredient">
+<input type="checkbox" id="ingredient_1"><label for="ingredient_1"><strong>2 tablespoons</strong> - coconut oil</label>
+</div>
+<div class="ingredient">
+<input type="checkbox" id="ingredient_2"><label for="ingredient_2"><strong>1 large</strong> - onion, diced</label>
+</div>
+<div class="ingredient">
+<input type="checkbox" id="ingredient_3"><label for="ingredient_3"><strong>3 cloves</strong> - garlic, minced</label>
+</div>
+<div class="ingredient">
+<input type="checkbox" id="ingredient_4"><label for="ingredient_4"><strong>1 tablespoon</strong> - fresh ginger, minced</label>
+</div>
+<div class="ingredient">
+<input type="checkbox" id="ingredient_5"><label for="ingredient_5"><strong>2 tablespoons</strong> - curry powder</label>
+</div>
+<div class="ingredient">
+<input type="checkbox" id="ingredient_6"><label for="ingredient_6"><strong>1 teaspoon</strong> - turmeric</label>
+</div>
+<div class="ingredient">
+<input type="checkbox" id="ingredient_7"><label for="ingredient_7"><strong>2 cups</strong> - cauliflower florets</label>
+</div>
+<div class="ingredient">
+<input type="checkbox" id="ingredient_8"><label for="ingredient_8"><strong>2 cups</strong> - diced potatoes</label>
+</div>
+<div class="ingredient">
+<input type="checkbox" id="ingredient_9"><label for="ingredient_9"><strong>1 cup</strong> - carrots, sliced</label>
+</div>
+<div class="ingredient">
+<input type="checkbox" id="ingredient_10"><label for="ingredient_10"><strong>1 can (14 oz)</strong> - coconut milk</label>
+</div>
+<div class="ingredient">
+<input type="checkbox" id="ingredient_11"><label for="ingredient_11"><strong>1 cup</strong> - vegetable broth</label>
+</div>
+<div class="ingredient">
+<input type="checkbox" id="ingredient_12"><label for="ingredient_12"><strong>1 count</strong> - lime, juiced</label>
+</div>
+<div class="ingredient">
+<input type="checkbox" id="ingredient_13"><label for="ingredient_13"><strong>1/4 cup</strong> - fresh cilantro, chopped</label>
+</div>
+<div class="ingredient">
+<input type="checkbox" id="ingredient_14"><label for="ingredient_14"><strong>1 teaspoon</strong> - salt</label>
+</div>
+</div>
+</div>
+<div class="preparation-section">
+<h2>Preparation Steps</h2>
+<div class="preparation">
+<div class="step">
+<div class="step-number">1</div>
+<div class="step-text">Heat coconut oil in a large pot over medium heat.</div>
+</div>
+<div class="step">
+<div class="step-number">2</div>
+<div class="step-text">Add diced onion and cook until softened, about 5 minutes.</div>
+</div>
+<div class="step">
+<div class="step-number">3</div>
+<div class="step-text">Stir in minced garlic and ginger, cook for 30 seconds until fragrant.</div>
+</div>
+<div class="step">
+<div class="step-number">4</div>
+<div class="step-text">Add curry powder and turmeric, stir well to coat vegetables, cook for 1 minute.</div>
+</div>
+<div class="step">
+<div class="step-number">5</div>
+<div class="step-text">Add cauliflower, potatoes, and carrots. Stir to combine with the spice mixture.</div>
+</div>
+<div class="step">
+<div class="step-number">6</div>
+<div class="step-text">Pour in coconut milk and vegetable broth. Bring to a simmer.</div>
+</div>
+<div class="step">
+<div class="step-number">7</div>
+<div class="step-text">Reduce heat to medium-low and simmer uncovered for 20-25 minutes until vegetables are tender.</div>
+</div>
+<div class="step">
+<div class="step-number">8</div>
+<div class="step-text">Stir in lime juice and season with salt to taste.</div>
+</div>
+<div class="step">
+<div class="step-number">9</div>
+<div class="step-text">Serve hot over rice, garnished with fresh cilantro.</div>
+</div>
+</div>
+</div>
+</div>
+</div></body>
+</html>

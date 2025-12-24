@@ -1,163 +1,74 @@
-import os
-import json
-from lxml import etree
-
-# filepath: /home/tprettol/repo/fluffy-spoon/recipe-system/scripts/cookbook-pkg.py
-
-# Define paths
-xml_directory = '/home/tprettol/repo/fluffy-spoon/recipe-system/recipes'
-output_directory = '/home/tprettol/repo/fluffy-spoon/recipe-system/web/recipes'
-cookbook_output = '/home/tprettol/repo/fluffy-spoon/recipe-system/web/recipe-box.html'
-
-def extract_recipe_metadata(xml_file):
-    """Extract metadata from XML recipe file"""
-    try:
-        tree = etree.parse(xml_file)
-        root = tree.getroot()
-        
-        # Define namespace
-        ns = {'r': 'http://www.example.com/recipe'}
-        
-        # Extract basic info - use namespace prefix for XPath queries
-        title = root.findtext('.//r:title', 'Unknown Recipe', ns)
-        summary = root.findtext('.//r:description/r:summary', '', ns)
-        servings = root.findtext('.//r:metadata/r:servings', '4', ns)
-        totalTime = root.findtext('.//r:metadata/r:totalTime', '0 minutes', ns)
-        difficulty = root.findtext('.//r:metadata/r:difficulty', 'medium', ns)
-        
-        # Extract tags/categories
-        tags = [tag.text for tag in root.findall('.//r:tag', ns) if tag.text]
-        category = root.findtext('.//r:category', 'uncategorized', ns)
-        
-        # Parse totalTime to minutes for filtering
-        totalTimeMinutes = parse_time_to_minutes(totalTime)
-        
-        return {
-            'title': title,
-            'description': summary,
-            'servings': int(servings) if servings.isdigit() else 4,
-            'totalTime': totalTimeMinutes,
-            'totalTimeDisplay': totalTime,
-            'difficulty': difficulty,
-            'tags': tags,
-            'category': category
-        }
-    except Exception as e:
-        print(f"Error parsing {xml_file}: {e}")
-        return None
-
-def parse_time_to_minutes(time_str):
-    """Convert time string like '1 hour 45 minutes' to total minutes"""
-    time_str = time_str.lower().strip()
-    total_minutes = 0
-    
-    # Handle hours
-    if 'hour' in time_str:
-        parts = time_str.split('hour')
-        hours = int(''.join(filter(str.isdigit, parts[0].strip())))
-        total_minutes += hours * 60
-    
-    # Handle minutes
-    if 'minute' in time_str:
-        # Extract the number before 'minute'
-        parts = time_str.split('minute')
-        remaining = parts[0].strip()
-        # Get the last number in the remaining string
-        numbers = ''.join(filter(lambda x: x.isdigit() or x == ' ', remaining)).split()
-        if numbers:
-            minutes = int(numbers[-1])
-            total_minutes += minutes
-    
-    return total_minutes if total_minutes > 0 else 0
-
-def generate_recipe_box():
-    """Generate recipe-box.html with all recipes"""
-    recipes = []
-    
-    # Scan XML directory for recipe files
-    for filename in os.listdir(xml_directory):
-        if filename.endswith('.xml'):
-            xml_path = os.path.join(xml_directory, filename)
-            metadata = extract_recipe_metadata(xml_path)
-            
-            if metadata:
-                recipe_name = os.path.splitext(filename)[0]
-                metadata['id'] = recipe_name
-                metadata['path'] = f'recipes/{recipe_name}.html'
-                recipes.append(metadata)
-    
-    # Generate HTML with embedded recipe data
-    html_content = f"""<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe Collection - Search & Browse</title>
     <style>
-        * {{
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }}
+        }
 
-        body {{
+        body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             padding: 20px;
-        }}
+        }
 
-        .container {{
+        .container {
             max-width: 1400px;
             margin: 0 auto;
-        }}
+        }
 
-        header {{
+        header {
             text-align: center;
             color: white;
             margin-bottom: 40px;
-        }}
+        }
 
-        h1 {{
+        h1 {
             font-size: 3em;
             margin-bottom: 10px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }}
+        }
 
-        .subtitle {{
+        .subtitle {
             font-size: 1.2em;
             opacity: 0.9;
-        }}
+        }
 
-        .search-section {{
+        .search-section {
             background: white;
             border-radius: 15px;
             padding: 30px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             margin-bottom: 30px;
-        }}
+        }
 
-        .search-bar {{
+        .search-bar {
             display: flex;
             gap: 10px;
             margin-bottom: 20px;
-        }}
+        }
 
-        .search-input {{
+        .search-input {
             flex: 1;
             padding: 15px 20px;
             font-size: 1.1em;
             border: 2px solid #e0e0e0;
             border-radius: 10px;
             transition: border-color 0.3s;
-        }}
+        }
 
-        .search-input:focus {{
+        .search-input:focus {
             outline: none;
             border-color: #667eea;
-        }}
+        }
 
-        .search-btn {{
+        .search-btn {
             padding: 15px 40px;
             font-size: 1.1em;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -167,39 +78,39 @@ def generate_recipe_box():
             cursor: pointer;
             font-weight: bold;
             transition: transform 0.2s;
-        }}
+        }
 
-        .search-btn:hover {{
+        .search-btn:hover {
             transform: scale(1.05);
-        }}
+        }
 
-        .filters {{
+        .filters {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 15px;
-        }}
+        }
 
-        .filter-group {{
+        .filter-group {
             background: #f8f9fa;
             padding: 15px;
             border-radius: 10px;
-        }}
+        }
 
-        .filter-group h3 {{
+        .filter-group h3 {
             font-size: 0.9em;
             color: #666;
             margin-bottom: 10px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-        }}
+        }
 
-        .tag-container {{
+        .tag-container {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
-        }}
+        }
 
-        .tag {{
+        .tag {
             padding: 6px 12px;
             border-radius: 20px;
             font-size: 0.9em;
@@ -207,81 +118,81 @@ def generate_recipe_box():
             transition: all 0.3s;
             background: white;
             border: 2px solid #e0e0e0;
-        }}
+        }
 
-        .tag:hover {{
+        .tag:hover {
             border-color: #667eea;
             transform: translateY(-2px);
-        }}
+        }
 
-        .tag.active {{
+        .tag.active {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             border-color: transparent;
-        }}
+        }
 
-        .results-section {{
+        .results-section {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 25px;
-        }}
+        }
 
-        .recipe-card {{
+        .recipe-card {
             background: white;
             border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
             transition: transform 0.3s, box-shadow 0.3s;
             cursor: pointer;
-        }}
+        }
 
-        .recipe-card:hover {{
+        .recipe-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-        }}
+        }
 
 
-        .recipe-content {{
+        .recipe-content {
                 padding: 15px;
-        }}
+        }
 
-        .recipe-title {{
+        .recipe-title {
                 font-size: 1.2em;
             color: #333;
                 margin-bottom: 8px;
             font-weight: bold;
-        }}
+        }
 
-        .recipe-meta {{
+        .recipe-meta {
             display: flex;
             gap: 15px;
                 margin: 8px 0;
             flex-wrap: wrap;
-        }}
+        }
 
-        .meta-item {{
+        .meta-item {
             display: flex;
             align-items: center;
             gap: 5px;
                 font-size: 0.85em;
             color: #666;
-        }}
+        }
 
-        .recipe-tags {{
+        .recipe-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 6px;
                 margin-bottom: 8px;
-        }}
+        }
 
-        .recipe-tag {{
+        .recipe-tag {
             padding: 4px 10px;
                 background: #e8ebff;
                 color: #667eea;
             border-radius: 15px;
             font-size: 0.8em;
-        }}
+        }
 
-        .stats {{
+        .stats {
             display: flex;
             justify-content: space-around;
             background: white;
@@ -289,25 +200,25 @@ def generate_recipe_box():
             padding: 20px;
             margin-bottom: 30px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }}
+        }
 
-        .stat-item {{
+        .stat-item {
             text-align: center;
-        }}
+        }
 
-        .stat-number {{
+        .stat-number {
             font-size: 2em;
             font-weight: bold;
             color: #667eea;
-        }}
+        }
 
-        .stat-label {{
+        .stat-label {
             color: #666;
             font-size: 0.9em;
             margin-top: 5px;
-        }}
+        }
 
-        .no-results {{
+        .no-results {
             grid-column: 1 / -1;
             text-align: center;
             padding: 60px;
@@ -315,7 +226,7 @@ def generate_recipe_box():
             border-radius: 15px;
             color: #666;
             font-size: 1.2em;
-        }}
+        }
     </style>
 </head>
 <body>
@@ -359,99 +270,99 @@ def generate_recipe_box():
     </div>
 
     <script>
-        const recipes = {json.dumps(recipes)};
+        const recipes = [{"title": "Classic Beef Chili", "description": "A hearty and flavorful beef chili with beans, perfect for cold evenings. This traditional recipe combines ground beef with a rich blend of spices, tomatoes, and kidney beans for a warming and satisfying meal.", "servings": 6, "totalTime": 105, "totalTimeDisplay": "1 hour 45 minutes", "difficulty": "medium", "tags": ["comfort-food", "one-pot", "spicy", "winter", "main-course"], "category": "uncategorized", "id": "chili", "path": "recipes/chili.html"}, {"title": "Crockpot Ziti", "description": "An easy and delicious crockpot ziti pasta with ground beef, marinara sauce, and melted cheese. Perfect for busy days when you want a homemade meal with minimal effort.", "servings": 6, "totalTime": 250, "totalTimeDisplay": "4 hours 10 minutes", "difficulty": "easy", "tags": ["easy", "crockpot", "pasta", "comfort-food", "main-course"], "category": "uncategorized", "id": "crockpot-ziti", "path": "recipes/crockpot-ziti.html"}, {"title": "Pasta Carbonara", "description": "An authentic Italian pasta dish with a creamy egg sauce, crispy pancetta, and Pecorino Romano cheese. This classic Roman recipe is simple yet elegant, featuring minimal ingredients combined perfectly.", "servings": 4, "totalTime": 30, "totalTimeDisplay": "30 minutes", "difficulty": "medium", "tags": ["italian", "pasta", "quick", "dinner", "main-course"], "category": "uncategorized", "id": "pasta-carbonara", "path": "recipes/pasta-carbonara.html"}, {"title": "Chicken Stir Fry with Vegetables", "description": "A quick and healthy stir fry loaded with tender chicken and fresh vegetables in a savory soy ginger sauce. Perfect weeknight dinner served over rice.", "servings": 4, "totalTime": 35, "totalTimeDisplay": "35 minutes", "difficulty": "easy", "tags": ["asian", "quick", "healthy", "dinner", "main-course"], "category": "uncategorized", "id": "chicken-stir-fry", "path": "recipes/chicken-stir-fry.html"}, {"title": "Baked Salmon with Lemon and Herbs", "description": "A elegant and healthy baked salmon fillet topped with fresh lemon juice, dill, and garlic. This restaurant-quality dish is simple to prepare and pairs beautifully with roasted vegetables.", "servings": 4, "totalTime": 25, "totalTimeDisplay": "25 minutes", "difficulty": "easy", "tags": ["seafood", "healthy", "quick", "dinner", "main-course"], "category": "uncategorized", "id": "baked-salmon", "path": "recipes/baked-salmon.html"}, {"title": "Crispy Beef Tacos", "description": "Delicious crispy beef tacos loaded with seasoned ground beef, fresh toppings, and tangy lime crema. A crowd-pleasing favorite that's perfect for casual entertaining or quick weeknight dinners.", "servings": 4, "totalTime": 30, "totalTimeDisplay": "30 minutes", "difficulty": "easy", "tags": ["mexican", "quick", "dinner", "main-course", "crowd-pleaser"], "category": "uncategorized", "id": "beef-tacos", "path": "recipes/beef-tacos.html"}, {"title": "Creamy Vegetable Curry", "description": "A fragrant and creamy vegetable curry made with coconut milk, aromatic spices, and fresh vegetables. This vegetarian dish is flavorful, satisfying, and naturally gluten-free.", "servings": 4, "totalTime": 50, "totalTimeDisplay": "50 minutes", "difficulty": "medium", "tags": ["vegetarian", "indian", "curry", "dinner", "gluten-free"], "category": "uncategorized", "id": "vegetable-curry", "path": "recipes/vegetable-curry.html"}, {"title": "Classic Tomato Soup", "description": "A silky smooth tomato soup made with fresh tomatoes and cream. Perfect comfort food for any season, pairs wonderfully with grilled cheese or crusty bread.", "servings": 4, "totalTime": 35, "totalTimeDisplay": "35 minutes", "difficulty": "easy", "tags": ["soup", "vegetarian", "comfort-food", "lunch", "quick"], "category": "uncategorized", "id": "tomato-soup", "path": "recipes/tomato-soup.html"}, {"title": "Creamy Mushroom Risotto", "description": "An elegant and creamy mushroom risotto made with Arborio rice, white wine, and earthy mushrooms. This Italian classic is luxurious yet surprisingly easy to prepare.", "servings": 4, "totalTime": 45, "totalTimeDisplay": "45 minutes", "difficulty": "medium", "tags": ["italian", "vegetarian", "elegant", "dinner", "main-course"], "category": "uncategorized", "id": "mushroom-risotto", "path": "recipes/mushroom-risotto.html"}, {"title": "Fudgy Chocolate Brownies", "description": "Rich, decadent fudgy brownies with a perfect chewy texture. These homemade brownies are loaded with chocolate flavor and perfect for satisfying any sweet craving.", "servings": 12, "totalTime": 45, "totalTimeDisplay": "45 minutes", "difficulty": "easy", "tags": ["dessert", "chocolate", "baking", "treat", "crowd-pleaser"], "category": "uncategorized", "id": "chocolate-brownies", "path": "recipes/chocolate-brownies.html"}, {"title": "Mediterranean Greek Salad", "description": "A fresh and vibrant Greek salad with crisp vegetables, creamy feta cheese, Kalamata olives, and tangy lemon vinaigrette. Light, healthy, and perfect for warm summer days.", "servings": 4, "totalTime": 15, "totalTimeDisplay": "15 minutes", "difficulty": "easy", "tags": ["salad", "vegetarian", "healthy", "lunch", "fresh"], "category": "uncategorized", "id": "greek-salad", "path": "recipes/greek-salad.html"}, {"title": "Chicken Tikka Masala", "description": "A creamy and aromatic Indian chicken dish made with tender chicken in a rich tomato-based sauce with warming spices. Serve with rice or naan bread for an authentic experience.", "servings": 4, "totalTime": 70, "totalTimeDisplay": "70 minutes", "difficulty": "medium", "tags": ["indian", "curry", "dinner", "main-course", "spicy"], "category": "uncategorized", "id": "chicken-tikka-masala", "path": "recipes/chicken-tikka-masala.html"}];
 
         let activeFilters = new Set();
         let currentRecipes = recipes;
 
-        function initializeFilters() {{
-            document.querySelectorAll('.tag').forEach(tag => {{
-                tag.addEventListener('click', function() {{
+        function initializeFilters() {
+            document.querySelectorAll('.tag').forEach(tag => {
+                tag.addEventListener('click', function() {
                     const filter = this.dataset.filter;
                     
-                    if (this.classList.contains('active')) {{
+                    if (this.classList.contains('active')) {
                         this.classList.remove('active');
                         activeFilters.delete(filter);
-                    }} else {{
+                    } else {
                         this.classList.add('active');
                         activeFilters.add(filter);
-                    }}
+                    }
                     
                     filterRecipes();
-                }});
-            }});
-        }}
+                });
+            });
+        }
 
-        function updateStats() {{
+        function updateStats() {
             const allTags = new Set();
             const allCategories = new Set();
             
-            recipes.forEach(recipe => {{
+            recipes.forEach(recipe => {
                 recipe.tags.forEach(tag => allTags.add(tag));
                 allCategories.add(recipe.category);
-            }});
+            });
             
             const totalTagsEl = document.getElementById('totalTags');
             const categoriesEl = document.getElementById('categories');
             if (totalTagsEl) totalTagsEl.textContent = allTags.size;
             if (categoriesEl) categoriesEl.textContent = allCategories.size;
-        }}
+        }
 
-        function filterRecipes() {{
+        function filterRecipes() {
             const searchTerm = document.getElementById('searchInput').value.toLowerCase();
             
-            currentRecipes = recipes.filter(recipe => {{
+            currentRecipes = recipes.filter(recipe => {
                 const matchesSearch = !searchTerm || 
                     recipe.title.toLowerCase().includes(searchTerm) ||
                     recipe.description.toLowerCase().includes(searchTerm) ||
                     recipe.tags.some(tag => tag.toLowerCase().includes(searchTerm));
                 
                 const matchesFilters = activeFilters.size === 0 ||
-                    Array.from(activeFilters).some(filter => {{
+                    Array.from(activeFilters).some(filter => {
                         if (filter === 'quick') return recipe.totalTime <= 30;
                         if (filter === 'medium') return recipe.totalTime > 30 && recipe.totalTime <= 60;
                         if (filter === 'long') return recipe.totalTime > 60;
                         return recipe.difficulty === filter;
-                    }});
+                    });
                 
                 return matchesSearch && matchesFilters;
-            }});
+            });
             
             displayRecipes();
-        }}
+        }
 
-        function displayRecipes() {{
+        function displayRecipes() {
             const resultsContainer = document.getElementById('results');
             
-            if (currentRecipes.length === 0) {{
+            if (currentRecipes.length === 0) {
                 resultsContainer.innerHTML = '<div class="no-results">No recipes found. Try adjusting your search or filters.</div>';
                 return;
-            }}
+            }
             
             resultsContainer.innerHTML = currentRecipes.map(recipe => `
-                <div class="recipe-card" onclick="openRecipe('${{recipe.path}}')">
+                <div class="recipe-card" onclick="openRecipe('${recipe.path}')">
                     <div class="recipe-content">
                             <div class="recipe-tags">
-                                ${{recipe.tags.slice(0, 3).map(tag => `<span class="recipe-tag">${{tag}}</span>`).join('')}}
+                                ${recipe.tags.slice(0, 3).map(tag => `<span class="recipe-tag">${tag}</span>`).join('')}
                             </div>
-                        <div class="recipe-title">${{recipe.title}}</div>
+                        <div class="recipe-title">${recipe.title}</div>
                         <div class="recipe-meta">
-                            <span class="meta-item">⏱️ ${{recipe.totalTimeDisplay}}</span>
-                            <span class="meta-item">📊 ${{recipe.difficulty}}</span>
+                            <span class="meta-item">⏱️ ${recipe.totalTimeDisplay}</span>
+                            <span class="meta-item">📊 ${recipe.difficulty}</span>
                         </div>
-                            <p style="color: #666; font-size: 0.9em; margin-top: 8px; line-height: 1.4;">${{recipe.description.substring(0, 120)}}...</p>
+                            <p style="color: #666; font-size: 0.9em; margin-top: 8px; line-height: 1.4;">${recipe.description.substring(0, 120)}...</p>
                     </div>
                 </div>
             `).join('');
-        }}
+        }
 
-        function searchRecipes() {{
+        function searchRecipes() {
             filterRecipes();
-        }}
+        }
 
-        function openRecipe(path) {{
+        function openRecipe(path) {
             window.location.href = path;
-        }}
+        }
 
         document.getElementById('searchInput').addEventListener('input', filterRecipes);
 
@@ -461,13 +372,3 @@ def generate_recipe_box():
     </script>
 </body>
 </html>
-"""
-    
-    # Write the HTML file
-    with open(cookbook_output, 'w', encoding='utf-8') as f:
-        f.write(html_content)
-    
-    print(f'Generated recipe-box.html with {len(recipes)} recipes at {cookbook_output}')
-
-if __name__ == '__main__':
-    generate_recipe_box()

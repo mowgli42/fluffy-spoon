@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet type="text/xsl" href="recipe-style.xsl"?>
+
+<recipe xmlns="http://www.example.com/recipe" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="recipe.xsd"
+id="beef-tacos">
+
+  <title>Crispy Beef Tacos</title>
+
+  <description>
+    <summary>Delicious crispy beef tacos loaded with seasoned ground beef, fresh toppings, and tangy lime crema. A crowd-pleasing favorite that's perfect for casual entertaining or quick weeknight dinners.</summary>
+    <tags>
+      <tag>mexican</tag>
+      <tag>quick</tag>
+      <tag>dinner</tag>
+      <tag>main-course</tag>
+      <tag>crowd-pleaser</tag>
+    </tags>
+  </description>
+
+  <metadata>
+    <servings>4</servings>
+    <prepTime>15 minutes</prepTime>
+    <cookTime>15 minutes</cookTime>
+    <totalTime>30 minutes</totalTime>
+    <difficulty>easy</difficulty>
+  </metadata>
+
+  <ingredients>
+    <ingredient quantity="1" unit="lb">ground beef</ingredient>
+    <ingredient quantity="1" unit="packet">taco seasoning mix</ingredient>
+    <ingredient quantity="8" unit="count">corn or flour taco shells</ingredient>
+    <ingredient quantity="1" unit="cup">shredded cheddar cheese</ingredient>
+    <ingredient quantity="2" unit="cups">shredded lettuce</ingredient>
+    <ingredient quantity="1" unit="large">tomato, diced</ingredient>
+    <ingredient quantity="1/2" unit="cup">sour cream</ingredient>
+    <ingredient quantity="1" unit="count">lime, juiced</ingredient>
+    <ingredient quantity="1/4" unit="cup">fresh cilantro, chopped</ingredient>
+    <ingredient quantity="1" unit="tablespoon">olive oil</ingredient>
+  </ingredients>
+
+  <preparation>
+    <step number="1">Heat olive oil in a large skillet over medium-high heat.</step>
+    <step number="2">Add ground beef and cook, breaking it up as it cooks, until browned, about 5-7 minutes. Drain excess fat if needed.</step>
+    <step number="3">Add taco seasoning and water according to packet instructions. Simmer for 5 minutes.</step>
+    <step number="4">Warm taco shells according to package directions.</step>
+    <step number="5">In a small bowl, mix sour cream with lime juice and cilantro to make lime crema.</step>
+    <step number="6">Assemble tacos: Place seasoned beef in warm shells, then top with lettuce, tomato, cheese, and lime crema.</step>
+    <step number="7">Serve immediately with additional lime wedges and your favorite salsa.</step>
+  </preparation>
+
+</recipe>

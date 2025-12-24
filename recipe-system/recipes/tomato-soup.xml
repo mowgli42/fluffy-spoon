@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet type="text/xsl" href="recipe-style.xsl"?>
+
+<recipe xmlns="http://www.example.com/recipe" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="recipe.xsd"
+id="tomato-soup">
+
+  <title>Classic Tomato Soup</title>
+
+  <description>
+    <summary>A silky smooth tomato soup made with fresh tomatoes and cream. Perfect comfort food for any season, pairs wonderfully with grilled cheese or crusty bread.</summary>
+    <tags>
+      <tag>soup</tag>
+      <tag>vegetarian</tag>
+      <tag>comfort-food</tag>
+      <tag>lunch</tag>
+      <tag>quick</tag>
+    </tags>
+  </description>
+
+  <metadata>
+    <servings>4</servings>
+    <prepTime>10 minutes</prepTime>
+    <cookTime>25 minutes</cookTime>
+    <totalTime>35 minutes</totalTime>
+    <difficulty>easy</difficulty>
+  </metadata>
+
+  <ingredients>
+    <ingredient quantity="2" unit="tablespoons">butter</ingredient>
+    <ingredient quantity="1" unit="large">onion, diced</ingredient>
+    <ingredient quantity="3" unit="cloves">garlic, minced</ingredient>
+    <ingredient quantity="2" unit="cans (28 oz)">crushed tomatoes</ingredient>
+    <ingredient quantity="2" unit="cups">vegetable broth</ingredient>
+    <ingredient quantity="1/2" unit="cup">heavy cream</ingredient>
+    <ingredient quantity="2" unit="tablespoons">tomato paste</ingredient>
+    <ingredient quantity="1" unit="teaspoon">dried basil</ingredient>
+    <ingredient quantity="1" unit="teaspoon">sugar</ingredient>
+    <ingredient quantity="1" unit="teaspoon">salt</ingredient>
+    <ingredient quantity="1/2" unit="teaspoon">black pepper</ingredient>
+    <ingredient quantity="Fresh basil leaves">for garnish</ingredient>
+  </ingredients>
+
+  <preparation>
+    <step number="1">Melt butter in a large pot over medium heat.</step>
+    <step number="2">Add diced onion and cook until softened, about 5 minutes.</step>
+    <step number="3">Add minced garlic and cook for 30 seconds until fragrant.</step>
+    <step number="4">Stir in tomato paste and cook for 1 minute.</step>
+    <step number="5">Add crushed tomatoes and vegetable broth. Bring to a simmer.</step>
+    <step number="6">Add dried basil, sugar, salt, and pepper. Simmer for 15 minutes.</step>
+    <step number="7">Using an immersion blender, puree soup until smooth. Alternatively, carefully transfer to a blender in batches.</step>
+    <step number="8">Stir in heavy cream and heat through without boiling.</step>
+    <step number="9">Adjust seasonings as needed and serve hot, garnished with fresh basil.</step>
+  </preparation>
+
+</recipe>

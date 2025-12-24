@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet type="text/xsl" href="recipe-style.xsl"?>
+
+<recipe xmlns="http://www.example.com/recipe" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="recipe.xsd"
+id="greek-salad">
+
+  <title>Mediterranean Greek Salad</title>
+
+  <description>
+    <summary>A fresh and vibrant Greek salad with crisp vegetables, creamy feta cheese, Kalamata olives, and tangy lemon vinaigrette. Light, healthy, and perfect for warm summer days.</summary>
+    <tags>
+      <tag>salad</tag>
+      <tag>vegetarian</tag>
+      <tag>healthy</tag>
+      <tag>lunch</tag>
+      <tag>fresh</tag>
+    </tags>
+  </description>
+
+  <metadata>
+    <servings>4</servings>
+    <prepTime>15 minutes</prepTime>
+    <cookTime>0 minutes</cookTime>
+    <totalTime>15 minutes</totalTime>
+    <difficulty>easy</difficulty>
+  </metadata>
+
+  <ingredients>
+    <ingredient quantity="3" unit="cups">cherry tomatoes, halved</ingredient>
+    <ingredient quantity="1" unit="large">cucumber, diced</ingredient>
+    <ingredient quantity="1" unit="red">red bell pepper, diced</ingredient>
+    <ingredient quantity="1/2" unit="red">red onion, thinly sliced</ingredient>
+    <ingredient quantity="1" unit="cup">Kalamata olives, pitted</ingredient>
+    <ingredient quantity="1.5" unit="cups">crumbled feta cheese</ingredient>
+    <ingredient quantity="1/4" unit="cup">fresh parsley, chopped</ingredient>
+    <ingredient quantity="3" unit="tablespoons">extra virgin olive oil</ingredient>
+    <ingredient quantity="2" unit="tablespoons">red wine vinegar</ingredient>
+    <ingredient quantity="1" unit="count">lemon, juiced</ingredient>
+    <ingredient quantity="1" unit="teaspoon">dried oregano</ingredient>
+    <ingredient quantity="1/2" unit="teaspoon">salt</ingredient>
+    <ingredient quantity="1/4" unit="teaspoon">black pepper</ingredient>
+  </ingredients>
+
+  <preparation>
+    <step number="1">In a large bowl, combine cherry tomatoes, cucumber, red bell pepper, and red onion.</step>
+    <step number="2">Add Kalamata olives and crumbled feta cheese to the vegetables.</step>
+    <step number="3">In a small bowl, whisk together olive oil, red wine vinegar, lemon juice, dried oregano, salt, and black pepper.</step>
+    <step number="4">Pour dressing over salad and toss gently to combine.</step>
+    <step number="5">Top with fresh chopped parsley.</step>
+    <step number="6">Serve immediately or refrigerate until ready to serve. Toss again before serving if dressing has settled.</step>
+  </preparation>
+
+</recipe>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet type="text/xsl" href="recipe-style.xsl"?>
+
+<recipe xmlns="http://www.example.com/recipe" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="recipe.xsd"
+id="chocolate-brownies">
+
+  <title>Fudgy Chocolate Brownies</title>
+
+  <description>
+    <summary>Rich, decadent fudgy brownies with a perfect chewy texture. These homemade brownies are loaded with chocolate flavor and perfect for satisfying any sweet craving.</summary>
+    <tags>
+      <tag>dessert</tag>
+      <tag>chocolate</tag>
+      <tag>baking</tag>
+      <tag>treat</tag>
+      <tag>crowd-pleaser</tag>
+    </tags>
+  </description>
+
+  <metadata>
+    <servings>12</servings>
+    <prepTime>15 minutes</prepTime>
+    <cookTime>30 minutes</cookTime>
+    <totalTime>45 minutes</totalTime>
+    <difficulty>easy</difficulty>
+  </metadata>
+
+  <ingredients>
+    <ingredient quantity="1/2" unit="cup">butter</ingredient>
+    <ingredient quantity="8" unit="oz">semi-sweet chocolate, chopped</ingredient>
+    <ingredient quantity="1" unit="cup">granulated sugar</ingredient>
+    <ingredient quantity="2" unit="large">eggs</ingredient>
+    <ingredient quantity="1" unit="teaspoon">vanilla extract</ingredient>
+    <ingredient quantity="3/4" unit="cup">all-purpose flour</ingredient>
+    <ingredient quantity="1/4" unit="cup">unsweetened cocoa powder</ingredient>
+    <ingredient quantity="1/2" unit="teaspoon">salt</ingredient>
+    <ingredient quantity="1/2" unit="teaspoon">baking powder</ingredient>
+  </ingredients>
+
+  <preparation>
+    <step number="1">Preheat oven to 350°F (175°C). Grease and line a 9x9 inch square baking pan with parchment paper.</step>
+    <step number="2">In a double boiler or microwave, melt butter and chopped chocolate together, stirring until smooth. Let cool slightly.</step>
+    <step number="3">In a bowl, whisk together granulated sugar, eggs, and vanilla extract until well combined.</step>
+    <step number="4">Stir the melted chocolate mixture into the egg mixture until combined.</step>
+    <step number="5">In another bowl, sift together flour, cocoa powder, salt, and baking powder.</step>
+    <step number="6">Fold the dry ingredients into the chocolate mixture until just combined. Do not overmix.</step>
+    <step number="7">Pour batter into prepared baking pan and smooth the top.</step>
+    <step number="8">Bake for 25-30 minutes until a toothpick inserted in the center comes out with a few moist crumbs.</step>
+    <step number="9">Cool in pan for 10 minutes, then turn out onto a wire rack to cool completely.</step>
+    <step number="10">Cut into 12 squares and serve. Store in an airtight container for up to 3 days.</step>
+  </preparation>
+
+</recipe>

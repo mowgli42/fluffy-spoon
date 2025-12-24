@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet type="text/xsl" href="recipe-style.xsl"?>
+
+<recipe xmlns="http://www.example.com/recipe" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="recipe.xsd"
+id="baked-salmon">
+
+  <title>Baked Salmon with Lemon and Herbs</title>
+
+  <description>
+    <summary>A elegant and healthy baked salmon fillet topped with fresh lemon juice, dill, and garlic. This restaurant-quality dish is simple to prepare and pairs beautifully with roasted vegetables.</summary>
+    <tags>
+      <tag>seafood</tag>
+      <tag>healthy</tag>
+      <tag>quick</tag>
+      <tag>dinner</tag>
+      <tag>main-course</tag>
+    </tags>
+  </description>
+
+  <metadata>
+    <servings>4</servings>
+    <prepTime>10 minutes</prepTime>
+    <cookTime>15 minutes</cookTime>
+    <totalTime>25 minutes</totalTime>
+    <difficulty>easy</difficulty>
+  </metadata>
+
+  <ingredients>
+    <ingredient quantity="4" unit="fillets (6 oz each)">salmon fillets, skin-on</ingredient>
+    <ingredient quantity="3" unit="tablespoons">olive oil</ingredient>
+    <ingredient quantity="2" unit="lemons">lemon, sliced</ingredient>
+    <ingredient quantity="2" unit="cloves">garlic, minced</ingredient>
+    <ingredient quantity="2" unit="tablespoons">fresh dill, chopped</ingredient>
+    <ingredient quantity="1" unit="tablespoon">fresh thyme, chopped</ingredient>
+    <ingredient quantity="1" unit="teaspoon">salt</ingredient>
+    <ingredient quantity="1/2" unit="teaspoon">black pepper</ingredient>
+  </ingredients>
+
+  <preparation>
+    <step number="1">Preheat oven to 400°F (200°C). Line a baking sheet with parchment paper.</step>
+    <step number="2">Place salmon fillets skin-side down on the prepared baking sheet.</step>
+    <step number="3">Drizzle salmon with olive oil and season with salt and pepper.</step>
+    <step number="4">Distribute minced garlic, fresh dill, and thyme evenly over each fillet.</step>
+    <step number="5">Top each salmon fillet with a few lemon slices.</step>
+    <step number="6">Bake in the preheated oven for 12-15 minutes until salmon is cooked through and flakes easily with a fork.</step>
+    <step number="7">Serve hot with additional fresh lemon wedges on the side.</step>
+  </preparation>
+
+</recipe>

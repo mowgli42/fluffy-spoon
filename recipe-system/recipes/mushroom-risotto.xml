@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet type="text/xsl" href="recipe-style.xsl"?>
+
+<recipe xmlns="http://www.example.com/recipe" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="recipe.xsd"
+id="mushroom-risotto">
+
+  <title>Creamy Mushroom Risotto</title>
+
+  <description>
+    <summary>An elegant and creamy mushroom risotto made with Arborio rice, white wine, and earthy mushrooms. This Italian classic is luxurious yet surprisingly easy to prepare.</summary>
+    <tags>
+      <tag>italian</tag>
+      <tag>vegetarian</tag>
+      <tag>elegant</tag>
+      <tag>dinner</tag>
+      <tag>main-course</tag>
+    </tags>
+  </description>
+
+  <metadata>
+    <servings>4</servings>
+    <prepTime>15 minutes</prepTime>
+    <cookTime>30 minutes</cookTime>
+    <totalTime>45 minutes</totalTime>
+    <difficulty>medium</difficulty>
+  </metadata>
+
+  <ingredients>
+    <ingredient quantity="1" unit="lb">mixed mushrooms, sliced</ingredient>
+    <ingredient quantity="2" unit="tablespoons">olive oil</ingredient>
+    <ingredient quantity="3" unit="tablespoons">butter</ingredient>
+    <ingredient quantity="1" unit="small">onion, finely diced</ingredient>
+    <ingredient quantity="3" unit="cloves">garlic, minced</ingredient>
+    <ingredient quantity="1.5" unit="cups">Arborio rice</ingredient>
+    <ingredient quantity="1/2" unit="cup">dry white wine</ingredient>
+    <ingredient quantity="4" unit="cups">vegetable or chicken broth, warm</ingredient>
+    <ingredient quantity="1/2" unit="cup">Parmesan cheese, grated</ingredient>
+    <ingredient quantity="2" unit="tablespoons">fresh parsley, chopped</ingredient>
+    <ingredient quantity="1" unit="teaspoon">salt</ingredient>
+    <ingredient quantity="1/2" unit="teaspoon">black pepper</ingredient>
+  </ingredients>
+
+  <preparation>
+    <step number="1">Heat 1 tablespoon olive oil in a large skillet over medium-high heat.</step>
+    <step number="2">Add sliced mushrooms and cook until golden and their liquid is released, about 8-10 minutes. Season with salt and pepper. Set aside.</step>
+    <step number="3">In a large, heavy-bottomed pot, heat 1 tablespoon butter and 1 tablespoon olive oil over medium heat.</step>
+    <step number="4">Add diced onion and cook until softened, about 3 minutes.</step>
+    <step number="5">Add minced garlic and cook for 30 seconds until fragrant.</step>
+    <step number="6">Add Arborio rice and stir constantly for 1-2 minutes to toast slightly.</step>
+    <step number="7">Pour in white wine and stir until mostly absorbed.</step>
+    <step number="8">Add warm broth one ladle at a time, stirring constantly. Wait until each addition is mostly absorbed before adding the next, about 18-20 minutes total.</step>
+    <step number="9">When rice is creamy and tender, remove from heat and stir in remaining 2 tablespoons butter, Parmesan cheese, and cooked mushrooms.</step>
+    <step number="10">Season to taste and serve immediately, garnished with fresh parsley.</step>
+  </preparation>
+
+</recipe>

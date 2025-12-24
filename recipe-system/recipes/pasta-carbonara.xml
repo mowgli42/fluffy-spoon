@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet type="text/xsl" href="recipe-style.xsl"?>
+
+<recipe xmlns="http://www.example.com/recipe" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="recipe.xsd"
+id="pasta-carbonara">
+
+  <title>Pasta Carbonara</title>
+
+  <description>
+    <summary>An authentic Italian pasta dish with a creamy egg sauce, crispy pancetta, and Pecorino Romano cheese. This classic Roman recipe is simple yet elegant, featuring minimal ingredients combined perfectly.</summary>
+    <tags>
+      <tag>italian</tag>
+      <tag>pasta</tag>
+      <tag>quick</tag>
+      <tag>dinner</tag>
+      <tag>main-course</tag>
+    </tags>
+  </description>
+
+  <metadata>
+    <servings>4</servings>
+    <prepTime>10 minutes</prepTime>
+    <cookTime>20 minutes</cookTime>
+    <totalTime>30 minutes</totalTime>
+    <difficulty>medium</difficulty>
+  </metadata>
+
+  <ingredients>
+    <ingredient quantity="1" unit="lb">spaghetti or linguine</ingredient>
+    <ingredient quantity="6" unit="oz">pancetta or guanciale, diced</ingredient>
+    <ingredient quantity="4" unit="large">eggs</ingredient>
+    <ingredient quantity="2" unit="cups">Pecorino Romano cheese, grated</ingredient>
+    <ingredient quantity="1" unit="teaspoon">black pepper, freshly ground</ingredient>
+    <ingredient quantity="1" unit="pinch">salt</ingredient>
+  </ingredients>
+
+  <preparation>
+    <step number="1">Bring a large pot of salted water to a boil and cook the pasta until al dente, about 8-10 minutes.</step>
+    <step number="2">While pasta cooks, fry the diced pancetta in a large skillet over medium-high heat until crispy, about 5-7 minutes. Remove from heat.</step>
+    <step number="3">In a bowl, whisk together eggs, Pecorino Romano cheese, and black pepper until well combined.</step>
+    <step number="4">Reserve 1 cup of pasta cooking water. Drain the cooked pasta.</step>
+    <step number="5">Add the hot drained pasta to the skillet with pancetta off the heat. Toss to combine.</step>
+    <step number="6">Pour the egg mixture over the pasta while stirring constantly. The residual heat will cook the eggs into a creamy sauce.</step>
+    <step number="7">If the sauce is too thick, add reserved pasta water a splash at a time to reach desired consistency.</step>
+    <step number="8">Serve immediately topped with additional Pecorino Romano and cracked black pepper.</step>
+  </preparation>
+
+</recipe>

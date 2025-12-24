@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet type="text/xsl" href="recipe-style.xsl"?>
+
+<recipe xmlns="http://www.example.com/recipe" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="recipe.xsd"
+id="chicken-stir-fry">
+
+  <title>Chicken Stir Fry with Vegetables</title>
+
+  <description>
+    <summary>A quick and healthy stir fry loaded with tender chicken and fresh vegetables in a savory soy ginger sauce. Perfect weeknight dinner served over rice.</summary>
+    <tags>
+      <tag>asian</tag>
+      <tag>quick</tag>
+      <tag>healthy</tag>
+      <tag>dinner</tag>
+      <tag>main-course</tag>
+    </tags>
+  </description>
+
+  <metadata>
+    <servings>4</servings>
+    <prepTime>20 minutes</prepTime>
+    <cookTime>15 minutes</cookTime>
+    <totalTime>35 minutes</totalTime>
+    <difficulty>easy</difficulty>
+  </metadata>
+
+  <ingredients>
+    <ingredient quantity="1.5" unit="lbs">chicken breast, sliced into thin strips</ingredient>
+    <ingredient quantity="2" unit="cups">broccoli florets</ingredient>
+    <ingredient quantity="1" unit="large">red bell pepper, sliced</ingredient>
+    <ingredient quantity="1" unit="large">onion, sliced</ingredient>
+    <ingredient quantity="2" unit="cloves">garlic, minced</ingredient>
+    <ingredient quantity="1" unit="tablespoon">fresh ginger, minced</ingredient>
+    <ingredient quantity="3" unit="tablespoons">soy sauce</ingredient>
+    <ingredient quantity="2" unit="tablespoons">sesame oil</ingredient>
+    <ingredient quantity="1" unit="tablespoon">cornstarch</ingredient>
+    <ingredient quantity="2" unit="tablespoons">vegetable oil</ingredient>
+    <ingredient quantity="1/2" unit="cup">chicken broth</ingredient>
+    <ingredient quantity="1" unit="teaspoon">rice vinegar</ingredient>
+  </ingredients>
+
+  <preparation>
+    <step number="1">In a small bowl, mix soy sauce, sesame oil, chicken broth, rice vinegar, and cornstarch to create sauce.</step>
+    <step number="2">Heat 1 tablespoon of vegetable oil in a large wok or skillet over high heat.</step>
+    <step number="3">Add chicken strips and cook until golden and cooked through, about 5-7 minutes. Remove from wok and set aside.</step>
+    <step number="4">Add remaining tablespoon of oil to the wok. Add broccoli, bell pepper, and onion. Stir fry for 5 minutes until vegetables are tender-crisp.</step>
+    <step number="5">Add minced garlic and ginger, cook for 30 seconds until fragrant.</step>
+    <step number="6">Return chicken to the wok and pour in the sauce. Toss everything together and cook for 2-3 minutes until sauce thickens.</step>
+    <step number="7">Serve immediately over steamed white or brown rice.</step>
+  </preparation>
+
+</recipe>
