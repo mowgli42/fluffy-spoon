@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="recipe-style.xsl"?>
+
+<recipe xmlns="http://www.example.com/recipe" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="recipe.xsd"
+id="crockpot-ziti">
+
+  <title>Crockpot Ziti</title>
+
+  <description>
+    <summary>An easy and delicious crockpot ziti pasta with ground beef, marinara sauce, and melted cheese. Perfect for busy days when you want a homemade meal with minimal effort.</summary>
+    <tags>
+      <tag>easy</tag>
+      <tag>crockpot</tag>
+      <tag>pasta</tag>
+      <tag>comfort-food</tag>
+      <tag>main-course</tag>
+    </tags>
+  </description>
+
+  <metadata>
+    <servings>6</servings>
+    <prepTime>10 minutes</prepTime>
+    <cookTime>4 hours</cookTime>
+    <totalTime>4 hours 10 minutes</totalTime>
+    <difficulty>easy</difficulty>
+  </metadata>
+
+  <ingredients>
+    <ingredient quantity="1" unit="lb">ground beef</ingredient>
+    <ingredient quantity="1" unit="box (16 oz)">ziti pasta, uncooked</ingredient>
+    <ingredient quantity="2" unit="jars (24 oz)">marinara sauce</ingredient>
+    <ingredient quantity="2" unit="cups">beef broth</ingredient>
+    <ingredient quantity="2" unit="cups">shredded mozzarella cheese</ingredient>
+    <ingredient quantity="1/2" unit="cup">parmesan cheese, grated</ingredient>
+    <ingredient quantity="1" unit="tablespoon">italian seasoning</ingredient>
+    <ingredient quantity="1" unit="teaspoon">salt</ingredient>
+    <ingredient quantity="1/2" unit="teaspoon">black pepper</ingredient>
+  </ingredients>
+
+  <preparation>
+    <step number="1">Brown the ground beef in a skillet over medium heat, breaking it apart as it cooks. Drain excess fat.</step>
+    <step number="2">Transfer the cooked beef to a 6-quart crockpot.</step>
+    <step number="3">Add the marinara sauce, beef broth, uncooked ziti, italian seasoning, salt, and black pepper to the crockpot.</step>
+    <step number="4">Stir well to combine all ingredients.</step>
+    <step number="5">Cover and cook on low for 4 hours, stirring occasionally to prevent sticking.</step>
+    <step number="6">In the last 30 minutes of cooking, stir in the mozzarella and parmesan cheese.</step>
+    <step number="7">Cover and let the cheese melt, about 30 minutes.</step>
+    <step number="8">Serve hot and enjoy!</step>
+  </preparation>
+
+</recipe>
+

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet type="text/xsl" href="recipe-style.xsl"?>
+
+<recipe xmlns="http://www.example.com/recipe" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="recipe.xsd"
+id="classic-chili">
+
+  <title>Classic Beef Chili</title>
+
+  <description>
+    <summary>A hearty and flavorful beef chili with beans, perfect for cold evenings. This traditional recipe combines ground beef with a rich blend of spices, tomatoes, and kidney beans for a warming and satisfying meal.</summary>
+    <tags>
+      <tag>comfort-food</tag>
+      <tag>one-pot</tag>
+      <tag>spicy</tag>
+      <tag>winter</tag>
+      <tag>main-course</tag>
+    </tags>
+  </description>
+
+  <metadata>
+    <servings>6</servings>
+    <prepTime>15 minutes</prepTime>
+    <cookTime>1 hour 30 minutes</cookTime>
+    <totalTime>1 hour 45 minutes</totalTime>
+    <difficulty>medium</difficulty>
+  </metadata>
+
+  <ingredients>
+    <ingredient quantity="2" unit="lbs">ground beef</ingredient>
+    <ingredient quantity="1" unit="large">onion, diced</ingredient>
+    <ingredient quantity="4" unit="cloves">garlic, minced</ingredient>
+    <ingredient quantity="1" unit="large">green bell pepper, diced</ingredient>
+    <ingredient quantity="2" unit="cans (14.5 oz)">diced tomatoes</ingredient>
+    <ingredient quantity="1" unit="can (15 oz)">tomato sauce</ingredient>
+    <ingredient quantity="2" unit="cans (15 oz)">kidney beans, drained and rinsed</ingredient>
+    <ingredient quantity="2" unit="cups">beef broth</ingredient>
+    <ingredient quantity="3" unit="tablespoons">chili powder</ingredient>
+    <ingredient quantity="1" unit="tablespoon">ground cumin</ingredient>
+    <ingredient quantity="1" unit="teaspoon">paprika</ingredient>
+    <ingredient quantity="1/2" unit="teaspoon">cayenne pepper (optional)</ingredient>
+    <ingredient quantity="2" unit="tablespoons">vegetable oil</ingredient>
+    <ingredient quantity="1" unit="teaspoon">salt</ingredient>
+    <ingredient quantity="1/2" unit="teaspoon">black pepper</ingredient>
+    <ingredient>Optional toppings: shredded cheese, sour cream, chopped cilantro, diced onions</ingredient>
+  </ingredients>
+
+  <preparation>
+    <step number="1">Heat the vegetable oil in a large pot or Dutch oven over medium-high heat.</step>
+    <step number="2">Add the ground beef and cook, breaking it up with a wooden spoon, until browned and no longer pink, about 6-8 minutes. Drain excess fat if necessary.</step>
+    <step number="3">Add the diced onion and bell pepper to the pot. Cook until softened, about 5 minutes.</step>
+    <step number="4">Stir in the minced garlic and cook for another minute until fragrant.</step>
+    <step number="5">Add the chili powder, cumin, paprika, cayenne pepper (if using), salt, and black pepper. Stir well to coat the meat and vegetables with the spices, cooking for 1-2 minutes.</step>
+    <step number="6">Pour in the diced tomatoes, tomato sauce, and beef broth. Stir to combine all ingredients.</step>
+    <step number="7">Add the drained kidney beans and stir them into the mixture.</step>
+    <step number="8">Bring the chili to a boil, then reduce heat to low. Cover and simmer for at least 1 hour, stirring occasionally. The longer it simmers, the better the flavors will meld together.</step>
+    <step number="9">Taste and adjust seasonings as needed. Add more salt, pepper, or chili powder to your preference.</step>
+    <step number="10">Serve hot with your choice of toppings such as shredded cheese, sour cream, chopped cilantro, or diced onions.</step>
+  </preparation>
+
+</recipe>

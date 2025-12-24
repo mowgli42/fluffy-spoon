@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Collection - Search & Browse</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+```
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        padding: 20px;
+    }
+
+    .container {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    header {
+        text-align: center;
+        color: white;
+        margin-bottom: 40px;
+    }
+
+    h1 {
+        font-size: 3em;
+        margin-bottom: 10px;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .subtitle {
+        font-size: 1.2em;
+        opacity: 0.9;
+    }
+
+    .search-section {
+        background: white;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        margin-bottom: 30px;
+    }
+
+    .search-bar {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .search-input {
+        flex: 1;
+        padding: 15px 20px;
+        font-size: 1.1em;
+        border: 2px solid #e0e0e0;
+        border-radius: 10px;
+        transition: border-color 0.3s;
+    }
+
+    .search-input:focus {
+        outline: none;
+        border-color: #667eea;
+    }
+
+    .search-btn {
+        padding: 15px 40px;
+        font-size: 1.1em;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: transform 0.2s;
+    }
+
+    .search-btn:hover {
+        transform: scale(1.05);
+    }
+
+    .filters {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+    }
+
+    .filter-group {
+        background: #f8f9fa;
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    .filter-group h3 {
+        font-size: 0.9em;
+        color: #666;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .tag-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .tag {
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 0.9em;
+        cursor: pointer;
+        transition: all 0.3s;
+        background: white;
+        border: 2px solid #e0e0e0;
+    }
+
+    .tag:hover {
+        border-color: #667eea;
+        transform: translateY(-2px);
+    }
+
+    .tag.active {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border-color: transparent;
+    }
+
+    .results-section {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 25px;
+    }
+
+    .recipe-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        transition: transform 0.3s, box-shadow 0.3s;
+        cursor: pointer;
+    }
+
+    .recipe-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    .recipe-image {
+        width: 100%;
+        height: 200px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 3em;
+    }
+
+    .recipe-content {
+        padding: 20px;
+    }
+
+    .recipe-title {
+        font-size: 1.4em;
+        color: #333;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    .recipe-meta {
+        display: flex;
+        gap: 15px;
+        margin: 15px 0;
+        flex-wrap: wrap;
+    }
+
+    .meta-item {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 0.9em;
+        color: #666;
+    }
+
+    .recipe-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 15px;
+    }
+
+    .recipe-tag {
+        padding: 4px 10px;
+        background: #e3f2fd;
+        color: #1976d2;
+        border-radius: 15px;
+        font-size: 0.8em;
+    }
+
+    .stats {
+        display: flex;
+        justify-content: space-around;
+        background: white;
+        border-radius: 15px;
+        padding: 20px;
+        margin-bottom: 30px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .stat-item {
+        text-align: center;
+    }
+
+    .stat-number {
+        font-size: 2em;
+        font-weight: bold;
+        color: #667eea;
+    }
+
+    .stat-label {
+        color: #666;
+        font-size: 0.9em;
+        margin-top: 5px;
+    }
+
+    .no-results {
+        grid-column: 1 / -1;
+        text-align: center;
+        padding: 60px;
+        background: white;
+        border-radius: 15px;
+        color: #666;
+        font-size: 1.2em;
+    }
+</style>
+```
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🍳 My Recipe Collection</h1>
+            <p class="subtitle">Search and browse your personal recipe library</p>
+        </header>
+
+```
+    <div class="stats">
+        <div class="stat-item">
+            <div class="stat-number" id="totalRecipes">127</div>
+            <div class="stat-label">Total Recipes</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number" id="totalTags">45</div>
+            <div class="stat-label">Tags</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number" id="categories">12</div>
+            <div class="stat-label">Categories</div>
+        </div>
+    </div>
+
+    <div class="search-section">
+        <div class="search-bar">
+            <input type="text" class="search-input" id="searchInput" placeholder="Search recipes by name, ingredient, or description...">
+            <button class="search-btn" onclick="searchRecipes()">Search</button>
+        </div>
+
+        <div class="filters">
+            <div class="filter-group">
+                <h3>Meal Type</h3>
+                <div class="tag-container" id="mealTypeFilter">
+                    <span class="tag" data-filter="breakfast">Breakfast</span>
+                    <span class="tag" data-filter="lunch">Lunch</span>
+                    <span class="tag" data-filter="dinner">Dinner</span>
+                    <span class="tag" data-filter="dessert">Dessert</span>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <h3>Dietary</h3>
+                <div class="tag-container" id="dietaryFilter">
+                    <span class="tag" data-filter="vegetarian">Vegetarian</span>
+                    <span class="tag" data-filter="vegan">Vegan</span>
+                    <span class="tag" data-filter="gluten-free">Gluten-Free</span>
+                    <span class="tag" data-filter="keto">Keto</span>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <h3>Cooking Time</h3>
+                <div class="tag-container" id="timeFilter">
+                    <span class="tag" data-filter="quick">Under 30 min</span>
+                    <span class="tag" data-filter="medium">30-60 min</span>
+                    <span class="tag" data-filter="long">Over 1 hour</span>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <h3>Difficulty</h3>
+                <div class="tag-container" id="difficultyFilter">
+                    <span class="tag" data-filter="easy">Easy</span>
+                    <span class="tag" data-filter="medium">Medium</span>
+                    <span class="tag" data-filter="hard">Hard</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="results-section" id="results">
+        <!-- Sample recipe cards -->
+    </div>
+</div>
+
+<script>
+    // Sample recipe data
+    const recipes = [
+        {
+            id: 'classic-chili',
+            title: 'Classic Beef Chili',
+            path: 'recipes/main-courses/beef/classic-chili.xml',
+            category: 'main-courses',
+            tags: ['comfort-food', 'one-pot', 'spicy', 'winter', 'main-course', 'dinner'],
+            servings: 6,
+            totalTime: 105,
+            difficulty: 'medium',
+            description: 'A hearty and flavorful beef chili perfect for cold evenings'
+        },
+        {
+            id: 'chicken-curry',
+            title: 'Thai Chicken Curry',
+            path: 'recipes/main-courses/chicken/chicken-curry.xml',
+            category: 'main-courses',
+            tags: ['thai', 'spicy', 'one-pot', 'dinner', 'main-course'],
+            servings: 4,
+            totalTime: 45,
+            difficulty: 'medium',
+            description: 'Creamy coconut curry with tender chicken and vegetables'
+        },
+        {
+            id: 'chocolate-cake',
+            title: 'Decadent Chocolate Cake',
+            path: 'recipes/desserts/chocolate-cake.xml',
+            category: 'desserts',
+            tags: ['dessert', 'chocolate', 'baked', 'party'],
+            servings: 12,
+            totalTime: 90,
+            difficulty: 'medium',
+            description: 'Rich, moist chocolate cake with fudge frosting'
+        },
+        {
+            id: 'caesar-salad',
+            title: 'Classic Caesar Salad',
+            path: 'recipes/salads/caesar-salad.xml',
+            category: 'salads',
+            tags: ['salad', 'vegetarian', 'quick', 'lunch'],
+            servings: 4,
+            totalTime: 15,
+            difficulty: 'easy',
+            description: 'Crisp romaine with homemade Caesar dressing'
+        },
+        {
+            id: 'veggie-stir-fry',
+            title: 'Asian Vegetable Stir-Fry',
+            path: 'recipes/vegetarian/veggie-stir-fry.xml',
+            category: 'vegetarian',
+            tags: ['vegetarian', 'vegan', 'quick', 'healthy', 'dinner'],
+            servings: 4,
+            totalTime: 25,
+            difficulty: 'easy',
+            description: 'Colorful vegetables in savory sauce over rice'
+        }
+    ];
+
+    let activeFilters = new Set();
+    let currentRecipes = recipes;
+
+    function initializeFilters() {
+        document.querySelectorAll('.tag').forEach(tag => {
+            tag.addEventListener('click', function() {
+                const filter = this.dataset.filter;
+                
+                if (this.classList.contains('active')) {
+                    this.classList.remove('active');
+                    activeFilters.delete(filter);
+                } else {
+                    this.classList.add('active');
+                    activeFilters.add(filter);
+                }
+                
+                filterRecipes();
+            });
+        });
+    }
+
+    function filterRecipes() {
+        const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+        
+        currentRecipes = recipes.filter(recipe => {
+            const matchesSearch = !searchTerm || 
+                recipe.title.toLowerCase().includes(searchTerm) ||
+                recipe.description.toLowerCase().includes(searchTerm) ||
+                recipe.tags.some(tag => tag.includes(searchTerm));
+            
+            const matchesFilters = activeFilters.size === 0 ||
+                Array.from(activeFilters).some(filter => {
+                    if (filter === 'quick') return recipe.totalTime <= 30;
+                    if (filter === 'medium') return recipe.totalTime > 30 && recipe.totalTime <= 60;
+                    if (filter === 'long') return recipe.totalTime > 60;
+                    return recipe.tags.includes(filter) || recipe.difficulty === filter;
+                });
+            
+            return matchesSearch && matchesFilters;
+        });
+        
+        displayRecipes();
+    }
+
+    function displayRecipes() {
+        const resultsContainer = document.getElementById('results');
+        
+        if (currentRecipes.length === 0) {
+            resultsContainer.innerHTML = '<div class="no-results">No recipes found. Try adjusting your search or filters.</div>';
+            return;
+        }
+        
+        resultsContainer.innerHTML = currentRecipes.map(recipe => `
+            <div class="recipe-card" onclick="openRecipe('${recipe.path}')">
+                <div class="recipe-image">🍽️</div>
+                <div class="recipe-content">
+                    <div class="recipe-title">${recipe.title}</div>
+                    <div class="recipe-meta">
+                        <span class="meta-item">⏱️ ${recipe.totalTime} min</span>
+                        <span class="meta-item">👥 ${recipe.servings} servings</span>
+                        <span class="meta-item">📊 ${recipe.difficulty}</span>
+                    </div>
+                    <p style="color: #666; font-size: 0.95em; margin-top: 10px;">${recipe.description}</p>
+                    <div class="recipe-tags">
+                        ${recipe.tags.slice(0, 4).map(tag => `<span class="recipe-tag">${tag}</span>`).join('')}
+                    </div>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    function searchRecipes() {
+        filterRecipes();
+    }
+
+    function openRecipe(path) {
+        window.location.href = path;
+    }
+
+    document.getElementById('searchInput').addEventListener('input', filterRecipes);
+
+    initializeFilters();
+    displayRecipes();
+</script>
+```
+
+</body>
+</html>
