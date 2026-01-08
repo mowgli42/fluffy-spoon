@@ -3,14 +3,82 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Chicken Stir Fry with Vegetables</title>
 <style>
+:root {
+  --page-background: #f8f9fa;
+}
+
 body {
 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 max-width: 900px;
 margin: 40px auto;
 padding: 0 20px;
-background-color: #f8f9fa;
+background: var(--page-background);
 color: #333;
 line-height: 1.6;
+transition: background 200ms ease-in-out;
+}
+
+.page-theme-picker {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 9999;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+  padding: 10px 12px;
+  width: 220px;
+  backdrop-filter: blur(8px);
+}
+
+.page-theme-picker .title {
+  font-size: 12px;
+  font-weight: 700;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 8px;
+}
+
+.page-theme-picker .row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.page-theme-picker .swatch {
+  width: 22px;
+  height: 22px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+}
+
+.page-theme-picker input[type="color"] {
+  width: 44px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.page-theme-picker button {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: white;
+  color: #333;
+  padding: 6px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.page-theme-picker button:hover {
+  transform: translateY(-1px);
 }
 
 .recipe-container {
@@ -184,7 +252,20 @@ h2 {
 }
 </style>
 </head>
-<body><div class="recipe-container">
+<body>
+<div class="page-theme-picker" aria-label="Page theme">
+<div class="title">Page color</div>
+<div class="row" aria-label="Preset backgrounds">
+<div class="swatch" role="button" tabindex="0" title="Light gray" data-bg="#f8f9fa" style="background: #f8f9fa;"></div>
+<div class="swatch" role="button" tabindex="0" title="Warm" data-bg="#fff7ed" style="background: #fff7ed;"></div>
+<div class="swatch" role="button" tabindex="0" title="Mint" data-bg="#ecfeff" style="background: #ecfeff;"></div>
+<div class="swatch" role="button" tabindex="0" title="Dark" data-bg="#0f172a" style="background: #0f172a;"></div>
+</div>
+<div class="row">
+<label for="pageBgColor" style="font-size:12px;color:#444;font-weight:600;">Custom</label><input id="pageBgColor" type="color" value="#f8f9fa" aria-label="Custom background color"><button type="button" id="pageBgReset">Reset</button>
+</div>
+</div>
+<div class="recipe-container">
 <h1>Chicken Stir Fry with Vegetables</h1>
 <div class="description">A quick and healthy stir fry loaded with tender chicken and fresh vegetables in a savory soy ginger sauce. Perfect weeknight dinner served over rice.<div class="tags">
 <span class="tag">asian</span><span class="tag">quick</span><span class="tag">healthy</span><span class="tag">dinner</span><span class="tag">main-course</span>
@@ -288,5 +369,66 @@ h2 {
 </div>
 </div>
 </div>
-</div></body>
+</div>
+<script>
+    (function () {
+      const PAGE_BG_STORAGE_KEY = 'recipeSystem.pageBackground';
+
+      function safeStorageGet(key) {
+        try { return window.localStorage.getItem(key); } catch (_e) { return null; }
+      }
+
+      function safeStorageSet(key, value) {
+        try { window.localStorage.setItem(key, value); } catch (_e) {}
+      }
+
+      function safeStorageRemove(key) {
+        try { window.localStorage.removeItem(key); } catch (_e) {}
+      }
+
+      function applyPageBackground(value) {
+        if (!value) return;
+        document.documentElement.style.setProperty('--page-background', value);
+        safeStorageSet(PAGE_BG_STORAGE_KEY, value);
+      }
+
+      function resetPageBackground() {
+        document.documentElement.style.removeProperty('--page-background');
+        safeStorageRemove(PAGE_BG_STORAGE_KEY);
+      }
+
+      function initPageThemePicker() {
+        const saved = safeStorageGet(PAGE_BG_STORAGE_KEY);
+        if (saved) applyPageBackground(saved);
+
+        const colorInput = document.getElementById('pageBgColor');
+        if (colorInput && saved && saved.startsWith('#')) colorInput.value = saved;
+
+        document.querySelectorAll('.page-theme-picker .swatch').forEach((el) => {
+          const bg = el.getAttribute('data-bg');
+          const activate = () => bg && applyPageBackground(bg);
+          el.addEventListener('click', activate);
+          el.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') activate();
+          });
+        });
+
+        if (colorInput) {
+          colorInput.addEventListener('input', (e) => {
+            applyPageBackground(e.target.value);
+          });
+        }
+
+        const resetBtn = document.getElementById('pageBgReset');
+        if (resetBtn) resetBtn.addEventListener('click', resetPageBackground);
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initPageThemePicker);
+      } else {
+        initPageThemePicker();
+      }
+    })();
+  </script>
+</body>
 </html>

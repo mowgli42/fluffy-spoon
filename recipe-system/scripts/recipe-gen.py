@@ -3,10 +3,12 @@ from lxml import etree
 
 import xml.etree.ElementTree as ET
 
-# Define paths
-xml_directory = '/home/tprettol/repo/fluffy-spoon/recipe-system/recipes'  # Update with the actual path to your XML files
-xsl_file = '/home/tprettol/repo/fluffy-spoon/recipe-system/stylesheets/recipe-style.xsl'
-output_directory = '/home/tprettol/repo/fluffy-spoon/recipe-system/web/recipes'
+# Define paths (relative to this repo)
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_DIR = os.path.abspath(os.path.join(SCRIPT_DIR, '..'))
+xml_directory = os.path.join(PROJECT_DIR, 'recipes')
+xsl_file = os.path.join(PROJECT_DIR, 'stylesheets', 'recipe-style.xsl')
+output_directory = os.path.join(PROJECT_DIR, 'web', 'recipes')
 
 # Ensure output directory exists
 os.makedirs(output_directory, exist_ok=True)
