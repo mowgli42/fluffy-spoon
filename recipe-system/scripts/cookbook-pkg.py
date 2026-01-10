@@ -2,6 +2,7 @@ import os
 import json
 import urllib.request
 import urllib.error
+import argparse
 from lxml import etree
 
 # Load XSD schema for validation
@@ -20,6 +21,13 @@ PROJECT_DIR = os.path.abspath(os.path.join(SCRIPT_DIR, '..'))
 xml_directory = os.path.join(PROJECT_DIR, 'recipes')
 output_directory = os.path.join(PROJECT_DIR, 'web', 'recipes')
 cookbook_output = os.path.join(PROJECT_DIR, 'web', 'recipe-box.html')
+
+THEMES = {
+    'indigo': 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+    'sunset': 'linear-gradient(135deg, #ff9966 0%, #ff5e62 100%)',
+    'mint': 'linear-gradient(135deg, #2af598 0%, #009efd 100%)',
+    'dark': '#0f172a',
+}
 
 def extract_recipe_metadata(xml_file):
     """Extract metadata from XML recipe file"""
@@ -96,7 +104,7 @@ def parse_time_to_minutes(time_str):
     
     return total_minutes if total_minutes > 0 else 0
 
-def generate_recipe_box():
+def generate_recipe_box(page_background: str):
     """Generate recipe-box.html with all recipes"""
     recipes = []
     
@@ -141,7 +149,7 @@ def generate_recipe_box():
         }}
 
         :root {{
-            --page-background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --page-background: {page_background};
         }}
 
         body {{
@@ -149,75 +157,11 @@ def generate_recipe_box():
             background: var(--page-background);
             min-height: 100vh;
             padding: 20px;
-            transition: background 200ms ease-in-out;
         }}
 
         .container {{
             max-width: 1400px;
             margin: 0 auto;
-        }}
-
-        .page-theme-picker {{
-            position: fixed;
-            top: 16px;
-            right: 16px;
-            z-index: 9999;
-            background: rgba(255, 255, 255, 0.92);
-            border: 1px solid rgba(0, 0, 0, 0.08);
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
-            padding: 10px 12px;
-            width: 220px;
-            backdrop-filter: blur(8px);
-        }}
-
-        .page-theme-picker .title {{
-            font-size: 12px;
-            font-weight: 700;
-            color: #333;
-            text-transform: uppercase;
-            letter-spacing: 0.6px;
-            margin-bottom: 8px;
-        }}
-
-        .page-theme-picker .row {{
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 8px;
-            flex-wrap: wrap;
-        }}
-
-        .page-theme-picker .swatch {{
-            width: 22px;
-            height: 22px;
-            border-radius: 8px;
-            border: 1px solid rgba(0, 0, 0, 0.12);
-            cursor: pointer;
-        }}
-
-        .page-theme-picker input[type="color"] {{
-            width: 44px;
-            height: 32px;
-            padding: 0;
-            border: none;
-            background: transparent;
-            cursor: pointer;
-        }}
-
-        .page-theme-picker button {{
-            border: 1px solid rgba(0, 0, 0, 0.12);
-            background: white;
-            color: #333;
-            padding: 6px 10px;
-            border-radius: 10px;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 12px;
-        }}
-
-        .page-theme-picker button:hover {{
-            transform: translateY(-1px);
         }}
 
         header {{
@@ -450,20 +394,6 @@ def generate_recipe_box():
     </style>
 </head>
 <body>
-    <div class="page-theme-picker" aria-label="Page theme">
-        <div class="title">Page color</div>
-        <div class="row" aria-label="Preset backgrounds">
-            <div class="swatch" role="button" tabindex="0" title="Indigo gradient" data-bg="linear-gradient(135deg, #667eea 0%, #764ba2 100%)" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
-            <div class="swatch" role="button" tabindex="0" title="Sunset gradient" data-bg="linear-gradient(135deg, #ff9966 0%, #ff5e62 100%)" style="background: linear-gradient(135deg, #ff9966 0%, #ff5e62 100%);"></div>
-            <div class="swatch" role="button" tabindex="0" title="Mint gradient" data-bg="linear-gradient(135deg, #2af598 0%, #009efd 100%)" style="background: linear-gradient(135deg, #2af598 0%, #009efd 100%);"></div>
-            <div class="swatch" role="button" tabindex="0" title="Dark" data-bg="#0f172a" style="background: #0f172a;"></div>
-        </div>
-        <div class="row">
-            <label for="pageBgColor" style="font-size:12px;color:#444;font-weight:600;">Custom</label>
-            <input id="pageBgColor" type="color" value="#667eea" aria-label="Custom background color" />
-            <button type="button" id="pageBgReset">Reset</button>
-        </div>
-    </div>
     <div class="container">
         <header>
             <h1>🍳 My Recipe Collection</h1>
@@ -508,57 +438,6 @@ def generate_recipe_box():
     </div>
 
     <script>
-        const PAGE_BG_STORAGE_KEY = 'recipeSystem.pageBackground';
-
-        function safeStorageGet(key) {{
-            try {{ return window.localStorage.getItem(key); }} catch (_e) {{ return null; }}
-        }}
-
-        function safeStorageSet(key, value) {{
-            try {{ window.localStorage.setItem(key, value); }} catch (_e) {{}}
-        }}
-
-        function safeStorageRemove(key) {{
-            try {{ window.localStorage.removeItem(key); }} catch (_e) {{}}
-        }}
-
-        function applyPageBackground(value) {{
-            if (!value) return;
-            document.documentElement.style.setProperty('--page-background', value);
-            safeStorageSet(PAGE_BG_STORAGE_KEY, value);
-        }}
-
-        function resetPageBackground() {{
-            document.documentElement.style.removeProperty('--page-background');
-            safeStorageRemove(PAGE_BG_STORAGE_KEY);
-        }}
-
-        function initPageThemePicker() {{
-            const saved = safeStorageGet(PAGE_BG_STORAGE_KEY);
-            if (saved) applyPageBackground(saved);
-
-            const colorInput = document.getElementById('pageBgColor');
-            if (colorInput && saved && saved.startsWith('#')) colorInput.value = saved;
-
-            document.querySelectorAll('.page-theme-picker .swatch').forEach((el) => {{
-                const bg = el.getAttribute('data-bg');
-                const activate = () => bg && applyPageBackground(bg);
-                el.addEventListener('click', activate);
-                el.addEventListener('keydown', (e) => {{
-                    if (e.key === 'Enter' || e.key === ' ') activate();
-                }});
-            }});
-
-            if (colorInput) {{
-                colorInput.addEventListener('input', (e) => {{
-                    applyPageBackground(e.target.value);
-                }});
-            }}
-
-            const resetBtn = document.getElementById('pageBgReset');
-            if (resetBtn) resetBtn.addEventListener('click', resetPageBackground);
-        }}
-
         const recipes = {json.dumps(recipes)};
 
         let activeFilters = new Set();
@@ -656,7 +535,6 @@ def generate_recipe_box():
 
         document.getElementById('searchInput').addEventListener('input', filterRecipes);
 
-        initPageThemePicker();
         initializeFilters();
         updateStats();
         displayRecipes();
@@ -672,4 +550,19 @@ def generate_recipe_box():
     print(f'Generated recipe-box.html with {len(recipes)} recipes at {cookbook_output}')
 
 if __name__ == '__main__':
-    generate_recipe_box()
+    parser = argparse.ArgumentParser(description='Generate recipe-box.html with all recipes')
+    parser.add_argument(
+        '--theme',
+        choices=sorted(THEMES.keys()),
+        default='indigo',
+        help='Background theme for the generated page',
+    )
+    parser.add_argument(
+        '--page-background',
+        default=None,
+        help='Custom CSS background value (overrides --theme), e.g. "#111827" or "linear-gradient(...)"',
+    )
+    args = parser.parse_args()
+
+    background = args.page_background if args.page_background else THEMES[args.theme]
+    generate_recipe_box(page_background=background)
