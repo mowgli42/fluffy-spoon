@@ -9,12 +9,16 @@
 <head>
 <title><xsl:value-of select="r:recipe/r:title"/></title>
 <style><![CDATA[
+:root {
+  --page-background: __PAGE_BACKGROUND__;
+}
+
 body {
 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 max-width: 900px;
 margin: 40px auto;
 padding: 0 20px;
-background-color: #f8f9fa;
+background: var(--page-background);
 color: #333;
 line-height: 1.6;
 }

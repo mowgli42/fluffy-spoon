@@ -2,6 +2,7 @@ import os
 import json
 import urllib.request
 import urllib.error
+import argparse
 from lxml import etree
 
 # Load XSD schema for validation
@@ -13,12 +14,20 @@ try:
 except Exception as _e:
     SCHEMA = None
 
-# filepath: /home/tprettol/repo/fluffy-spoon/recipe-system/scripts/cookbook-pkg.py
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_DIR = os.path.abspath(os.path.join(SCRIPT_DIR, '..'))
 
-# Define paths
-xml_directory = '/home/tprettol/repo/fluffy-spoon/recipe-system/recipes'
-output_directory = '/home/tprettol/repo/fluffy-spoon/recipe-system/web/recipes'
-cookbook_output = '/home/tprettol/repo/fluffy-spoon/recipe-system/web/recipe-box.html'
+# Define paths (relative to this repo)
+xml_directory = os.path.join(PROJECT_DIR, 'recipes')
+output_directory = os.path.join(PROJECT_DIR, 'web', 'recipes')
+cookbook_output = os.path.join(PROJECT_DIR, 'web', 'recipe-box.html')
+
+THEMES = {
+    'indigo': 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+    'sunset': 'linear-gradient(135deg, #ff9966 0%, #ff5e62 100%)',
+    'mint': 'linear-gradient(135deg, #2af598 0%, #009efd 100%)',
+    'dark': '#0f172a',
+}
 
 def extract_recipe_metadata(xml_file):
     """Extract metadata from XML recipe file"""
@@ -95,7 +104,7 @@ def parse_time_to_minutes(time_str):
     
     return total_minutes if total_minutes > 0 else 0
 
-def generate_recipe_box():
+def generate_recipe_box(page_background: str):
     """Generate recipe-box.html with all recipes"""
     recipes = []
     
@@ -139,9 +148,13 @@ def generate_recipe_box():
             box-sizing: border-box;
         }}
 
+        :root {{
+            --page-background: {page_background};
+        }}
+
         body {{
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--page-background);
             min-height: 100vh;
             padding: 20px;
         }}
@@ -537,4 +550,19 @@ def generate_recipe_box():
     print(f'Generated recipe-box.html with {len(recipes)} recipes at {cookbook_output}')
 
 if __name__ == '__main__':
-    generate_recipe_box()
+    parser = argparse.ArgumentParser(description='Generate recipe-box.html with all recipes')
+    parser.add_argument(
+        '--theme',
+        choices=sorted(THEMES.keys()),
+        default='indigo',
+        help='Background theme for the generated page',
+    )
+    parser.add_argument(
+        '--page-background',
+        default=None,
+        help='Custom CSS background value (overrides --theme), e.g. "#111827" or "linear-gradient(...)"',
+    )
+    args = parser.parse_args()
+
+    background = args.page_background if args.page_background else THEMES[args.theme]
+    generate_recipe_box(page_background=background)
