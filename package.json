@@ -1,0 +1,10 @@
+{
+  "name": "recipe-collection",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Self-hosted recipe collection — static site with optional local Flask creator",
+  "scripts": {
+    "build": "bash scripts/build-site.sh",
+    "generate": "cd recipe-system/scripts && python3 recipe-gen.py && python3 cookbook-pkg.py"
+  }
+}

@@ -1,7 +1,5 @@
 import os
 import json
-import urllib.request
-import urllib.error
 import argparse
 from lxml import etree
 
@@ -120,19 +118,15 @@ def generate_recipe_box(page_background: str):
                 metadata['path'] = f'recipes/{recipe_name}.html'
                 recipes.append(metadata)
     
-    # Check whether the recipe generator server is reachable (can be overridden)
-    server_url = os.environ.get('RECIPE_GENERATOR_URL', 'http://127.0.0.1:8000/')
-    def server_is_up(url):
-        try:
-            req = urllib.request.Request(url, method='HEAD')
-            with urllib.request.urlopen(req, timeout=1) as resp:
-                return getattr(resp, 'status', 200) < 400
-        except Exception:
-            return False
-
+    server_url = os.environ.get('RECIPE_GENERATOR_URL', '').strip()
     create_link_html = ''
-    if server_is_up(server_url):
-        create_link_html = f'<a class="create-btn" href="{server_url}" target="_blank" rel="noopener">＋ Create Recipe</a>'
+    if server_url:
+        safe_url = server_url if server_url.endswith('/') else server_url + '/'
+        if safe_url.startswith('http://') or safe_url.startswith('https://'):
+            create_link_html = (
+                f'<a class="create-btn" href="{safe_url}" target="_blank" rel="noopener noreferrer">'
+                '＋ Create Recipe</a>'
+            )
 
     # Generate HTML with embedded recipe data
     html_content = f"""<!DOCTYPE html>
@@ -401,6 +395,20 @@ def generate_recipe_box(page_background: str):
         </header>
 
         <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number" id="totalRecipes">{len(recipes)}</div>
+                <div class="stat-label">Recipes</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="totalTags">0</div>
+                <div class="stat-label">Tags</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="categories">0</div>
+                <div class="stat-label">Categories</div>
+            </div>
+        </div>
+
         <div class="search-section">
             <div class="search-bar">
                 <input type="text" class="search-input" id="searchInput" placeholder="Search recipes by name, ingredient, or description...">
@@ -438,10 +446,20 @@ def generate_recipe_box(page_background: str):
     </div>
 
     <script>
-        const recipes = {json.dumps(recipes)};
+        const recipes = {json.dumps(recipes, ensure_ascii=False)};
 
         let activeFilters = new Set();
         let currentRecipes = recipes;
+
+        function escapeHtml(text) {{
+            if (text === null || text === undefined) return '';
+            return String(text)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+        }}
 
         function initializeFilters() {{
             document.querySelectorAll('.tag').forEach(tag => {{
@@ -507,22 +525,39 @@ def generate_recipe_box(page_background: str):
                 return;
             }}
             
-            resultsContainer.innerHTML = currentRecipes.map(recipe => `
-                <div class="recipe-card" onclick="openRecipe('${{recipe.path}}')">
+            resultsContainer.innerHTML = currentRecipes.map(recipe => {{
+                const summary = recipe.description ? recipe.description.substring(0, 120) : '';
+                const invalidBadge = recipe.valid ? '' :
+                    `<span class="meta-item" title="${{escapeHtml(recipe.validationErrors.join(' | '))}}" style="color:#d32f2f">⚠️ Invalid</span>`;
+                const tagsHtml = recipe.tags.slice(0, 3)
+                    .map(tag => `<span class="recipe-tag">${{escapeHtml(tag)}}</span>`)
+                    .join('');
+                return `
+                <div class="recipe-card" data-path="${{escapeHtml(recipe.path)}}" role="button" tabindex="0">
                     <div class="recipe-content">
-                            <div class="recipe-tags">
-                                ${{recipe.tags.slice(0, 3).map(tag => `<span class="recipe-tag">${{tag}}</span>`).join('')}}
-                            </div>
-                        <div class="recipe-title">${{recipe.title}}</div>
+                        <div class="recipe-tags">${{tagsHtml}}</div>
+                        <div class="recipe-title">${{escapeHtml(recipe.title)}}</div>
                         <div class="recipe-meta">
-                            <span class="meta-item">⏱️ ${{recipe.totalTimeDisplay}}</span>
-                            <span class="meta-item">📊 ${{recipe.difficulty}}</span>
-                            ${{recipe.valid ? '' : `<span class="meta-item" title="${{recipe.validationErrors.join(' | ')}}" style="color:#d32f2f">⚠️ Invalid</span>`}}
+                            <span class="meta-item">⏱️ ${{escapeHtml(recipe.totalTimeDisplay)}}</span>
+                            <span class="meta-item">📊 ${{escapeHtml(recipe.difficulty)}}</span>
+                            ${{invalidBadge}}
                         </div>
-                            <p style="color: #666; font-size: 0.9em; margin-top: 8px; line-height: 1.4;">${{recipe.description.substring(0, 120)}}...</p>
+                        <p style="color: #666; font-size: 0.9em; margin-top: 8px; line-height: 1.4;">${{escapeHtml(summary)}}${{summary ? '...' : ''}}</p>
                     </div>
-                </div>
-            `).join('');
+                </div>`;
+            }}).join('');
+
+            resultsContainer.querySelectorAll('.recipe-card').forEach(card => {{
+                const path = card.getAttribute('data-path');
+                const open = () => openRecipe(path);
+                card.addEventListener('click', open);
+                card.addEventListener('keydown', (event) => {{
+                    if (event.key === 'Enter' || event.key === ' ') {{
+                        event.preventDefault();
+                        open();
+                    }}
+                }});
+            }});
         }}
 
         function searchRecipes() {{
@@ -530,6 +565,10 @@ def generate_recipe_box(page_background: str):
         }}
 
         function openRecipe(path) {{
+            if (!path || !/^recipes\\/[a-z0-9-]+\\.html$/.test(path)) {{
+                console.warn('Blocked unsafe recipe path:', path);
+                return;
+            }}
             window.location.href = path;
         }}
 
