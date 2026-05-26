@@ -57,3 +57,12 @@ See [SECURITY.md](SECURITY.md) for deployment model, Flask controls, and XSS mit
 ## Roadmap
 
 - **Recipe import** — bulk import from external formats (next planned feature)
+
+## Vercel troubleshooting
+
+If the deployment shows **404 NOT_FOUND**:
+
+1. **Root Directory** in Vercel project settings must be **`.`** (repository root), not `recipe-system`, unless you intentionally use the nested `recipe-system/vercel.json`.
+2. **Output Directory** should be left blank in the dashboard so `vercel.json` controls it (`dist` after build).
+3. Confirm the latest **Production** deployment succeeded (build logs should show `Static site ready in dist`).
+4. Redeploy after merging changes to `main`.
