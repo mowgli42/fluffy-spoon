@@ -6,7 +6,8 @@ Usage:
   - CLI test (no Flask required):
       python recipe-web-generator.py --create-sample
 
-  - Run web server (requires Flask):
+  - Run web server (requires Flask, local dev only):
+      cp .env.example .env   # set ENABLE_RECIPE_CREATE and FLASK_SECRET_KEY
       pip install -r requirements.txt
       python recipe-web-generator.py --serve
 
@@ -41,7 +42,6 @@ def prettify_xml(elem):
 
 
 def build_recipe_element(data):
-    # Create root with default namespace
     root = ET.Element('recipe', xmlns=NS)
 
     title = ET.SubElement(root, 'title')
@@ -59,7 +59,6 @@ def build_recipe_element(data):
     difficulty = ET.SubElement(metadata, 'difficulty')
     difficulty.text = data.get('difficulty', 'medium')
 
-    # Schema expects tags inside description/tags/tag
     tags = data.get('tags', [])
     if tags:
         tags_el = ET.SubElement(description, 'tags')
@@ -72,7 +71,6 @@ def build_recipe_element(data):
         i = ET.SubElement(ingredients_el, 'ingredient')
         i.text = ing
 
-    # include top-level category element for cookbook indexing (placed before preparation per schema)
     category = ET.SubElement(root, 'category')
     category.text = data.get('category', 'uncategorized')
 
@@ -82,19 +80,30 @@ def build_recipe_element(data):
         s.set('number', str(idx))
         s.text = step
 
-    # Optionally add created timestamp
     meta_created = ET.SubElement(root, 'created')
-    meta_created.text = datetime.datetime.utcnow().isoformat() + 'Z'
+    meta_created.text = datetime.datetime.now(datetime.timezone.utc).isoformat().replace('+00:00', 'Z')
 
     return root
 
 
+def safe_recipe_filename(filename):
+    base = os.path.basename(filename)
+    if base != filename or not re.fullmatch(r'[a-z0-9-]+\.xml', base):
+        raise ValueError(f'Invalid recipe filename: {filename!r}')
+    return base
+
+
 def write_recipe_xml(elem, filename):
+    filename = safe_recipe_filename(filename)
     path = os.path.join(RECIPES_DIR, filename)
+    resolved = os.path.realpath(path)
+    recipes_root = os.path.realpath(RECIPES_DIR)
+    if not resolved.startswith(recipes_root + os.sep):
+        raise ValueError('Recipe path escapes recipes directory')
     xml_bytes = prettify_xml(elem)
-    with open(path, 'wb') as f:
+    with open(resolved, 'wb') as f:
         f.write(xml_bytes)
-    return path
+    return resolved
 
 
 def create_sample_recipe():
@@ -106,8 +115,19 @@ def create_sample_recipe():
         'difficulty': 'easy',
         'tags': ['pasta', 'quick', 'vegetarian'],
         'category': 'main-course',
-        'ingredients': ['200g spaghetti', '1 lemon, zested and juiced', '2 tbsp butter', '50g parmesan, grated', 'Salt and pepper to taste'],
-        'steps': ['Cook pasta according to package instructions.', 'Reserve some pasta water.', 'Combine lemon, butter, and cheese off heat.', 'Toss pasta with sauce, adding pasta water to loosen.']
+        'ingredients': [
+            '200g spaghetti',
+            '1 lemon, zested and juiced',
+            '2 tbsp butter',
+            '50g parmesan, grated',
+            'Salt and pepper to taste',
+        ],
+        'steps': [
+            'Cook pasta according to package instructions.',
+            'Reserve some pasta water.',
+            'Combine lemon, butter, and cheese off heat.',
+            'Toss pasta with sauce, adding pasta water to loosen.',
+        ],
     }
     elem = build_recipe_element(data)
     base = slugify(data['title'])
@@ -116,21 +136,39 @@ def create_sample_recipe():
     print(f"Wrote sample recipe to: {final_path}")
 
 
-# --- Minimal Flask app when requested ---
-
 def run_server(host='127.0.0.1', port=8000):
     try:
-        from flask import Flask, request, render_template_string, redirect, url_for, flash
+        from flask import (
+            Flask,
+            request,
+            render_template_string,
+            redirect,
+            url_for,
+            flash,
+            abort,
+            send_from_directory,
+        )
     except Exception:
         print('Flask not installed. Install dependencies with: pip install -r requirements.txt')
         sys.exit(1)
 
-    app = Flask(__name__)
-    app.secret_key = 'dev-secret'
+    if os.environ.get('ENABLE_RECIPE_CREATE', '').lower() not in ('1', 'true', 'yes'):
+        print(
+            'Recipe creation server is disabled. Set ENABLE_RECIPE_CREATE=true for local development.'
+        )
+        sys.exit(1)
 
-    # compute file URL for the generated recipe homepage
-    recipe_box_path = os.path.abspath(os.path.join(SCRIPT_DIR, '..', 'web', 'recipe-box.html'))
-    recipe_home_url = 'file://' + recipe_box_path
+    secret = os.environ.get('FLASK_SECRET_KEY')
+    if not secret:
+        print('Set FLASK_SECRET_KEY before running the recipe creation server.')
+        sys.exit(1)
+
+    app = Flask(__name__)
+    app.secret_key = secret
+    app.config['MAX_CONTENT_LENGTH'] = 64 * 1024
+
+    web_dir = os.path.abspath(os.path.join(SCRIPT_DIR, '..', 'web'))
+    recipe_home_url = os.environ.get('RECIPE_HOME_URL', '/recipe-box')
 
     FORM_HTML = '''
     <!doctype html>
@@ -148,41 +186,33 @@ def run_server(host='127.0.0.1', port=8000):
         {% endif %}
       {% endwith %}
       <form method="post" action="/create">
-        <label>Title<input name="title" required></label>
-        <label>Summary<textarea name="summary" rows="3"></textarea></label>
-        <label>Servings<input name="servings" value="4"></label>
-        <label>Total Time<input name="totalTime" placeholder="e.g. 45 minutes"></label>
+        <label>Title<input name="title" required maxlength="200"></label>
+        <label>Summary<textarea name="summary" rows="3" maxlength="2000"></textarea></label>
+        <label>Servings<input name="servings" value="4" maxlength="10"></label>
+        <label>Total Time<input name="totalTime" placeholder="e.g. 45 minutes" maxlength="100"></label>
         <label>Difficulty<select name="difficulty"><option>easy</option><option>medium</option><option>hard</option></select></label>
-                <label>Tags (comma-separated)<input name="tags"></label>
-                <label>Category
-                    <select name="category">
-                        <option value="uncategorized">Uncategorized</option>
-                        <option value="breakfast">Breakfast</option>
-                        <option value="main-course">Main Course</option>
-                        <option value="soup">Soup</option>
-                        <option value="dessert">Dessert</option>
-                        <option value="side-dish">Side Dish</option>
-                        <option value="salad">Salad</option>
-                        <option value="appetizer">Appetizer</option>
-                        <option value="beverage">Beverage</option>
-                        <option value="snack">Snack</option>
-                        <option value="brunch">Brunch</option>
-                    </select>
-                </label>
+        <label>Tags (comma-separated)<input name="tags" maxlength="500"></label>
+        <label>Category
+            <select name="category">
+                <option value="uncategorized">Uncategorized</option>
+                <option value="breakfast">Breakfast</option>
+                <option value="main-course">Main Course</option>
+                <option value="soup">Soup</option>
+                <option value="dessert">Dessert</option>
+                <option value="side-dish">Side Dish</option>
+                <option value="salad">Salad</option>
+                <option value="appetizer">Appetizer</option>
+                <option value="beverage">Beverage</option>
+                <option value="snack">Snack</option>
+                <option value="brunch">Brunch</option>
+            </select>
+        </label>
         <label>Ingredients (one per line)<textarea name="ingredients" rows="5"></textarea></label>
         <label>Steps (one per line)<textarea name="steps" rows="6"></textarea></label>
         <button type="submit" style="margin-top:12px;padding:10px 16px">Create</button>
       </form>
-            <p style="margin-top:14px;font-size:0.95em;color:#444">Once you've added recipes, re-run <code>recipe-gen.py</code> and <code>cookbook-pkg.py</code> to regenerate the site.</p>
-            <p><a href="#" id="viewHome" style="display:inline-block;margin-top:8px;padding:8px 12px;background:#667eea;color:white;border-radius:8px;text-decoration:none">View Recipe Home</a></p>
-            <script>
-                document.getElementById('viewHome').addEventListener('click', function(e){
-                    e.preventDefault();
-                    if (confirm('To see newly created recipes you must re-run recipe-gen.py and cookbook-pkg.py. Open the recipe homepage now?')) {
-                        window.open('{{ recipe_home_url }}', '_blank');
-                    }
-                });
-            </script>
+      <p style="margin-top:14px;font-size:0.95em;color:#444">After adding recipes locally, run <code>npm run generate</code> to rebuild the static site.</p>
+      <p><a href="{{ recipe_home_url }}" style="display:inline-block;margin-top:8px;padding:8px 12px;background:#667eea;color:white;border-radius:8px;text-decoration:none">View Recipe Home</a></p>
     </body>
     </html>
     '''
@@ -191,20 +221,51 @@ def run_server(host='127.0.0.1', port=8000):
     def index():
         return render_template_string(FORM_HTML, recipe_home_url=recipe_home_url)
 
+    @app.route('/recipe-box')
+    def recipe_box():
+        return send_from_directory(web_dir, 'recipe-box.html')
+
     @app.route('/create', methods=['POST'])
     def create():
+        if host not in ('127.0.0.1', 'localhost', '::1'):
+            abort(403)
+
         form = request.form
-        title = form.get('title').strip()
+        title = (form.get('title') or '').strip()
+        if not title or len(title) > 200:
+            flash('Title is required and must be under 200 characters.')
+            return redirect(url_for('index'))
+
+        allowed_categories = {
+            'uncategorized', 'breakfast', 'main-course', 'soup', 'dessert',
+            'side-dish', 'salad', 'appetizer', 'beverage', 'snack', 'brunch',
+        }
+        category = (form.get('category') or 'uncategorized').strip()
+        if category not in allowed_categories:
+            category = 'uncategorized'
+
+        difficulty = (form.get('difficulty') or 'medium').strip()
+        if difficulty not in ('easy', 'medium', 'hard'):
+            difficulty = 'medium'
+
         data = {
             'title': title,
-            'summary': form.get('summary','').strip(),
-            'servings': form.get('servings','4').strip(),
-            'totalTime': form.get('totalTime','').strip(),
-            'difficulty': form.get('difficulty','medium').strip(),
-            'tags': [t.strip() for t in form.get('tags','').split(',') if t.strip()],
-            'category': form.get('category','uncategorized').strip(),
-            'ingredients': [l.strip() for l in form.get('ingredients','').splitlines() if l.strip()],
-            'steps': [l.strip() for l in form.get('steps','').splitlines() if l.strip()]
+            'summary': (form.get('summary') or '').strip()[:2000],
+            'servings': (form.get('servings') or '4').strip()[:10],
+            'totalTime': (form.get('totalTime') or '').strip()[:100],
+            'difficulty': difficulty,
+            'tags': [t.strip()[:50] for t in form.get('tags', '').split(',') if t.strip()][:20],
+            'category': category,
+            'ingredients': [
+                line.strip()[:500]
+                for line in form.get('ingredients', '').splitlines()
+                if line.strip()
+            ][:100],
+            'steps': [
+                line.strip()[:1000]
+                for line in form.get('steps', '').splitlines()
+                if line.strip()
+            ][:50],
         }
         elem = build_recipe_element(data)
         base = slugify(title)
