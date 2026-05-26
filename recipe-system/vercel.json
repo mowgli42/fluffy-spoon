@@ -1,9 +1,8 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "version": 2,
-  "buildCommand": "cd .. && npm run build",
-  "outputDirectory": "../dist",
-  "installCommand": "cd .. && (python3 -m pip install --quiet -r requirements.txt || true)",
+  "buildCommand": "python3 -m pip install --quiet lxml 2>/dev/null || true; cd scripts && python3 recipe-gen.py && python3 cookbook-pkg.py",
+  "outputDirectory": "web",
   "rewrites": [
     { "source": "/", "destination": "/recipe-box.html" }
   ]
