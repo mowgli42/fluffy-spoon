@@ -1,0 +1,7 @@
+{
+  "database": "dolt",
+  "backend": "dolt",
+  "dolt_mode": "embedded",
+  "dolt_database": "fluffy_spoon",
+  "project_id": "e2187202-f6e8-46a4-ad4d-3b28c922ce01"
+}
