@@ -1,0 +1,28 @@
+# AGENTS.md - guide for AI coding agents
+
+## Project context
+
+fluffy-spoon is a static recipe site with optional Python recipe tooling.
+Read `README.md`, `scripts/`, and the recipe data before changing generation logic.
+
+## Local setup
+
+Run from the repository root:
+
+```bash
+python3 -m venv .venv
+.venv/bin/pip install -r requirements.txt
+```
+
+## Smoke test
+
+```bash
+npm run build
+.venv/bin/python -c "import lxml"
+```
+
+## Agent notes
+
+- This repo has no package lockfile; do not use `npm ci` unless a lockfile is added intentionally.
+- Keep committed static output consistent with generator changes.
+- Preserve existing local user changes; stage only files you intentionally modify.
