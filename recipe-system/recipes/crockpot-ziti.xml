@@ -6,16 +6,18 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="recipe.xsd"
 id="crockpot-ziti">
 
-  <title>Crockpot Ziti</title>
+  <title>Crockpot Baked Ziti</title>
 
   <description>
-    <summary>An easy and delicious crockpot ziti pasta with ground beef, marinara sauce, and melted cheese. Perfect for busy days when you want a homemade meal with minimal effort.</summary>
+    <summary>An easy and delicious crockpot baked ziti pasta with ground beef, marinara sauce, and melted cheese. Perfect for busy days when you want a homemade meal with minimal effort. Great for meal prep and weekend batch cooking to support lunches during the week.</summary>
     <tags>
       <tag>easy</tag>
       <tag>crockpot</tag>
       <tag>pasta</tag>
       <tag>comfort-food</tag>
       <tag>main-course</tag>
+      <tag>meal-prep</tag>
+      <tag>weekend-batch</tag>
     </tags>
   </description>
 
@@ -26,6 +28,8 @@ id="crockpot-ziti">
     <totalTime>4 hours 10 minutes</totalTime>
     <difficulty>easy</difficulty>
   </metadata>
+
+  <source url="https://buildyourbite.com/easy-crockpot-baked-ziti/">Build Your Bite</source>
 
   <ingredients>
     <ingredient quantity="1" unit="lb">ground beef</ingredient>
@@ -47,7 +51,7 @@ id="crockpot-ziti">
     <step number="5">Cover and cook on low for 4 hours, stirring occasionally to prevent sticking.</step>
     <step number="6">In the last 30 minutes of cooking, stir in the mozzarella and parmesan cheese.</step>
     <step number="7">Cover and let the cheese melt, about 30 minutes.</step>
-    <step number="8">Serve hot and enjoy!</step>
+    <step number="8">Serve hot and enjoy! Leftovers reheat well for lunches.</step>
   </preparation>
 
 </recipe>
