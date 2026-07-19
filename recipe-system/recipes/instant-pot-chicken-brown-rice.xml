@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="recipe-style.xsl"?>
+
+<recipe xmlns="http://www.example.com/recipe" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="recipe.xsd"
+id="instant-pot-chicken-brown-rice">
+
+  <title>Instant Pot Chicken and Brown Rice (One-Pot)</title>
+
+  <description>
+    <summary>Comforting one-pot Instant Pot meal with tender chicken thighs, brown rice, carrots, mushrooms, and a creamy savory sauce. Kid- and family-friendly, nutritious, and minimal cleanup. Perfect for busy weeknights or batch cooking. (Primarily Instant Pot; adaptable notes included.)</summary>
+    <tags>
+      <tag>easy</tag>
+      <tag>instant-pot</tag>
+      <tag>chicken</tag>
+      <tag>one-pot</tag>
+      <tag>main-course</tag>
+      <tag>family-friendly</tag>
+      <tag>meal-prep</tag>
+    </tags>
+  </description>
+
+  <metadata>
+    <servings>8</servings>
+    <prepTime>15 minutes</prepTime>
+    <cookTime>25 minutes pressure + build/release</cookTime>
+    <totalTime>~1 hour</totalTime>
+    <difficulty>easy</difficulty>
+  </metadata>
+
+  <source url="https://www.superhealthykids.com/all-in-one-instant-pot-chicken-and-brown-rice/">Super Healthy Kids</source>
+
+  <ingredients>
+    <ingredient quantity="1" unit="medium">onion, chopped</ingredient>
+    <ingredient quantity="3" unit="cloves">garlic, minced</ingredient>
+    <ingredient quantity="2" unit="cups">baby carrots</ingredient>
+    <ingredient quantity="2" unit="cups">sliced mushrooms</ingredient>
+    <ingredient quantity="2" unit="cups">raw brown rice (rinsed)</ingredient>
+    <ingredient quantity="1" unit="tablespoon">olive oil</ingredient>
+    <ingredient quantity="2 1/4" unit="cups">low-sodium chicken broth</ingredient>
+    <ingredient quantity="2" unit="lbs">boneless skinless chicken thighs (or breasts, halved)</ingredient>
+    <ingredient quantity="1" unit="teaspoon">salt</ingredient>
+    <ingredient quantity="1/2" unit="teaspoon">black pepper</ingredient>
+    <ingredient quantity="2" unit="cups">cream of chicken soup (homemade or canned)</ingredient>
+    <ingredient quantity="2" unit="tablespoons">Worcestershire sauce</ingredient>
+    <ingredient quantity="1" unit="tablespoon">fresh thyme (8-10 sprigs)</ingredient>
+  </ingredients>
+
+  <preparation>
+    <step number="1">Press Sauté on Instant Pot. Add olive oil and onion; cook ~3 minutes. Cancel Sauté.</step>
+    <step number="2">Layer in this order: garlic, rinsed brown rice, chicken, carrots, mushrooms.</step>
+    <step number="3">In a bowl, whisk together broth, cream of chicken soup, Worcestershire, salt, and pepper. Pour over ingredients in pot.</step>
+    <step number="4">Place thyme sprigs on top. Seal lid, set to High Pressure / Manual for 25 minutes.</step>
+    <step number="5">Quick release pressure carefully. Open lid, remove thyme stems, strip leaves into pot, and stir (shred chicken slightly if desired).</step>
+    <step number="6">Serve warm. For meal prep: Portions reheat well; makes a big batch for lunches or family dinners. (Note: Primarily Instant Pot recipe; for crockpot adaptation try low 6-8 hrs with adjusted liquid, though results may vary.)</step>
+  </preparation>
+
+</recipe>
+
