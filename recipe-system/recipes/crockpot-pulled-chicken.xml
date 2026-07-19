@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="recipe-style.xsl"?>
+
+<recipe xmlns="http://www.example.com/recipe" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="recipe.xsd"
+id="crockpot-pulled-chicken">
+
+  <title>3-Ingredient Crock Pot Pulled Chicken</title>
+
+  <description>
+    <summary>Super simple 3-ingredient clean eating pulled chicken made in the crockpot. Sweet-tangy flavor from salsa and balsamic. Versatile for tacos, salads, sandwiches, bowls, or lettuce wraps. Ideal for large weekend batch cooking and meal prepping lunches all week long. Clean, healthy, and endlessly adaptable.</summary>
+    <tags>
+      <tag>easy</tag>
+      <tag>crockpot</tag>
+      <tag>chicken</tag>
+      <tag>clean-eating</tag>
+      <tag>main-course</tag>
+      <tag>meal-prep</tag>
+      <tag>weekend-batch</tag>
+      <tag>bbq-friendly</tag>
+    </tags>
+  </description>
+
+  <metadata>
+    <servings>6</servings>
+    <prepTime>5 minutes</prepTime>
+    <cookTime>6 hours low or 4 hours high</cookTime>
+    <totalTime>6 hours</totalTime>
+    <difficulty>easy</difficulty>
+  </metadata>
+
+  <source url="https://cleanfoodcrush.com/3-ingredient-crock-pot-pulled-chicken-clean-eating/">Clean Food Crush</source>
+
+  <ingredients>
+    <ingredient quantity="2" unit="lbs">boneless, skinless chicken breasts or tenders</ingredient>
+    <ingredient quantity="1" unit="jar (16 oz) low-sugar all-natural">salsa or tomato sauce</ingredient>
+    <ingredient quantity="1/3" unit="cup">high-quality balsamic vinegar</ingredient>
+  </ingredients>
+
+  <preparation>
+    <step number="1">Add chicken breasts/tenders to the slow cooker.</step>
+    <step number="2">Pour the salsa (or tomato sauce) and balsamic vinegar over the chicken.</step>
+    <step number="3">Cover and cook on LOW for 6 hours or HIGH for 4 hours until chicken shreds easily.</step>
+    <step number="4">Shred the chicken directly in the pot using two forks, or for speed use a stand mixer with paddle attachment (1 minute on low after cooling slightly).</step>
+    <step number="5">Stir the shredded chicken back into the sauce/juices to coat thoroughly.</step>
+    <step number="6">For weekend BBQ twist: After shredding, transfer to a grill-safe pan or foil and finish on the grill for smoky flavor, or use as base for BBQ chicken sandwiches.</step>
+    <step number="7">Meal prep magic: Portion into containers for salads, quinoa bowls, tacos, or wraps. Keeps 4-5 days in fridge or freeze up to 6 weeks. Perfect for supporting weekday lunches from one big weekend cook.</step>
+  </preparation>
+
+</recipe>
+
