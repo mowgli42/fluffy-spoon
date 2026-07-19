@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="recipe-style.xsl"?>
+
+<recipe xmlns="http://www.example.com/recipe" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="recipe.xsd"
+id="garlic-butter-quinoa">
+
+  <title>5-Ingredient Garlic Butter Quinoa</title>
+
+  <description>
+    <summary>Super easy one-pan garlic butter quinoa side dish with just 5 ingredients. Buttery, flavorful, and versatile — pairs perfectly with any main like pulled chicken, adobo, or Asian sesame chicken. Ready in 20 minutes. Excellent for meal prep batches and weekday lunches.</summary>
+    <tags>
+      <tag>easy</tag>
+      <tag>side-dish</tag>
+      <tag>quinoa</tag>
+      <tag>meal-prep</tag>
+      <tag>quick</tag>
+    </tags>
+  </description>
+
+  <metadata>
+    <servings>4</servings>
+    <prepTime>5 minutes</prepTime>
+    <cookTime>15 minutes</cookTime>
+    <totalTime>20 minutes</totalTime>
+    <difficulty>easy</difficulty>
+  </metadata>
+
+  <source url="https://www.simplyquinoa.com/5-ingredient-garlic-butter-quinoa/">Simply Quinoa</source>
+
+  <ingredients>
+    <ingredient quantity="1" unit="cup">quinoa (rinsed if desired)</ingredient>
+    <ingredient quantity="1" unit="tablespoon">vegan butter, butter, or ghee</ingredient>
+    <ingredient quantity="2-3" unit="teaspoons">garlic powder (start low if sensitive)</ingredient>
+    <ingredient quantity="1/2" unit="teaspoon">sea salt (or to taste)</ingredient>
+    <ingredient quantity="2" unit="cups">vegetable broth (or chicken broth)</ingredient>
+  </ingredients>
+
+  <preparation>
+    <step number="1">Add all ingredients to a small saucepan.</step>
+    <step number="2">Bring to a boil, stirring until the butter melts.</step>
+    <step number="3">Cover, reduce heat to low, and simmer for 15 minutes.</step>
+    <step number="4">Remove from heat, fluff with a fork, and let stand covered for 5 minutes.</step>
+    <step number="5">Serve as a side with your favorite mains. For meal prep: Make a double batch and portion into containers — reheats beautifully for lunches alongside protein like pulled chicken or adobo.</step>
+  </preparation>
+
+</recipe>
+
