@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="recipe-style.xsl"?>
+
+<recipe xmlns="http://www.example.com/recipe" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="recipe.xsd"
+id="filipino-chicken-adobo">
+
+  <title>Filipino Chicken Adobo (Crockpot Version)</title>
+
+  <description>
+    <summary>Authentic Filipino Chicken Adobo made easy in the slow cooker. Tangy, savory, garlicky perfection with vinegar, soy sauce, and bay leaves. Perfect for meal prep, weekend batch cooking, or as a base for lunches. Stovetop option also available but crockpot is set-it-and-forget-it.</summary>
+    <tags>
+      <tag>easy</tag>
+      <tag>crockpot</tag>
+      <tag>chicken</tag>
+      <tag>filipino</tag>
+      <tag>main-course</tag>
+      <tag>meal-prep</tag>
+      <tag>weekend-batch</tag>
+    </tags>
+  </description>
+
+  <metadata>
+    <servings>6</servings>
+    <prepTime>10 minutes (plus optional marinate)</prepTime>
+    <cookTime>6 hours low or 3 hours high</cookTime>
+    <totalTime>6+ hours</totalTime>
+    <difficulty>easy</difficulty>
+  </metadata>
+
+  <source url="https://www.melaniecooks.com/filipino-chicken-adobo/14493/">MelanieCooks.com</source>
+
+  <ingredients>
+    <ingredient quantity="2" unit="lbs">boneless skinless chicken thighs (preferred) or cut-up whole chicken</ingredient>
+    <ingredient quantity="1/3" unit="cup">white vinegar</ingredient>
+    <ingredient quantity="1/3" unit="cup">water</ingredient>
+    <ingredient quantity="1/3" unit="cup">soy sauce</ingredient>
+    <ingredient quantity="1" unit="head">garlic cloves, peeled and crushed</ingredient>
+    <ingredient quantity="1/2" unit="teaspoon">black pepper</ingredient>
+    <ingredient quantity="3">bay leaves</ingredient>
+  </ingredients>
+
+  <preparation>
+    <step number="1">Optional but recommended: Combine chicken, vinegar, water, soy sauce, garlic, bay leaves, and pepper in a bowl. Marinate in fridge overnight or at least 20-30 min.</step>
+    <step number="2">Place chicken and all marinade ingredients into the slow cooker.</step>
+    <step number="3">Cover and cook on LOW for 6 hours or HIGH for 3 hours until chicken is very tender.</step>
+    <step number="4">Remove chicken to a plate. Pour sauce into a skillet or saucepan, bring to a boil, and reduce by about half (5-10 min) to thicken and concentrate flavors. (Optional but recommended for best taste).</step>
+    <step number="5">Shred or chop chicken and return to reduced sauce in crockpot or bowl. Stir to coat well.</step>
+    <step number="6">Serve over rice or quinoa. For meal prep: Divide into containers with rice and veggies for grab-and-go lunches. Excellent flavor that improves next day.</step>
+  </preparation>
+
+</recipe>
+
