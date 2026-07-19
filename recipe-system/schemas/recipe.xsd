@@ -16,6 +16,16 @@
     <xs:element name="title" type="xs:string"/>
     <xs:element name="description" type="DescriptionType"/>
     <xs:element name="metadata" type="MetadataType" minOccurs="0"/>
+    <!-- source/credit for original recipe inspiration or source -->
+    <xs:element name="source" minOccurs="0">
+      <xs:complexType>
+        <xs:simpleContent>
+          <xs:extension base="xs:string">
+            <xs:attribute name="url" type="xs:anyURI" use="optional"/>
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+    </xs:element>
      <!-- category added to schema: optional, limited set of values -->
     <xs:element name="category" minOccurs="0">
       <xs:simpleType>
@@ -41,8 +51,6 @@
   </xs:sequence>
   <xs:attribute name="id" type="xs:ID" use="optional"/>
 </xs:complexType>
-
-  <!-- Description Type -->
 
   <!-- Description Type -->
 
