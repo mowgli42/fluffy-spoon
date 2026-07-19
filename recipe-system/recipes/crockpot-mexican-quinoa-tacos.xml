@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="recipe-style.xsl"?>
+
+<recipe xmlns="http://www.example.com/recipe" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="recipe.xsd"
+id="crockpot-mexican-quinoa-tacos">
+
+  <title>Crockpot Mexican Quinoa Tacos</title>
+
+  <description>
+    <summary>Easy meatless (or vegan) crockpot quinoa tacos — dump everything in the slow cooker, no chopping or sautéing required. Flavor-packed with black beans, fire-roasted tomatoes, enchilada sauce, corn, and taco seasoning. Nutritious plant-based protein perfect for taco night or meal prep. Great vegetarian option alongside your chicken recipes.</summary>
+    <tags>
+      <tag>easy</tag>
+      <tag>crockpot</tag>
+      <tag>quinoa</tag>
+      <tag>vegetarian</tag>
+      <tag>tacos</tag>
+      <tag>main-course</tag>
+      <tag>meal-prep</tag>
+    </tags>
+  </description>
+
+  <metadata>
+    <servings>6</servings>
+    <prepTime>10 minutes</prepTime>
+    <cookTime>2.5-4 hours (high)</cookTime>
+    <totalTime>~3-4 hours</totalTime>
+    <difficulty>easy</difficulty>
+  </metadata>
+
+  <source url="https://www.chelseasmessyapron.com/crockpot-mexican-quinoa-tacos/">Chelsea's Messy Apron</source>
+
+  <ingredients>
+    <ingredient quantity="1" unit="cup">uncooked quinoa (rinsed)</ingredient>
+    <ingredient quantity="1" unit="cup">chicken or vegetable stock</ingredient>
+    <ingredient quantity="2" unit="cans (15.25 oz)">black beans, drained and rinsed</ingredient>
+    <ingredient quantity="1" unit="can (14.5 oz)">fire-roasted diced tomatoes (undrained)</ingredient>
+    <ingredient quantity="1" unit="can (10 oz)">red enchilada sauce</ingredient>
+    <ingredient quantity="1.5" unit="cups">frozen corn (or 1 can, drained)</ingredient>
+    <ingredient quantity="3" unit="tablespoons or 1 packet">taco seasoning</ingredient>
+    <ingredient quantity="" unit="for serving">corn or flour tortillas + desired toppings (avocado, cheese, cilantro, lime, etc.)</ingredient>
+  </ingredients>
+
+  <preparation>
+    <step number="1">Rinse quinoa if needed. Generously spray a 6-quart slow cooker with cooking spray (or use a liner).</step>
+    <step number="2">Add quinoa, stock, black beans, tomatoes (undrained), enchilada sauce, corn, and taco seasoning to the crockpot. Stir well to combine.</step>
+    <step number="3">Cover and cook on HIGH for 2.5–4 hours until quinoa has popped and absorbed most liquid (do not use low setting).</step>
+    <step number="4">Stir gently, taste, and adjust seasoning with salt/pepper if needed.</step>
+    <step number="5">Warm tortillas. Fill with quinoa mixture and load up with favorite toppings (lime, avocado, cilantro, cheese, etc.).</step>
+    <step number="6">For meal prep: Store filling separately (refrigerate up to 4 days; reheat with splash of water). Assemble tacos fresh. Excellent meatless option for variety in weekly plans.</step>
+  </preparation>
+
+</recipe>
+
