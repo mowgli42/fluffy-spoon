@@ -187,6 +187,23 @@ h2 {
   min-width: 0;
 }
 
+.source {
+  font-size: 0.85em;
+  color: #666;
+  margin-top: 20px;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+}
+
+.source a {
+  color: #667eea;
+  text-decoration: none;
+}
+
+.source a:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 900px) {
   .ingredients-and-steps {
     grid-template-columns: 1fr;
@@ -280,6 +297,16 @@ h2 {
         </div>
       </div>
     </div>
+
+    <xsl:if test="r:recipe/r:source">
+      <div class="source">
+        <strong>Credit / Inspired by:</strong> 
+        <a href="{r:recipe/r:source/@url}" target="_blank" rel="noopener noreferrer">
+          <xsl:value-of select="r:recipe/r:source"/>
+        </a>
+        <xsl:text> — recipe adapted for fluffyspoon meal planning and crockpot focus</xsl:text>
+      </div>
+    </xsl:if>
   </div>
 </body>
 </html>
