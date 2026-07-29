@@ -4,6 +4,58 @@ Standalone recipe book viewable in any web browser. Each recipe is stored as XML
 
 ![Recipe Collection](https://github.com/user-attachments/assets/f726a9a7-f2b8-4b6b-a386-de3a7ab26c8b)
 
+## Architecture
+
+```mermaid
+flowchart LR
+  XML["recipe-system/recipes/*.xml"] --> Gen["recipe-gen.py<br/>(XSLT → HTML pages)"]
+  XML --> Box["cookbook-pkg.py<br/>(recipe-box.html)"]
+  Gen --> Web["recipe-system/web/"]
+  Box --> Web
+  Web --> Build["scripts/build-site.sh<br/>(npm run build)"]
+  Build --> Dist["dist/"]
+  Dist --> Vercel["Vercel"]
+  Dist --> TrueNAS["TrueNAS / nginx"]
+  MealXML["Recipe tags / catalog"] -.-> Meal["meal-plan-generator.py"]
+  Meal -.-> Plans["Weekly / 52-week plans"]
+```
+
+## Sequence: static site build
+
+```mermaid
+sequenceDiagram
+  participant Dev as Developer / CI
+  participant NPM as npm run build
+  participant Build as build-site.sh
+  participant Gen as recipe-gen.py
+  participant Box as cookbook-pkg.py
+  participant Dist as dist/
+  participant Host as Vercel or TrueNAS
+
+  Dev->>NPM: trigger build
+  NPM->>Build: bash scripts/build-site.sh
+  Build->>Gen: XML → per-recipe HTML (XSLT)
+  Build->>Box: assemble searchable recipe-box.html
+  Build->>Dist: copy recipe-system/web → dist
+  Dist->>Host: deploy static output
+```
+
+## Sequence: meal-plan generation
+
+```mermaid
+sequenceDiagram
+  participant User as User
+  participant CLI as meal-plan-generator.py
+  participant Catalog as Recipe catalog / tags
+  participant Out as Plan output
+
+  User->>CLI: python3 meal-plan-generator.py --week N --year Y
+  CLI->>Catalog: pick crockpot / easy / weekend-batch recipes
+  CLI->>CLI: apply weekday vs weekend BBQ themes
+  CLI->>CLI: note holiday stubs when relevant
+  CLI->>Out: print daily themes, recipes, meal-prep notes
+```
+
 **Now featuring favorite crockpot & easy meal-prep recipes with full source credits, plus meal planning support for weekly/52-week plans with weekend large BBQ batch cooking and holiday awareness.**
 
 ## Favorite Recipes (with Credit)
