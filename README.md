@@ -40,12 +40,16 @@ Example output includes daily themes, specific recipe suggestions, meal prep not
 ## Deploy to Vercel
 
 1. Import this repository in [Vercel](https://vercel.com).
-2. Use the default settings (Vercel reads `vercel.json`):
+2. Leave dashboard Build/Output overrides blank so root `vercel.json` wins:
+   - **Root Directory:** `.` (repository root)
    - **Build command:** `npm run build`
-   - **Output directory:** `recipe-system/web`
-3. Deploy. The site serves `recipe-box.html` at `/` with security headers applied.
+   - **Output directory:** `dist`
+3. Assign a public production domain (Project → Settings → Domains) and turn off
+   **Deployment Protection** for Production so `/` and `/recipe-box.html` are
+   reachable without Vercel SSO.
+4. Deploy. The site serves `recipe-box.html` at `/` (rewrite) with security headers.
 
-To add or change recipes, edit XML files under `recipe-system/recipes/`, commit, and redeploy. The build step regenerates all HTML pages.
+To add or change recipes, edit XML files under `recipe-system/recipes/`, commit, and redeploy. The build step regenerates all HTML pages into `dist/`.
 
 ## Local development
 
@@ -82,7 +86,8 @@ After creating recipes, run `npm run build` from the repo root and refresh the s
 | `recipe-system/scripts/cookbook-pkg.py` | Builds searchable `recipe-box.html` |
 | `recipe-system/scripts/recipe-web-generator.py` | Local recipe creation UI (dev only) |
 | `recipe-system/scripts/meal-plan-generator.py` | **NEW** Weekly / 52-week meal plan demo generator |
-| `recipe-system/web/` | Generated static site (Vercel output) |
+| `recipe-system/web/` | Generated static site (source for `dist/`) |
+| `dist/` | Build output served by Vercel (`npm run build`) |
 
 ## Security
 
@@ -96,9 +101,19 @@ See [SECURITY.md](SECURITY.md) for deployment model, Flask controls, and XSS mit
 
 ## Vercel troubleshooting
 
-If the deployment shows **404 NOT_FOUND**:
+If the public URL returns **`DEPLOYMENT_NOT_FOUND`** (plain-text 404 from Vercel):
+
+1. The production hostname is not attached to a live deployment (orphaned alias).
+2. In the Vercel project **Settings → Domains**, add/repair the production domain
+   (or update the GitHub repo Homepage to the current production URL).
+3. Disable **Deployment Protection** for Production; team `*.vercel.app` URLs
+   that redirect to Vercel SSO are not a public site.
+4. Confirm the latest Production deploy succeeded and serves `/recipe-box.html`.
+
+If the deployment shows **404 NOT_FOUND** for page paths:
 
 1. **Root Directory** in Vercel project settings must be **`.`** (repository root), not `recipe-system`, unless you intentionally use the nested `recipe-system/vercel.json`.
 2. **Output Directory** should be left blank in the dashboard so `vercel.json` controls it (`dist` after build).
 3. Confirm the latest **Production** deployment succeeded (build logs should show `Static site ready in dist`).
 4. Redeploy after merging changes to `main`.
+5. Locally verify: `npm run build` then `ls dist/recipe-box.html`.
