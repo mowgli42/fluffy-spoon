@@ -3,7 +3,7 @@
 ## Project context
 
 fluffy-spoon is a static recipe site with optional Python recipe tooling.
-Read `README.md`, `scripts/`, and the recipe data before changing generation logic.
+Read `README.md`, `docs/OPENSPEC.md`, `scripts/`, and the recipe data before changing generation logic.
 
 ## Local setup
 

@@ -136,6 +136,12 @@ After creating recipes, run `npm run build` from the repo root and refresh the s
 | `recipe-system/scripts/meal-plan-generator.py` | **NEW** Weekly / 52-week meal plan demo generator |
 | `recipe-system/web/` | Generated static site (Vercel output) |
 
+## Docs
+
+- [OpenSpec](docs/OPENSPEC.md) — architecture, XML schema, generation pipeline, meal-plan CLI, and Vercel/TrueNAS deployment boundaries (agent-oriented)
+- [TrueNAS deploy](TRUENAS_DEPLOY.md) — self-host on TrueNAS Scale/Core
+- [Security](SECURITY.md) — deployment model, Flask controls, and XSS mitigations
+
 ## Security
 
 See [SECURITY.md](SECURITY.md) for deployment model, Flask controls, and XSS mitigations.
