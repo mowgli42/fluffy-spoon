@@ -18,9 +18,16 @@ if command -v python3 >/dev/null 2>&1; then
     || true
 
   if python3 -c "import lxml" 2>/dev/null; then
-    cd "${SCRIPTS_DIR}"
-    python3 recipe-gen.py
-    python3 cookbook-pkg.py
+    # ponytail: fall back to committed HTML if one bad XML breaks regen
+    if (
+      cd "${SCRIPTS_DIR}"
+      python3 recipe-gen.py
+      python3 cookbook-pkg.py
+    ); then
+      :
+    else
+      echo "WARN: recipe generation failed; deploying committed static files."
+    fi
   else
     echo "WARN: lxml not available; deploying committed static files."
   fi
