@@ -2,9 +2,61 @@
 
 Standalone recipe book viewable in any web browser. Each recipe is stored as XML; Python scripts generate searchable static HTML for deployment.
 
+Favorite crockpot and easy meal-prep recipes include source credits. Meal planning supports weekly / 52-week plans with weekend batch/BBQ cooking and holiday stubs.
+
 ![Recipe Collection](https://github.com/user-attachments/assets/f726a9a7-f2b8-4b6b-a386-de3a7ab26c8b)
 
-**Now featuring favorite crockpot & easy meal-prep recipes with full source credits, plus meal planning support for weekly/52-week plans with weekend large BBQ batch cooking and holiday awareness.**
+## Architecture
+
+XML recipe sources are transformed by Python generators into a static site, then copied to `dist/` for Vercel or TrueNAS.
+
+```mermaid
+flowchart LR
+  XML["recipe-system/recipes/*.xml"] --> Gen["recipe-gen.py"]
+  Gen --> Pages["Individual recipe HTML"]
+  Pages --> Box["cookbook-pkg.py"]
+  Box --> Web["recipe-system/web/"]
+  Web --> Build["scripts/build-site.sh"]
+  Build --> Dist["dist/"]
+  Dist --> Vercel["Vercel"]
+  Dist --> TrueNAS["TrueNAS / nginx"]
+  Meal["meal-plan-generator.py"] -.->|"CLI demo plans"| Local["Local stdout / future HTML"]
+```
+
+## Sequence diagrams
+
+### Static site build (Vercel / local)
+
+```mermaid
+sequenceDiagram
+  participant Dev as Developer / Vercel
+  participant NPM as npm run build
+  participant Gen as recipe-gen.py
+  participant Box as cookbook-pkg.py
+  participant Dist as dist/
+  participant Host as Vercel or TrueNAS
+
+  Dev->>NPM: trigger build
+  NPM->>Gen: XML → recipe HTML (if lxml available)
+  NPM->>Box: assemble recipe-box.html
+  NPM->>Dist: copy recipe-system/web → dist
+  Dist->>Host: serve static files (/ → recipe-box.html)
+```
+
+### Meal-plan generation
+
+```mermaid
+sequenceDiagram
+  participant User as User
+  participant CLI as meal-plan-generator.py
+  participant Cat as Sample recipe catalog / tags
+  participant Out as Weekly plan output
+
+  User->>CLI: python3 meal-plan-generator.py --week N --year Y
+  CLI->>Cat: rotate crockpot / batch / BBQ tags
+  CLI->>Cat: check holiday stubs
+  CLI->>Out: print daily themes, recipes, prep notes
+```
 
 ## Favorite Recipes (with Credit)
 
