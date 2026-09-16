@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="recipe-style.xsl"?>
+
+<recipe xmlns="http://www.example.com/recipe" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="recipe.xsd"
+id="baked-chicken-breasts">
+
+  <title>Baked Chicken Breasts</title>
+
+  <description>
+    <summary>Tender, juicy baked chicken breasts seasoned with a simple five-ingredient pantry rub and roasted at high heat. Five minutes of prep and under 20 minutes in the oven for an easy weeknight dinner.</summary>
+    <tags>
+      <tag>easy</tag>
+      <tag>chicken</tag>
+      <tag>baked</tag>
+      <tag>weeknight</tag>
+      <tag>main-course</tag>
+      <tag>meal-prep</tag>
+    </tags>
+  </description>
+
+  <metadata>
+    <servings>6</servings>
+    <prepTime>5 minutes</prepTime>
+    <cookTime>18 minutes</cookTime>
+    <totalTime>25 minutes</totalTime>
+    <difficulty>easy</difficulty>
+  </metadata>
+
+  <source url="https://www.yellowblissroad.com/baked-chicken-breasts/">Yellow Bliss Road</source>
+
+  <category>main-course</category>
+
+  <ingredients>
+    <ingredient quantity="2" unit="pounds">boneless, skinless chicken breasts (about 4 medium size breasts)</ingredient>
+    <ingredient quantity="2" unit="tablespoons">extra virgin olive oil</ingredient>
+    <ingredient quantity="1" unit="teaspoon">kosher salt</ingredient>
+    <ingredient quantity="1/2" unit="teaspoon">black pepper</ingredient>
+    <ingredient quantity="1/2" unit="teaspoon">garlic powder</ingredient>
+    <ingredient quantity="1/2" unit="teaspoon">onion powder</ingredient>
+    <ingredient quantity="1/2" unit="teaspoon">smoked paprika</ingredient>
+  </ingredients>
+
+  <preparation>
+    <step number="1">Preheat oven to 450°F. Pat the chicken dry with paper towels, then pound the breasts to an even thickness of about 1 inch.</step>
+    <step number="2">Pour the olive oil into a 13x9-inch baking dish. Coat the chicken lightly in the oil, then arrange the breasts side by side in the dish, alternating direction so they fit without overlapping. Use a dish rated for high heat.</step>
+    <step number="3">In a small bowl, whisk together the salt, pepper, garlic powder, onion powder, and smoked paprika. Sprinkle over both sides of the chicken and rub it in with your hands.</step>
+    <step number="4">Bake 15 to 20 minutes, until an instant-read thermometer inserted into the thickest part registers 160°F. Larger or thicker breasts will need longer.</step>
+    <step number="5">Tent with foil and rest 5 to 10 minutes before slicing. The temperature will rise to 165°F as it sits. Slice against the grain and spoon the pan juices over the top.</step>
+  </preparation>
+
+</recipe>
