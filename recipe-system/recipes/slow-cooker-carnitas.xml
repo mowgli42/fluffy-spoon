@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="recipe-style.xsl"?>
+
+<recipe xmlns="http://www.example.com/recipe" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="recipe.xsd"
+id="slow-cooker-carnitas">
+
+  <title>Classic Carnitas Recipe (Slow Cooker)</title>
+
+  <description>
+    <summary>Slow cooker carnitas simmered until falling-apart tender with a special pork rub — crispy finish optional. Great for weekend batch cooking and taco night.</summary>
+    <tags>
+      <tag>easy</tag>
+      <tag>crockpot</tag>
+      <tag>pork</tag>
+      <tag>mexican</tag>
+      <tag>main-course</tag>
+      <tag>meal-prep</tag>
+      <tag>weekend-batch</tag>
+      <tag>bbq-friendly</tag>
+    </tags>
+  </description>
+
+  <metadata>
+    <servings>10</servings>
+    <prepTime>20 minutes</prepTime>
+    <cookTime>10 hours low or 6 hours high</cookTime>
+    <totalTime>10 hours</totalTime>
+    <difficulty>easy</difficulty>
+  </metadata>
+
+  <source url="https://keviniscooking.com/homemade-carnitas/">Kevin Is Cooking</source>
+
+  <category>main-course</category>
+
+  <ingredients>
+    <ingredient quantity="6" unit="lbs">boneless pork shoulder (pork butt)</ingredient>
+    <ingredient quantity="6" unit="cloves">garlic, minced (for rub)</ingredient>
+    <ingredient quantity="2" unit="tsp">kosher salt (for rub)</ingredient>
+    <ingredient quantity="1/4" unit="cup">brown sugar (for rub)</ingredient>
+    <ingredient quantity="2" unit="tbsp">Mexican oregano (or regular) (for rub)</ingredient>
+    <ingredient quantity="1" unit="tsp">ground cumin (for rub)</ingredient>
+    <ingredient quantity="1/2" unit="tsp">cinnamon (for rub)</ingredient>
+    <ingredient quantity="2">oranges, cut in half</ingredient>
+    <ingredient quantity="2" unit="large">carrots, cut in half</ingredient>
+    <ingredient quantity="1">onion (white or yellow), cut into quarters</ingredient>
+    <ingredient quantity="3">bay leaves</ingredient>
+    <ingredient quantity="3/4" unit="cup">chicken stock</ingredient>
+    <ingredient quantity="3/4" unit="cup">orange juice</ingredient>
+  </ingredients>
+
+  <preparation>
+    <step number="1">Combine rub ingredients; rub over entire surface of pork.</step>
+    <step number="2">Place pork in slow cooker fat side up. Add oranges, carrots, onion, bay leaves; pour chicken stock and orange juice over; cover.</step>
+    <step number="3">Cook on low 10 hours or high 6 hours.</step>
+    <step number="4">Transfer pork to platter with slotted spoon; cool slightly; shred by hand or two forks. Best crispy.</step>
+    <step number="5">Discard cooked orange and vegetables from liquid; reserve liquid.</step>
+    <step number="6">In a large skillet over high heat, fry shredded meat in batches with a little oil, adding ~1/4 cup cooking liquid per batch; simmer until liquid evaporates and meat is crispy/caramelized.</step>
+    <step number="7">Serve with hot tortillas and desired toppings (refried beans, onions, cilantro, limes, salsas, guacamole, etc.).</step>
+  </preparation>
+
+</recipe>

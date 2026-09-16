@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="recipe-style.xsl"?>
+
+<recipe xmlns="http://www.example.com/recipe" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="recipe.xsd"
+id="rosemary-garlic-white-bean-soup">
+
+  <title>Easy Rosemary Garlic White Bean Soup</title>
+
+  <description>
+    <summary>Eight-ingredient rosemary garlic white bean soup with rich, bold flavor — quick stovetop weeknight soup (vegan-friendly with veg broth).</summary>
+    <tags>
+      <tag>easy</tag>
+      <tag>soup</tag>
+      <tag>vegetarian</tag>
+      <tag>vegan</tag>
+      <tag>weeknight</tag>
+      <tag>bean</tag>
+      <tag>main-course</tag>
+    </tags>
+  </description>
+
+  <metadata>
+    <servings>4</servings>
+    <prepTime>5 minutes</prepTime>
+    <cookTime>25 minutes</cookTime>
+    <totalTime>30 minutes</totalTime>
+    <difficulty>easy</difficulty>
+  </metadata>
+
+  <source url="https://www.budgetbytes.com/easy-rosemary-garlic-white-bean-soup/">Budget Bytes</source>
+
+  <category>soup</category>
+
+  <ingredients>
+    <ingredient quantity="2" unit="Tbsp">olive oil</ingredient>
+    <ingredient quantity="4" unit="cloves">garlic</ingredient>
+    <ingredient quantity="3" unit="15oz cans">cannellini beans</ingredient>
+    <ingredient quantity="2" unit="cups">vegetable (or chicken) broth</ingredient>
+    <ingredient quantity="1/2" unit="tsp">dried rosemary</ingredient>
+    <ingredient quantity="1/4" unit="tsp">dried thyme</ingredient>
+    <ingredient quantity="1" unit="pinch">crushed red pepper</ingredient>
+    <ingredient>freshly cracked black pepper to taste</ingredient>
+  </ingredients>
+
+  <preparation>
+    <step number="1">Purée one can of cannellini beans with its liquid until smooth; drain the other two cans.</step>
+    <step number="2">Mince garlic; sauté in olive oil over medium ~1 minute until fragrant.</step>
+    <step number="3">Add puréed beans, drained beans, broth, rosemary, thyme, crushed red pepper, and black pepper; stir.</step>
+    <step number="4">Cover, bring to a boil over medium-high; then medium-low, uncover, simmer 15 minutes, stirring occasionally.</step>
+    <step number="5">Smash beans slightly to thicken; salt to taste if needed. Serve hot with crusty bread.</step>
+  </preparation>
+
+</recipe>

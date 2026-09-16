@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="recipe-style.xsl"?>
+
+<recipe xmlns="http://www.example.com/recipe" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="recipe.xsd"
+id="instant-pot-panera-mac-and-cheese">
+
+  <title>Instant Pot Panera Mac and Cheese</title>
+
+  <description>
+    <summary>Easy Instant Pot copycat of Panera's mac and cheese — creamy white cheddar and American cheese with a touch of Dijon, ready in under 20 minutes.</summary>
+    <tags>
+      <tag>easy</tag>
+      <tag>instant-pot</tag>
+      <tag>pasta</tag>
+      <tag>vegetarian</tag>
+      <tag>weeknight</tag>
+      <tag>kid-friendly</tag>
+      <tag>main-course</tag>
+    </tags>
+  </description>
+
+  <metadata>
+    <servings>6</servings>
+    <prepTime>5 minutes</prepTime>
+    <cookTime>4 minutes pressure (plus ~10 minutes to pressurize)</cookTime>
+    <totalTime>20 minutes</totalTime>
+    <difficulty>easy</difficulty>
+  </metadata>
+
+  <source url="https://thedecoratedcookie.com/instant-pot-panera-mac-and-cheese/">The Decorated Cookie</source>
+
+  <category>main-course</category>
+
+  <ingredients>
+    <ingredient quantity="16" unit="ounces">large shell pasta</ingredient>
+    <ingredient quantity="4" unit="cups">water</ingredient>
+    <ingredient quantity="1 1/2" unit="teaspoons">coarse sea salt</ingredient>
+    <ingredient quantity="4" unit="tablespoons">butter</ingredient>
+    <ingredient quantity="1" unit="cup">milk (or start with 1/2 cup for less creamy; add more as desired)</ingredient>
+    <ingredient quantity="8" unit="ounces">freshly shredded white cheddar cheese (about 2 rounded cups)</ingredient>
+    <ingredient quantity="4" unit="ounces">white American cheese (4 to 6 slices)</ingredient>
+    <ingredient quantity="1" unit="teaspoon">Dijon mustard</ingredient>
+    <ingredient>black pepper, optional</ingredient>
+    <ingredient>dash of hot sauce, optional</ingredient>
+    <ingredient>extra butter and pinch of salt to taste if pasta was drained</ingredient>
+  </ingredients>
+
+  <preparation>
+    <step number="1">Place pasta, water, salt, and butter in Instant Pot; stir. Seal. Pressure/manual 4 minutes (~10 min to pressurize).</step>
+    <step number="2">Quick-release carefully. If water spurts, close valve briefly, wait ~15s, release in short intervals until float drops.</step>
+    <step number="3">If significant water remains, gently pour most off (keep a colander handy).</step>
+    <step number="4">Stir in milk, white cheddar, American cheese; if drained, add butter/salt to taste. Stir in Dijon; optional pepper and hot sauce.</step>
+    <step number="5">Use Warm to melt cheese if needed. For less creamy, start with 1/2 cup milk. Serve.</step>
+  </preparation>
+
+</recipe>

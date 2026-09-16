@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="recipe-style.xsl"?>
+
+<recipe xmlns="http://www.example.com/recipe" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="recipe.xsd"
+id="crockpot-southwest-2-bean-chicken">
+
+  <title>Southwest Chicken Crockpot Recipe</title>
+
+  <description>
+    <summary>Wholesome shredded chicken with black beans, pinto beans, corn, and tomatoes — easy clean-eating slow cooker dinner.</summary>
+    <tags>
+      <tag>easy</tag>
+      <tag>crockpot</tag>
+      <tag>chicken</tag>
+      <tag>mexican</tag>
+      <tag>clean-eating</tag>
+      <tag>main-course</tag>
+      <tag>meal-prep</tag>
+      <tag>weekend-batch</tag>
+    </tags>
+  </description>
+
+  <metadata>
+    <servings>10</servings>
+    <prepTime>15 minutes</prepTime>
+    <cookTime>5-7 hours low</cookTime>
+    <totalTime>7 hours</totalTime>
+    <difficulty>easy</difficulty>
+  </metadata>
+
+  <source url="https://www.thegraciouspantry.com/clean-eating-slow-cooker-southwestern-2-bean-chicken/">The Gracious Pantry</source>
+
+  <category>main-course</category>
+
+  <ingredients>
+    <ingredient quantity="2" unit="lb">boneless, skinless chicken breasts</ingredient>
+    <ingredient quantity="15" unit="oz can">pinto beans, rinsed and drained (or ~1 1/3 cup home-cooked)</ingredient>
+    <ingredient quantity="15" unit="oz can">black beans, rinsed and drained (or ~1 1/3 cup home-cooked)</ingredient>
+    <ingredient quantity="28" unit="oz can">diced tomatoes in juice (low sodium best)</ingredient>
+    <ingredient quantity="1" unit="lb">frozen and thawed organic corn</ingredient>
+    <ingredient quantity="12" unit="oz jar">salsa (no sugar added preferred)</ingredient>
+  </ingredients>
+
+  <preparation>
+    <step number="1">Place chicken breasts on the bottom of the slow cooker.</step>
+    <step number="2">Pour tomatoes and salsa over that.</step>
+    <step number="3">Layer on the beans.</step>
+    <step number="4">Add the corn.</step>
+    <step number="5">Cover securely.</step>
+    <step number="6">Cook on low 5-7 hours, until chicken falls apart when stirred.</step>
+    <step number="7">Shred chicken by stirring, or use forks / mixer on lowest speed so beans stay intact.</step>
+    <step number="8">Serve on its own, with corn chips, over rice, or as burrito filling.</step>
+  </preparation>
+
+</recipe>
