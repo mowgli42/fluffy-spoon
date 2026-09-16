@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="recipe-style.xsl"?>
+
+<recipe xmlns="http://www.example.com/recipe" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="recipe.xsd"
+id="crockpot-creamy-chicken-rice">
+
+  <title>Crockpot Creamy Chicken + Rice</title>
+
+  <description>
+    <summary>Nutritious crockpot comfort food — seared chicken with brown rice, veggies, and a creamy Greek yogurt–Dijon finish. Convenient clean-eating dinner with leftovers for meal prep.</summary>
+    <tags>
+      <tag>easy</tag>
+      <tag>crockpot</tag>
+      <tag>chicken</tag>
+      <tag>rice</tag>
+      <tag>clean-eating</tag>
+      <tag>main-course</tag>
+      <tag>meal-prep</tag>
+      <tag>weekend-batch</tag>
+    </tags>
+  </description>
+
+  <metadata>
+    <servings>6</servings>
+    <prepTime>15 minutes</prepTime>
+    <cookTime>3-4 hours high or 6-8 hours low</cookTime>
+    <totalTime>4 hours</totalTime>
+    <difficulty>easy</difficulty>
+  </metadata>
+
+  <source url="https://cleanfoodcrush.com/crockpot-creamy-chicken-rice-clean-eating/">Clean Food Crush</source>
+
+  <category>main-course</category>
+
+  <ingredients>
+    <ingredient quantity="1.5" unit="lbs">boneless, skinless chicken breasts, cut into 1-inch bite-sized pieces</ingredient>
+    <ingredient quantity="1" unit="Tbsp">avocado oil or olive oil</ingredient>
+    <ingredient quantity="2-3" unit="cloves">fresh garlic, minced</ingredient>
+    <ingredient quantity="1" unit="cup">uncooked long grain brown rice (dry)</ingredient>
+    <ingredient quantity="4">carrots, diced small</ingredient>
+    <ingredient quantity="1">sweet yellow onion, finely diced</ingredient>
+    <ingredient>sea salt and fresh ground black pepper, to taste</ingredient>
+    <ingredient quantity="2 1/2" unit="cups">low-sodium chicken broth or stock</ingredient>
+    <ingredient quantity="1" unit="cup">frozen organic peas</ingredient>
+    <ingredient quantity="1" unit="cup">frozen organic corn</ingredient>
+    <ingredient quantity="1" unit="Tbsp">Dijon mustard</ingredient>
+    <ingredient quantity="1" unit="cup">plain Greek yogurt</ingredient>
+    <ingredient quantity="2-3">green onions, thinly sliced to garnish</ingredient>
+  </ingredients>
+
+  <preparation>
+    <step number="1">Heat oil in a large skillet over medium-high heat.</step>
+    <step number="2">Add garlic and cook 1 minute until fragrant.</step>
+    <step number="3">Add chicken and sear 2-3 minutes until golden but not fully cooked.</step>
+    <step number="4">Season with salt and pepper; add garlic and chicken to the slow cooker.</step>
+    <step number="5">Stir in rice, carrots, onions, corn, and peas.</step>
+    <step number="6">Add broth and stir. Cook on HIGH 3-4 hours or LOW 6-8 hours.</step>
+    <step number="7">Whisk Greek yogurt and Dijon together.</step>
+    <step number="8">When cooking is done, stir in yogurt-mustard mixture; season to taste.</step>
+    <step number="9">Serve warm with sliced green onions.</step>
+  </preparation>
+
+</recipe>
