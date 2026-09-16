@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="recipe-style.xsl"?>
+
+<recipe xmlns="http://www.example.com/recipe" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="recipe.xsd"
+id="slow-cooker-salsa-verde-chicken">
+
+  <title>4-Ingredient Slow Cooker Salsa Verde Chicken</title>
+
+  <description>
+    <summary>Simple 4-ingredient slow cooker salsa verde chicken — dump-and-go, shreds easily, great for tacos, bowls, and meal prep.</summary>
+    <tags>
+      <tag>easy</tag>
+      <tag>crockpot</tag>
+      <tag>chicken</tag>
+      <tag>mexican</tag>
+      <tag>main-course</tag>
+      <tag>meal-prep</tag>
+      <tag>weekend-batch</tag>
+    </tags>
+  </description>
+
+  <metadata>
+    <servings>6</servings>
+    <prepTime>5 minutes</prepTime>
+    <cookTime>3-4 hours high or 7-8 hours low</cookTime>
+    <totalTime>4 hours</totalTime>
+    <difficulty>easy</difficulty>
+  </metadata>
+
+  <source url="https://www.gimmesomeoven.com/4-ingredient-slow-cooker-salsa-verde-chicken-recipe/">Gimme Some Oven</source>
+
+  <category>main-course</category>
+
+  <ingredients>
+    <ingredient quantity="6">boneless, skinless chicken breasts</ingredient>
+    <ingredient quantity="2" unit="cups">salsa verde</ingredient>
+    <ingredient quantity="1" unit="bottle">beer (use gluten-free beer or chicken broth for gluten-free)</ingredient>
+    <ingredient quantity="2" unit="teaspoons">cumin</ingredient>
+    <ingredient>salt and black pepper</ingredient>
+    <ingredient quantity="1">jalapeño, stem removed and diced (optional; leave seeds in for extra heat)</ingredient>
+  </ingredients>
+
+  <preparation>
+    <step number="1">Add chicken to the slow cooker. Top with salsa verde and beer, sprinkle with cumin, and season with generous pinches of salt and a pinch of pepper. Turn chicken so both sides are coated. Cover. Cook 3-4 hours on high or 7-8 hours on low.</step>
+    <step number="2">Chicken is ready when it shreds easily with a fork. Shred in the slow cooker and toss with the juices. Remove with a slotted spoon and serve warm. Or store shredded chicken sealed in the fridge up to 5 days or freezer up to 3 months.</step>
+    <step number="3">Note: For gluten-free, use gluten-free beer or replace beer with chicken broth.</step>
+  </preparation>
+
+</recipe>
