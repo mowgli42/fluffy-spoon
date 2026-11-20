@@ -7,11 +7,14 @@ This document reflects **what exists today**, not the full roadmap in the README
 
 | Surface | Role | Deployed? |
 |---------|------|-----------|
-| Static recipe site | Searchable cookbook + per-recipe HTML | Yes (Vercel / TrueNAS / any static host) |
+| **Fluffy Spoon PWA** (`pwa/`) | Svelte + Vite installable app; IndexedDB + SW offline viewing | Yes (Vercel `/`) |
+| Classic static recipe site | Searchable cookbook + per-recipe HTML | Yes (`/classic/` on Vercel) |
 | Local Flask creator | Optional form that writes recipe XML to disk | Local only |
 | Meal-plan CLI | Demo weekly / 52-week plan printer | Local CLI only |
 
-There is no authenticated multi-user API, shopping-list service, or hosted recipe editor on Vercel.
+Behaviour-driven OpenSpec: `openspec/` (change `pwa-offline-windows-app`). Demo notes: `DEMO.md`.
+
+There is no authenticated multi-user API, shopping-list service, or hosted recipe editor on Vercel. Offline “sync” is a local demo queue flush only.
 
 ## Architecture (current)
 
@@ -22,8 +25,11 @@ recipe-system/recipes/*.xml   ──►  recipe-gen.py (+ XSLT)
 recipe-system/recipes/*.xml   ──►  cookbook-pkg.py (+ recipe.xsd)
                                   └──► web/recipe-box.html
 
-scripts/build-site.sh         ──►  copy web/ → dist/
-                                  (regenerates HTML when python3 + lxml available)
+recipe-system/recipes/*.xml   ──►  export-pwa-seed.py
+                                  └──► pwa/public/data/seed.json
+
+scripts/build-site.sh         ──►  seed + vite build → dist/ (PWA)
+                                  └──► copy web/ → dist/classic/
 ```
 
 Source of truth is **XML under `recipe-system/recipes/`**. Committed HTML under `recipe-system/web/` is the build artifact and fallback when `lxml` is unavailable at build time.

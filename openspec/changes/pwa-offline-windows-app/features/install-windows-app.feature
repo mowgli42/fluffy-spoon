@@ -4,10 +4,10 @@ Feature: Install and run Fluffy Spoon as a Windows app
   So that I can open meal plans without browser chrome
 
   # ---------------------------------------------------------------------------
-  # @prototype — intended for the Svelte+Vite PWA slice (not yet exercised)
+  # @validated — exercised by Playwright (manifest) / build output
   # ---------------------------------------------------------------------------
 
-  @prototype @pwa-install
+  @validated @pwa-install
   Scenario: Manifest makes the site installable
     Given the demo is served over HTTPS on Vercel or localhost
     When a client fetches the web app manifest

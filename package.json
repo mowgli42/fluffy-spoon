@@ -1,11 +1,15 @@
 {
   "name": "recipe-collection",
   "private": true,
-  "version": "1.0.0",
-  "description": "Self-hosted recipe collection — static site with optional local Flask creator",
+  "version": "1.1.0",
+  "description": "Fluffy Spoon — static cookbook + Svelte PWA (offline recipes & meal plans)",
   "scripts": {
     "build": "bash scripts/build-site.sh",
     "vercel-build": "bash scripts/build-site.sh",
-    "generate": "cd recipe-system/scripts && python3 recipe-gen.py && python3 cookbook-pkg.py"
+    "generate": "cd recipe-system/scripts && python3 recipe-gen.py && python3 cookbook-pkg.py",
+    "seed": "python3 recipe-system/scripts/export-pwa-seed.py",
+    "dev": "npm run seed && npm --prefix pwa run dev",
+    "preview": "npm --prefix pwa run preview",
+    "test:e2e": "npm --prefix pwa run test:e2e"
   }
 }

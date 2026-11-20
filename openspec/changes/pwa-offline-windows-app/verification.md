@@ -8,15 +8,20 @@
 | `@prototype` | Intended for the next implementation slice | Promote when evidence exists |
 | `@aspirational` / `@future` | Production or deferred | Remains until a later change |
 
-## Prototype verification plan (when implementing)
+## Evidence (2026-11-20 America/New_York)
 
-1. **Manifest**: `curl` / browser Application panel — name `Fluffy Spoon`, `display: standalone`, icons present.
-2. **Service worker**: registers; offline reload shows shell + seeded list.
-3. **IndexedDB**: Application panel shows recipes / week seed after first online visit.
-4. **Vercel**: production URL loads without local backend; Lighthouse installable (or equivalent checklist).
-5. **Windows install** (manual): Edge or Chrome → Install → Start menu entry → standalone window — screenshot to `docs/demo/` when available.
-6. **Playwright**: go offline after first load; open a seeded recipe; attach screenshot artifact.
+| Check | Result |
+|-------|--------|
+| `npm run build` → `dist/index.html`, `manifest.webmanifest`, `sw.js`, `data/seed.json`, `classic/` | pass |
+| Playwright `pwa/e2e/offline-recipe.spec.ts` | pass |
+| Screenshot `docs/demo/offline-recipe-view.png` | produced |
+| Manifest name / standalone / theme | asserted in E2E |
+| Windows Start-menu install | **not** automated — still `@aspirational` |
+| Backend sync | demo local flush only — backend scenarios `@aspirational` |
 
-## Currently validated (baseline only)
+## Commands
 
-See `openspec/specs/static-recipe-site/spec.md` and root `features/*.feature`. **No PWA scenarios are validated yet.**
+```bash
+npm run build
+npm run test:e2e
+```
