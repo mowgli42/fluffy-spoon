@@ -204,6 +204,24 @@
         </p>
       {/if}
 
+      {#if selected.source?.name || selected.source?.url}
+        <p class="source" data-testid="recipe-source">
+          <span class="muted">Source:</span>
+          {#if selected.source.url}
+            <a
+              href={selected.source.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="recipe-source-link"
+            >
+              {selected.source.name || selected.source.url}
+            </a>
+          {:else}
+            <span>{selected.source.name}</span>
+          {/if}
+        </p>
+      {/if}
+
       <h3>Ingredients</h3>
       <ul class="ingredients" data-testid="ingredients">
         {#each selected.ingredients as ing}
