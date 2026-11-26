@@ -96,22 +96,31 @@ Example output includes daily themes, specific recipe suggestions, meal prep not
    - **Root Directory:** `.` (repository root)
    - **Build command:** `npm run build`
    - **Output directory:** `dist`
+   - Install also runs `cd pwa && npm install`
 3. Assign a public production domain (Project → Settings → Domains) and turn off
-   **Deployment Protection** for Production so `/` and `/recipe-box.html` are
+   **Deployment Protection** for Production so `/` and `/classic/` are
    reachable without Vercel SSO.
-4. Deploy. The site serves `recipe-box.html` at `/` (rewrite) with security headers.
+4. Deploy. `/` serves the **Fluffy Spoon PWA**; `/classic/recipe-box.html` is the legacy cookbook.
 
-To add or change recipes, edit XML files under `recipe-system/recipes/`, commit, and redeploy. The build step regenerates all HTML pages into `dist/`.
+See [DEMO.md](DEMO.md) for offline install notes and screenshots.
+
+To add or change recipes, edit XML files under `recipe-system/recipes/`, commit, and redeploy. The build exports `seed.json` and regenerates classic HTML into `dist/classic/`.
 
 ## Local development
 
 ```bash
-# Generate static site
+# Build PWA + classic site into dist/
 npm run build
 
-# Preview locally
+# Preview PWA (service worker + offline)
+npm run preview
+# Open http://127.0.0.1:4173/
+
+# Dev HMR
+npm run dev
+
+# Classic HTML only
 cd recipe-system/web && python3 -m http.server 8080
-# Open http://localhost:8080/recipe-box.html
 ```
 
 ### Create recipes locally (optional)
@@ -133,7 +142,9 @@ After creating recipes, run `npm run build` from the repo root and refresh the s
 
 | Path | Purpose |
 |------|---------|
+| `pwa/` | Svelte + Vite PWA (manifest, SW, IndexedDB offline shell) |
 | `recipe-system/recipes/` | Recipe XML source files (new ones auto-included on build) |
+| `recipe-system/scripts/export-pwa-seed.py` | XML → `pwa/public/data/seed.json` (52-week + BBQ prep) |
 | `recipe-system/scripts/recipe-gen.py` | XML → individual HTML pages (XSLT) |
 | `recipe-system/scripts/cookbook-pkg.py` | Builds searchable `recipe-box.html` |
 | `recipe-system/scripts/recipe-web-generator.py` | Local recipe creation UI (dev only) |

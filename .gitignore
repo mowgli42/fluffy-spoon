@@ -5,6 +5,9 @@ __pycache__/
 .vercel/
 node_modules/
 dist/
+pwa/playwright-report/
+pwa/test-results/
+pwa/blob-report/
 
 # Beads / Dolt files (added by bd init)
 .dolt/

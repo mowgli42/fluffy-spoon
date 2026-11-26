@@ -1,0 +1,16 @@
+schema: behaviour-driven
+project: fluffy-spoon
+description: >
+  Fluffy Spoon recipe / meal-planning site. Today: static XML→HTML cookbook
+  with optional local Flask creator and meal-plan CLI. Target prototype:
+  installable offline-capable PWA (Svelte + Vite shell) hostable on Vercel
+  for demos; production rebuild may add FastAPI + durable store later.
+stack: svelte-vite-static-python
+context: |
+  Graham-bell prototype mode: small vertical slices, honest Validated vs
+  Aspirational Gherkin, Beads for roadmap. Prefer behaviour-driven OpenSpec.
+  Existing root features/*.feature and docs/OPENSPEC.md describe the static
+  baseline — do not pretend FastAPI/SQLite exist yet.
+  Use bd for task tracking after openspec/changes/*/tasks.md is ready.
+  Prototype PWA shell: Svelte + Vite consuming build-time JSON (option B).
+  Vercel remains static (or lightly serverless) for the viewing happy path.

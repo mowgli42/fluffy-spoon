@@ -1,0 +1,190 @@
+{
+  "nodes": [
+    {
+      "key": "epic",
+      "title": "PWA offline Windows app (prototype + production roadmap)",
+      "type": "epic",
+      "priority": 1,
+      "description": "Installable Fluffy Spoon PWA: Svelte+Vite shell, offline viewing, Vercel demo. Specs in openspec/changes/pwa-offline-windows-app/.",
+      "labels": ["pwa", "openspec", "graham-bell"]
+    },
+    {
+      "key": "openspec-init",
+      "title": "Init OpenSpec behaviour-driven + change pwa-offline-windows-app",
+      "type": "task",
+      "priority": 1,
+      "parent_key": "epic",
+      "description": "Create openspec/ (config, project, LEARNINGS, baseline spec) and change folder with proposal, design, Gherkin, tasks, verification.",
+      "labels": ["openspec", "docs"],
+      "spec_id": "openspec/changes/pwa-offline-windows-app/proposal.md"
+    },
+    {
+      "key": "svelte-shell",
+      "title": "Scaffold Svelte + Vite PWA shell consuming generated JSON",
+      "type": "task",
+      "priority": 1,
+      "parent_key": "epic",
+      "description": "Option B: small Svelte+Vite app that loads build-time recipe/meal-plan JSON. Keep prototype small; do not rewrite all static HTML.",
+      "labels": ["pwa", "svelte", "prototype"],
+      "notes": "Production rebuild may replace seed JSON with API hydration."
+    },
+    {
+      "key": "manifest-icons",
+      "title": "Add web app manifest + icons; verify install criteria on Edge/Chrome",
+      "type": "task",
+      "priority": 1,
+      "parent_key": "epic",
+      "description": "Manifest name Fluffy Spoon, standalone display, start_url, theme colors, icons. Document Windows install checklist.",
+      "labels": ["pwa", "manifest", "prototype"]
+    },
+    {
+      "key": "sw-precache",
+      "title": "Implement service worker with vite-plugin-pwa for app-shell precaching",
+      "type": "task",
+      "priority": 1,
+      "parent_key": "epic",
+      "description": "Workbox via vite-plugin-pwa: precache shell + seed; navigation fallback. Avoid unbounded runtime cache.",
+      "labels": ["pwa", "service-worker", "prototype"],
+      "notes": "Trade-off: precache allowlist vs stale-while-revalidate for images — see design.md."
+    },
+    {
+      "key": "idb-seed",
+      "title": "Add IndexedDB store for recipes and meal plans with seed strategy",
+      "type": "task",
+      "priority": 1,
+      "parent_key": "epic",
+      "description": "IndexedDB for structured recipes + sample 52-week/BBQ prep. Prototype sync strategy = hydrate from build seed on first visit.",
+      "labels": ["pwa", "indexeddb", "prototype"],
+      "notes": "Production: API-backed hydration + conflict-aware sync (separate beads)."
+    },
+    {
+      "key": "cache-assets",
+      "title": "Cache recipe images and static assets for offline UI",
+      "type": "task",
+      "priority": 2,
+      "parent_key": "epic",
+      "description": "Allowlisted image/static precache or runtime SWR; guard Cache API quota.",
+      "labels": ["pwa", "cache", "prototype"]
+    },
+    {
+      "key": "vercel-demo",
+      "title": "Minimal offline-first demo path on Vercel (static export + sample data)",
+      "type": "task",
+      "priority": 1,
+      "parent_key": "epic",
+      "description": "Deploy PWA shell so core viewing works without local backend. Optional serverless sample JSON later.",
+      "labels": ["vercel", "demo", "prototype"]
+    },
+    {
+      "key": "e2e-offline",
+      "title": "E2E Playwright: offline recipe view + screenshot artifact",
+      "type": "task",
+      "priority": 2,
+      "parent_key": "epic",
+      "description": "Automate offline viewing after first load. Windows install prompt may remain manual.",
+      "labels": ["e2e", "playwright", "prototype"]
+    },
+    {
+      "key": "demo-md",
+      "title": "Document DEMO.md with Vercel URL, local run, screenshot walkthrough",
+      "type": "task",
+      "priority": 2,
+      "parent_key": "epic",
+      "description": "DEMO.md after slice lands: URLs, commands, screenshots under docs/demo/.",
+      "labels": ["docs", "demo", "prototype"]
+    },
+    {
+      "key": "gherkin-promote",
+      "title": "Promote exercised Gherkin from @prototype to @validated",
+      "type": "chore",
+      "priority": 2,
+      "parent_key": "epic",
+      "description": "Update feature tags and verification.md only after demo/E2E evidence.",
+      "labels": ["openspec", "gherkin"]
+    },
+    {
+      "key": "offline-sync",
+      "title": "Queue simple offline writes and sync when connectivity returns",
+      "type": "task",
+      "priority": 3,
+      "parent_key": "epic",
+      "description": "Aspirational prototype/production: mutation queue in IndexedDB + sync. Blocked until a write API exists.",
+      "labels": ["pwa", "sync", "aspirational"],
+      "notes": "Different in production: auth-scoped queue, idempotent APIs, conflict policy."
+    },
+    {
+      "key": "prod-auth",
+      "title": "[Production] Proper authentication",
+      "type": "task",
+      "priority": 3,
+      "parent_key": "epic",
+      "description": "Do not implement in graham-bell prototype. Auth for multi-user / private plans.",
+      "labels": ["production", "auth"]
+    },
+    {
+      "key": "prod-backend",
+      "title": "[Production] Durable backend persistence beyond SQLite",
+      "type": "task",
+      "priority": 3,
+      "parent_key": "epic",
+      "description": "Hosted durable store suitable for sync; not laptop SQLite file.",
+      "labels": ["production", "backend"]
+    },
+    {
+      "key": "prod-conflicts",
+      "title": "[Production] Conflict resolution on sync",
+      "type": "task",
+      "priority": 3,
+      "parent_key": "epic",
+      "description": "Define and implement conflict policy for multi-writer meal-plan updates.",
+      "labels": ["production", "sync"]
+    },
+    {
+      "key": "prod-msix",
+      "title": "[Production] Microsoft Store MSIX packaging via PWABuilder",
+      "type": "task",
+      "priority": 3,
+      "parent_key": "epic",
+      "description": "Store packaging after web install path is solid. Not required for Edge/Chrome install demo.",
+      "labels": ["production", "windows", "store"]
+    },
+    {
+      "key": "prod-observability",
+      "title": "[Production] Observability for PWA and sync",
+      "type": "task",
+      "priority": 3,
+      "parent_key": "epic",
+      "description": "SW update failures, sync errors, client metrics.",
+      "labels": ["production", "observability"]
+    },
+    {
+      "key": "prod-multidevice",
+      "title": "[Production] Multi-device sync",
+      "type": "task",
+      "priority": 3,
+      "parent_key": "epic",
+      "description": "Authenticated sync across devices; depends on backend + conflict policy.",
+      "labels": ["production", "sync"]
+    }
+  ],
+  "edges": [
+    { "from_key": "svelte-shell", "to_key": "openspec-init", "type": "blocks" },
+    { "from_key": "manifest-icons", "to_key": "svelte-shell", "type": "blocks" },
+    { "from_key": "sw-precache", "to_key": "manifest-icons", "type": "blocks" },
+    { "from_key": "idb-seed", "to_key": "sw-precache", "type": "blocks" },
+    { "from_key": "cache-assets", "to_key": "sw-precache", "type": "blocks" },
+    { "from_key": "vercel-demo", "to_key": "idb-seed", "type": "blocks" },
+    { "from_key": "vercel-demo", "to_key": "cache-assets", "type": "blocks" },
+    { "from_key": "e2e-offline", "to_key": "vercel-demo", "type": "blocks" },
+    { "from_key": "demo-md", "to_key": "e2e-offline", "type": "blocks" },
+    { "from_key": "gherkin-promote", "to_key": "vercel-demo", "type": "blocks" },
+    { "from_key": "offline-sync", "to_key": "idb-seed", "type": "blocks" },
+    { "from_key": "offline-sync", "to_key": "prod-backend", "type": "related" },
+    { "from_key": "prod-conflicts", "to_key": "offline-sync", "type": "blocks" },
+    { "from_key": "prod-conflicts", "to_key": "prod-backend", "type": "blocks" },
+    { "from_key": "prod-multidevice", "to_key": "prod-auth", "type": "blocks" },
+    { "from_key": "prod-multidevice", "to_key": "prod-conflicts", "type": "blocks" },
+    { "from_key": "prod-msix", "to_key": "manifest-icons", "type": "related" },
+    { "from_key": "prod-observability", "to_key": "prod-backend", "type": "related" }
+  ]
+}
