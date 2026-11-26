@@ -1205,21 +1205,22 @@
     {
       "id": "crockpot-ziti",
       "title": "Crockpot Baked Ziti",
-      "summary": "An easy and delicious crockpot baked ziti pasta with ground beef, marinara sauce, and melted cheese. Perfect for busy days when you want a homemade meal with minimal effort. Great for meal prep and weekend batch cooking to support lunches during the week.",
+      "summary": "Layered crockpot baked ziti where the penne goes in uncooked and cooks right in the sauce. Layers of marinara, a basil-ricotta filling, and parmesan, finished with melted mozzarella. Feeds a crowd (needs a 6-quart or larger slow cooker) and works well for a late Thursday dinner, meal prep, and weekend batch cooking.",
       "tags": [
         "easy",
         "crockpot",
         "pasta",
+        "vegetarian",
         "comfort-food",
         "main-course",
         "meal-prep",
         "weekend-batch"
       ],
       "metadata": {
-        "servings": "6",
-        "prepTime": "10 minutes",
-        "cookTime": "4 hours",
-        "totalTime": "4 hours 10 minutes",
+        "servings": "10",
+        "prepTime": "20 minutes",
+        "cookTime": "2 hours 30 minutes high (2-3 hours high, or about 3-4 hours low)",
+        "totalTime": "2 hours 50 minutes",
         "difficulty": "easy"
       },
       "source": {
@@ -1228,83 +1229,90 @@
       },
       "ingredients": [
         {
-          "text": "ground beef",
+          "text": "pasta sauce",
+          "quantity": "2",
+          "unit": "jars (25 oz each)"
+        },
+        {
+          "text": "tomato sauce",
+          "quantity": "15",
+          "unit": "oz"
+        },
+        {
+          "text": "penne pasta, uncooked",
           "quantity": "1",
           "unit": "lb"
         },
         {
-          "text": "ziti pasta, uncooked",
-          "quantity": "1",
-          "unit": "box (16 oz)"
+          "text": "ricotta cheese",
+          "quantity": "15",
+          "unit": "oz"
         },
         {
-          "text": "marinara sauce",
+          "text": "eggs",
           "quantity": "2",
-          "unit": "jars (24 oz)"
+          "unit": "large"
         },
         {
-          "text": "beef broth",
+          "text": "fresh basil, chopped",
+          "quantity": "1/3",
+          "unit": "cup"
+        },
+        {
+          "text": "parmesan cheese, freshly grated",
           "quantity": "2",
           "unit": "cups"
         },
         {
           "text": "shredded mozzarella cheese",
-          "quantity": "2",
-          "unit": "cups"
-        },
-        {
-          "text": "parmesan cheese, grated",
-          "quantity": "1/2",
+          "quantity": "1",
           "unit": "cup"
-        },
-        {
-          "text": "italian seasoning",
-          "quantity": "1",
-          "unit": "tablespoon"
-        },
-        {
-          "text": "salt",
-          "quantity": "1",
-          "unit": "teaspoon"
-        },
-        {
-          "text": "black pepper",
-          "quantity": "1/2",
-          "unit": "teaspoon"
         }
       ],
       "steps": [
         {
           "number": 1,
-          "text": "Brown the ground beef in a skillet over medium heat, breaking it apart as it cooks. Drain excess fat."
+          "text": "Stir the ricotta, eggs, and chopped basil together in a bowl until evenly combined."
         },
         {
           "number": 2,
-          "text": "Transfer the cooked beef to a 6-quart crockpot."
+          "text": "In a large bowl, mix both jars of pasta sauce with the tomato sauce. You will use this in three roughly equal portions (about 2 1/3 cups each)."
         },
         {
           "number": 3,
-          "text": "Add the marinara sauce, beef broth, uncooked ziti, italian seasoning, salt, and black pepper to the crockpot."
+          "text": "Grate the parmesan, and split the uncooked penne into three equal piles so the layers cook evenly."
         },
         {
           "number": 4,
-          "text": "Stir well to combine all ingredients."
+          "text": "Grease or spray the inside of a 6-quart (or larger) slow cooker."
         },
         {
           "number": 5,
-          "text": "Cover and cook on low for 4 hours, stirring occasionally to prevent sticking."
+          "text": "First layer: spread about 2 1/3 cups of sauce over the bottom, scatter one pile of penne over it, spoon on half of the ricotta mixture and spread it out, then sprinkle with 1 cup of parmesan."
         },
         {
           "number": 6,
-          "text": "In the last 30 minutes of cooking, stir in the mozzarella and parmesan cheese."
+          "text": "Second layer: repeat with another 2 1/3 cups of sauce, the second pile of penne, the rest of the ricotta mixture, and the remaining 1 cup of parmesan."
         },
         {
           "number": 7,
-          "text": "Cover and let the cheese melt, about 30 minutes."
+          "text": "Top with the last pile of penne and cover it completely with the remaining sauce, spreading it so no noodles are left dry."
         },
         {
           "number": 8,
-          "text": "Serve hot and enjoy! Leftovers reheat well for lunches."
+          "text": "Cover and cook on HIGH for 2-3 hours (about 2 1/2 hours is usually right) until the pasta is al dente. On LOW, plan on roughly 3-4 hours and check so the noodles don't turn mushy."
+        },
+        {
+          "number": 9,
+          "text": "For the final 15-30 minutes, sprinkle the mozzarella over the top, cover, and let it melt."
+        },
+        {
+          "number": 10,
+          "text": "Serve as is or with red pepper flakes, garlic bread, roasted vegetables, or a side salad."
+        },
+        {
+          "number": 11,
+          "text": "Notes: A full batch will not fit in a 4-quart slow cooker; halve the recipe for that size. Cottage cheese or cream cheese can stand in for the ricotta, and asiago can replace the mozzarella. Browned Italian sausage can be added for a meatier version. Leftovers keep 4-5 days in an airtight container in the fridge."
         }
       ],
       "image": null

@@ -9,11 +9,12 @@ id="crockpot-ziti">
   <title>Crockpot Baked Ziti</title>
 
   <description>
-    <summary>An easy and delicious crockpot baked ziti pasta with ground beef, marinara sauce, and melted cheese. Perfect for busy days when you want a homemade meal with minimal effort. Great for meal prep and weekend batch cooking to support lunches during the week.</summary>
+    <summary>Layered crockpot baked ziti where the penne goes in uncooked and cooks right in the sauce. Layers of marinara, a basil-ricotta filling, and parmesan, finished with melted mozzarella. Feeds a crowd (needs a 6-quart or larger slow cooker) and works well for a late Thursday dinner, meal prep, and weekend batch cooking.</summary>
     <tags>
       <tag>easy</tag>
       <tag>crockpot</tag>
       <tag>pasta</tag>
+      <tag>vegetarian</tag>
       <tag>comfort-food</tag>
       <tag>main-course</tag>
       <tag>meal-prep</tag>
@@ -22,37 +23,40 @@ id="crockpot-ziti">
   </description>
 
   <metadata>
-    <servings>6</servings>
-    <prepTime>10 minutes</prepTime>
-    <cookTime>4 hours</cookTime>
-    <totalTime>4 hours 10 minutes</totalTime>
+    <servings>10</servings>
+    <prepTime>20 minutes</prepTime>
+    <cookTime>2 hours 30 minutes high (2-3 hours high, or about 3-4 hours low)</cookTime>
+    <totalTime>2 hours 50 minutes</totalTime>
     <difficulty>easy</difficulty>
   </metadata>
 
   <source url="https://buildyourbite.com/easy-crockpot-baked-ziti/">Build Your Bite</source>
 
+  <category>main-course</category>
+
   <ingredients>
-    <ingredient quantity="1" unit="lb">ground beef</ingredient>
-    <ingredient quantity="1" unit="box (16 oz)">ziti pasta, uncooked</ingredient>
-    <ingredient quantity="2" unit="jars (24 oz)">marinara sauce</ingredient>
-    <ingredient quantity="2" unit="cups">beef broth</ingredient>
-    <ingredient quantity="2" unit="cups">shredded mozzarella cheese</ingredient>
-    <ingredient quantity="1/2" unit="cup">parmesan cheese, grated</ingredient>
-    <ingredient quantity="1" unit="tablespoon">italian seasoning</ingredient>
-    <ingredient quantity="1" unit="teaspoon">salt</ingredient>
-    <ingredient quantity="1/2" unit="teaspoon">black pepper</ingredient>
+    <ingredient quantity="2" unit="jars (25 oz each)">pasta sauce</ingredient>
+    <ingredient quantity="15" unit="oz">tomato sauce</ingredient>
+    <ingredient quantity="1" unit="lb">penne pasta, uncooked</ingredient>
+    <ingredient quantity="15" unit="oz">ricotta cheese</ingredient>
+    <ingredient quantity="2" unit="large">eggs</ingredient>
+    <ingredient quantity="1/3" unit="cup">fresh basil, chopped</ingredient>
+    <ingredient quantity="2" unit="cups">parmesan cheese, freshly grated</ingredient>
+    <ingredient quantity="1" unit="cup">shredded mozzarella cheese</ingredient>
   </ingredients>
 
   <preparation>
-    <step number="1">Brown the ground beef in a skillet over medium heat, breaking it apart as it cooks. Drain excess fat.</step>
-    <step number="2">Transfer the cooked beef to a 6-quart crockpot.</step>
-    <step number="3">Add the marinara sauce, beef broth, uncooked ziti, italian seasoning, salt, and black pepper to the crockpot.</step>
-    <step number="4">Stir well to combine all ingredients.</step>
-    <step number="5">Cover and cook on low for 4 hours, stirring occasionally to prevent sticking.</step>
-    <step number="6">In the last 30 minutes of cooking, stir in the mozzarella and parmesan cheese.</step>
-    <step number="7">Cover and let the cheese melt, about 30 minutes.</step>
-    <step number="8">Serve hot and enjoy! Leftovers reheat well for lunches.</step>
+    <step number="1">Stir the ricotta, eggs, and chopped basil together in a bowl until evenly combined.</step>
+    <step number="2">In a large bowl, mix both jars of pasta sauce with the tomato sauce. You will use this in three roughly equal portions (about 2 1/3 cups each).</step>
+    <step number="3">Grate the parmesan, and split the uncooked penne into three equal piles so the layers cook evenly.</step>
+    <step number="4">Grease or spray the inside of a 6-quart (or larger) slow cooker.</step>
+    <step number="5">First layer: spread about 2 1/3 cups of sauce over the bottom, scatter one pile of penne over it, spoon on half of the ricotta mixture and spread it out, then sprinkle with 1 cup of parmesan.</step>
+    <step number="6">Second layer: repeat with another 2 1/3 cups of sauce, the second pile of penne, the rest of the ricotta mixture, and the remaining 1 cup of parmesan.</step>
+    <step number="7">Top with the last pile of penne and cover it completely with the remaining sauce, spreading it so no noodles are left dry.</step>
+    <step number="8">Cover and cook on HIGH for 2-3 hours (about 2 1/2 hours is usually right) until the pasta is al dente. On LOW, plan on roughly 3-4 hours and check so the noodles don't turn mushy.</step>
+    <step number="9">For the final 15-30 minutes, sprinkle the mozzarella over the top, cover, and let it melt.</step>
+    <step number="10">Serve as is or with red pepper flakes, garlic bread, roasted vegetables, or a side salad.</step>
+    <step number="11">Notes: A full batch will not fit in a 4-quart slow cooker; halve the recipe for that size. Cottage cheese or cream cheese can stand in for the ricotta, and asiago can replace the mozzarella. Browned Italian sausage can be added for a meatier version. Leftovers keep 4-5 days in an airtight container in the fridge.</step>
   </preparation>
 
 </recipe>
-
