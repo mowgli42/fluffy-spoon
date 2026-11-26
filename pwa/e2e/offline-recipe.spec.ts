@@ -30,6 +30,10 @@ test.describe('Fluffy Spoon PWA offline viewing', () => {
     await expect(page.getByTestId('recipe-detail')).toBeVisible()
     await expect(page.getByTestId('ingredients')).toBeVisible()
     await expect(page.getByTestId('instructions')).toBeVisible()
+    // First seeded recipe (baked chicken) includes a credit URL
+    const sourceLink = page.getByTestId('recipe-source-link')
+    await expect(sourceLink).toBeVisible()
+    await expect(sourceLink).toHaveAttribute('href', /https?:\/\//)
 
     await page.getByRole('button', { name: 'Recipes', exact: true }).click()
     await expect(page.getByTestId('recipes-panel')).toBeVisible()

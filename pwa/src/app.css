@@ -247,6 +247,20 @@ button {
   color: var(--muted);
 }
 
+.source {
+  margin: 0.75rem 0 0;
+  font-size: 0.95rem;
+}
+
+.source a {
+  color: var(--accent-2);
+  word-break: break-word;
+}
+
+.source a:hover {
+  text-decoration: underline;
+}
+
 .prep-list {
   list-style: none;
   padding: 0;
