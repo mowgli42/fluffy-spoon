@@ -4,6 +4,92 @@
   "appName": "Fluffy Spoon",
   "recipes": [
     {
+      "id": "artichoke-chicken",
+      "title": "Artichoke Chicken",
+      "summary": "Chicken marinated in Italian dressing, topped with cheesy artichoke dip, and baked. Six ingredients: chicken, Italian dressing, artichokes, mayonnaise, garlic, and Parmesan cheese. Can be assembled earlier in the day and baked when ready. Ready in under 30 minutes. Low-carb, keto, and gluten-free.",
+      "tags": [
+        "easy",
+        "chicken",
+        "artichoke",
+        "baked",
+        "low-carb",
+        "keto",
+        "gluten-free",
+        "main-course"
+      ],
+      "metadata": {
+        "servings": "4",
+        "prepTime": "5 minutes",
+        "cookTime": "25 minutes",
+        "totalTime": "30 minutes",
+        "difficulty": "easy"
+      },
+      "source": {
+        "name": "Plain Chicken",
+        "url": "https://www.plainchicken.com/artichoke-chicken/"
+      },
+      "ingredients": [
+        {
+          "text": "bottled Italian dressing",
+          "quantity": "1",
+          "unit": "cup"
+        },
+        {
+          "text": "skinless boneless chicken breast halves",
+          "quantity": "4",
+          "unit": ""
+        },
+        {
+          "text": "olive oil",
+          "quantity": "1",
+          "unit": "Tbsp"
+        },
+        {
+          "text": "artichoke hearts, drained and chopped",
+          "quantity": "1",
+          "unit": "(15-oz) can"
+        },
+        {
+          "text": "grated Parmesan cheese",
+          "quantity": "3/4",
+          "unit": "cup"
+        },
+        {
+          "text": "mayonnaise",
+          "quantity": "3/4",
+          "unit": "cup"
+        },
+        {
+          "text": "garlic powder",
+          "quantity": "1/4",
+          "unit": "tsp"
+        }
+      ],
+      "steps": [
+        {
+          "number": 1,
+          "text": "Marinate chicken breasts in Italian dressing a few hours to overnight."
+        },
+        {
+          "number": 2,
+          "text": "Preheat oven to 375\u00b0F."
+        },
+        {
+          "number": 3,
+          "text": "Heat olive oil in non-stick skillet over medium-high heat. Remove chicken from marinade and cook 2 minutes per side. Place chicken on foil lined baking sheet."
+        },
+        {
+          "number": 4,
+          "text": "In a medium bowl, mix together chopped artichoke hearts, Parmesan cheese, mayonnaise, and garlic powder. Spread artichoke mixture evenly on top of chicken."
+        },
+        {
+          "number": 5,
+          "text": "Bake for 20 to 25 minutes, until juices run clear."
+        }
+      ],
+      "image": null
+    },
+    {
       "id": "baked-chicken-breasts",
       "title": "Baked Chicken Breasts",
       "summary": "Tender, juicy baked chicken breasts seasoned with a simple five-ingredient pantry rub and roasted at high heat. Five minutes of prep and under 20 minutes in the oven for an easy weeknight dinner.",
@@ -1924,6 +2010,100 @@
       "image": null
     },
     {
+      "id": "leftover-turkey-corn-chowder",
+      "title": "Leftover Turkey Corn Chowder",
+      "summary": "This leftover turkey corn chowder comes together in about 30 minutes and is the most delicious way to use up that leftover Thanksgiving turkey. It uses both cream-style corn and whole-kernel sweet corn. Also works with leftover shredded chicken or rotisserie chicken.",
+      "tags": [
+        "easy",
+        "soup",
+        "turkey",
+        "corn",
+        "main-course"
+      ],
+      "metadata": {
+        "servings": "4",
+        "prepTime": "5 minutes",
+        "cookTime": "30 minutes",
+        "totalTime": "35 minutes",
+        "difficulty": "easy"
+      },
+      "source": {
+        "name": "Creme De La Crumb",
+        "url": "https://www.lecremedelacrumb.com/leftover-turkey-corn-chowder/"
+      },
+      "ingredients": [
+        {
+          "text": "shredded leftover fully cooked turkey (may sub shredded leftover fully cooked chicken)",
+          "quantity": "2",
+          "unit": "cups"
+        },
+        {
+          "text": "cream style corn",
+          "quantity": "2",
+          "unit": "15-ounce cans"
+        },
+        {
+          "text": "sweet yellow whole kernel corn",
+          "quantity": "1",
+          "unit": "15-ounce can"
+        },
+        {
+          "text": "low sodium chicken broth or vegetable broth",
+          "quantity": "3",
+          "unit": "cups"
+        },
+        {
+          "text": "celery, chopped",
+          "quantity": "1",
+          "unit": "rib"
+        },
+        {
+          "text": "red bell pepper, diced",
+          "quantity": "1",
+          "unit": ""
+        },
+        {
+          "text": "cubed golden or red potatoes",
+          "quantity": "2",
+          "unit": "cups"
+        },
+        {
+          "text": "Italian seasoning",
+          "quantity": "1 1/2",
+          "unit": "teaspoons"
+        },
+        {
+          "text": "garlic powder",
+          "quantity": "1",
+          "unit": "teaspoon"
+        },
+        {
+          "text": "salt and pepper to taste",
+          "quantity": "",
+          "unit": ""
+        }
+      ],
+      "steps": [
+        {
+          "number": 1,
+          "text": "In a large stock pot combine cream style corn, whole kernel corn, broth, celery, bell peppers, potatoes, Italian seasoning, and garlic powder."
+        },
+        {
+          "number": 2,
+          "text": "Cover and simmer over medium heat for 20-25 minutes until potatoes are tender and easily pierced with a fork."
+        },
+        {
+          "number": 3,
+          "text": "Stir in turkey and season with salt and pepper. When turkey is heated through, serve and garnish with fresh parsley or thyme as desired."
+        },
+        {
+          "number": 4,
+          "text": "Note: This also works with leftover shredded chicken or rotisserie chicken."
+        }
+      ],
+      "image": null
+    },
+    {
       "id": "mushroom-risotto",
       "title": "Creamy Mushroom Risotto",
       "summary": "An elegant and creamy mushroom risotto made with Arborio rice, white wine, and earthy mushrooms. This Italian classic is luxurious yet surprisingly easy to prepare.",
@@ -2806,8 +2986,8 @@
           "day": "Tuesday",
           "date": "2025-12-30",
           "theme": "Leftovers / Easy",
-          "recipeId": "crockpot-mexican-quinoa-tacos",
-          "recipeTitle": "Crockpot Mexican Quinoa Tacos",
+          "recipeId": "crockpot-creamy-chicken-rice",
+          "recipeTitle": "Crockpot Creamy Chicken + Rice",
           "notes": ""
         },
         {
@@ -2894,8 +3074,8 @@
           "day": "Tuesday",
           "date": "2026-01-06",
           "theme": "Leftovers / Easy",
-          "recipeId": "crockpot-pulled-chicken",
-          "recipeTitle": "3-Ingredient Crock Pot Pulled Chicken",
+          "recipeId": "crockpot-mexican-quinoa-tacos",
+          "recipeTitle": "Crockpot Mexican Quinoa Tacos",
           "notes": ""
         },
         {
@@ -2982,8 +3162,8 @@
           "day": "Tuesday",
           "date": "2026-01-13",
           "theme": "Leftovers / Easy",
-          "recipeId": "crockpot-southwest-2-bean-chicken",
-          "recipeTitle": "Southwest Chicken Crockpot Recipe",
+          "recipeId": "crockpot-pulled-chicken",
+          "recipeTitle": "3-Ingredient Crock Pot Pulled Chicken",
           "notes": ""
         },
         {
@@ -3070,8 +3250,8 @@
           "day": "Tuesday",
           "date": "2026-01-20",
           "theme": "Leftovers / Easy",
-          "recipeId": "crockpot-ziti",
-          "recipeTitle": "Crockpot Baked Ziti",
+          "recipeId": "crockpot-southwest-2-bean-chicken",
+          "recipeTitle": "Southwest Chicken Crockpot Recipe",
           "notes": ""
         },
         {
@@ -3158,8 +3338,8 @@
           "day": "Tuesday",
           "date": "2026-01-27",
           "theme": "Leftovers / Easy",
-          "recipeId": "filipino-chicken-adobo",
-          "recipeTitle": "Filipino Chicken Adobo (Crockpot Version)",
+          "recipeId": "crockpot-ziti",
+          "recipeTitle": "Crockpot Baked Ziti",
           "notes": ""
         },
         {
@@ -3246,8 +3426,8 @@
           "day": "Tuesday",
           "date": "2026-02-03",
           "theme": "Leftovers / Easy",
-          "recipeId": "garlic-butter-quinoa",
-          "recipeTitle": "5-Ingredient Garlic Butter Quinoa",
+          "recipeId": "filipino-chicken-adobo",
+          "recipeTitle": "Filipino Chicken Adobo (Crockpot Version)",
           "notes": ""
         },
         {
@@ -3334,8 +3514,8 @@
           "day": "Tuesday",
           "date": "2026-02-10",
           "theme": "Leftovers / Easy",
-          "recipeId": "instant-pot-cheesy-cauliflower-potato-soup",
-          "recipeTitle": "Instant Pot Cheesy Cauliflower Potato Soup",
+          "recipeId": "garlic-butter-quinoa",
+          "recipeTitle": "5-Ingredient Garlic Butter Quinoa",
           "notes": ""
         },
         {
@@ -3422,8 +3602,8 @@
           "day": "Tuesday",
           "date": "2026-02-17",
           "theme": "Leftovers / Easy",
-          "recipeId": "instant-pot-chicken-brown-rice",
-          "recipeTitle": "Instant Pot Chicken and Brown Rice (One-Pot)",
+          "recipeId": "instant-pot-cheesy-cauliflower-potato-soup",
+          "recipeTitle": "Instant Pot Cheesy Cauliflower Potato Soup",
           "notes": ""
         },
         {
@@ -3510,8 +3690,8 @@
           "day": "Tuesday",
           "date": "2026-02-24",
           "theme": "Leftovers / Easy",
-          "recipeId": "instant-pot-panera-mac-and-cheese",
-          "recipeTitle": "Instant Pot Panera Mac and Cheese",
+          "recipeId": "instant-pot-chicken-brown-rice",
+          "recipeTitle": "Instant Pot Chicken and Brown Rice (One-Pot)",
           "notes": ""
         },
         {
@@ -3598,8 +3778,8 @@
           "day": "Tuesday",
           "date": "2026-03-03",
           "theme": "Leftovers / Easy",
-          "recipeId": "rosemary-garlic-white-bean-soup",
-          "recipeTitle": "Easy Rosemary Garlic White Bean Soup",
+          "recipeId": "instant-pot-panera-mac-and-cheese",
+          "recipeTitle": "Instant Pot Panera Mac and Cheese",
           "notes": ""
         },
         {
@@ -3686,8 +3866,8 @@
           "day": "Tuesday",
           "date": "2026-03-10",
           "theme": "Leftovers / Easy",
-          "recipeId": "slow-cooker-asian-sesame-chicken",
-          "recipeTitle": "Slow Cooker Asian Sesame Chicken",
+          "recipeId": "leftover-turkey-corn-chowder",
+          "recipeTitle": "Leftover Turkey Corn Chowder",
           "notes": ""
         },
         {
@@ -3774,8 +3954,8 @@
           "day": "Tuesday",
           "date": "2026-03-17",
           "theme": "Leftovers / Easy",
-          "recipeId": "slow-cooker-carnitas",
-          "recipeTitle": "Classic Carnitas Recipe (Slow Cooker)",
+          "recipeId": "rosemary-garlic-white-bean-soup",
+          "recipeTitle": "Easy Rosemary Garlic White Bean Soup",
           "notes": ""
         },
         {
@@ -3862,8 +4042,8 @@
           "day": "Tuesday",
           "date": "2026-03-24",
           "theme": "Leftovers / Easy",
-          "recipeId": "slow-cooker-salsa-verde-chicken",
-          "recipeTitle": "4-Ingredient Slow Cooker Salsa Verde Chicken",
+          "recipeId": "slow-cooker-asian-sesame-chicken",
+          "recipeTitle": "Slow Cooker Asian Sesame Chicken",
           "notes": ""
         },
         {
@@ -3950,8 +4130,8 @@
           "day": "Tuesday",
           "date": "2026-03-31",
           "theme": "Leftovers / Easy",
-          "recipeId": "baked-chicken-breasts",
-          "recipeTitle": "Baked Chicken Breasts",
+          "recipeId": "slow-cooker-carnitas",
+          "recipeTitle": "Classic Carnitas Recipe (Slow Cooker)",
           "notes": ""
         },
         {
@@ -4038,8 +4218,8 @@
           "day": "Tuesday",
           "date": "2026-04-07",
           "theme": "Leftovers / Easy",
-          "recipeId": "crockpot-creamy-chicken-rice",
-          "recipeTitle": "Crockpot Creamy Chicken + Rice",
+          "recipeId": "slow-cooker-salsa-verde-chicken",
+          "recipeTitle": "4-Ingredient Slow Cooker Salsa Verde Chicken",
           "notes": ""
         },
         {
@@ -4126,8 +4306,8 @@
           "day": "Tuesday",
           "date": "2026-04-14",
           "theme": "Leftovers / Easy",
-          "recipeId": "crockpot-mexican-quinoa-tacos",
-          "recipeTitle": "Crockpot Mexican Quinoa Tacos",
+          "recipeId": "artichoke-chicken",
+          "recipeTitle": "Artichoke Chicken",
           "notes": ""
         },
         {
@@ -4214,8 +4394,8 @@
           "day": "Tuesday",
           "date": "2026-04-21",
           "theme": "Leftovers / Easy",
-          "recipeId": "crockpot-pulled-chicken",
-          "recipeTitle": "3-Ingredient Crock Pot Pulled Chicken",
+          "recipeId": "baked-chicken-breasts",
+          "recipeTitle": "Baked Chicken Breasts",
           "notes": ""
         },
         {
@@ -4302,8 +4482,8 @@
           "day": "Tuesday",
           "date": "2026-04-28",
           "theme": "Leftovers / Easy",
-          "recipeId": "crockpot-southwest-2-bean-chicken",
-          "recipeTitle": "Southwest Chicken Crockpot Recipe",
+          "recipeId": "crockpot-creamy-chicken-rice",
+          "recipeTitle": "Crockpot Creamy Chicken + Rice",
           "notes": ""
         },
         {
@@ -4390,8 +4570,8 @@
           "day": "Tuesday",
           "date": "2026-05-05",
           "theme": "Leftovers / Easy",
-          "recipeId": "crockpot-ziti",
-          "recipeTitle": "Crockpot Baked Ziti",
+          "recipeId": "crockpot-mexican-quinoa-tacos",
+          "recipeTitle": "Crockpot Mexican Quinoa Tacos",
           "notes": ""
         },
         {
@@ -4478,8 +4658,8 @@
           "day": "Tuesday",
           "date": "2026-05-12",
           "theme": "Leftovers / Easy",
-          "recipeId": "filipino-chicken-adobo",
-          "recipeTitle": "Filipino Chicken Adobo (Crockpot Version)",
+          "recipeId": "crockpot-pulled-chicken",
+          "recipeTitle": "3-Ingredient Crock Pot Pulled Chicken",
           "notes": ""
         },
         {
@@ -4566,8 +4746,8 @@
           "day": "Tuesday",
           "date": "2026-05-19",
           "theme": "Leftovers / Easy",
-          "recipeId": "garlic-butter-quinoa",
-          "recipeTitle": "5-Ingredient Garlic Butter Quinoa",
+          "recipeId": "crockpot-southwest-2-bean-chicken",
+          "recipeTitle": "Southwest Chicken Crockpot Recipe",
           "notes": ""
         },
         {
@@ -4654,8 +4834,8 @@
           "day": "Tuesday",
           "date": "2026-05-26",
           "theme": "Leftovers / Easy",
-          "recipeId": "instant-pot-cheesy-cauliflower-potato-soup",
-          "recipeTitle": "Instant Pot Cheesy Cauliflower Potato Soup",
+          "recipeId": "crockpot-ziti",
+          "recipeTitle": "Crockpot Baked Ziti",
           "notes": ""
         },
         {
@@ -4742,8 +4922,8 @@
           "day": "Tuesday",
           "date": "2026-06-02",
           "theme": "Leftovers / Easy",
-          "recipeId": "instant-pot-chicken-brown-rice",
-          "recipeTitle": "Instant Pot Chicken and Brown Rice (One-Pot)",
+          "recipeId": "filipino-chicken-adobo",
+          "recipeTitle": "Filipino Chicken Adobo (Crockpot Version)",
           "notes": ""
         },
         {
@@ -4830,8 +5010,8 @@
           "day": "Tuesday",
           "date": "2026-06-09",
           "theme": "Leftovers / Easy",
-          "recipeId": "instant-pot-panera-mac-and-cheese",
-          "recipeTitle": "Instant Pot Panera Mac and Cheese",
+          "recipeId": "garlic-butter-quinoa",
+          "recipeTitle": "5-Ingredient Garlic Butter Quinoa",
           "notes": ""
         },
         {
@@ -4918,8 +5098,8 @@
           "day": "Tuesday",
           "date": "2026-06-16",
           "theme": "Leftovers / Easy",
-          "recipeId": "rosemary-garlic-white-bean-soup",
-          "recipeTitle": "Easy Rosemary Garlic White Bean Soup",
+          "recipeId": "instant-pot-cheesy-cauliflower-potato-soup",
+          "recipeTitle": "Instant Pot Cheesy Cauliflower Potato Soup",
           "notes": ""
         },
         {
@@ -5006,8 +5186,8 @@
           "day": "Tuesday",
           "date": "2026-06-23",
           "theme": "Leftovers / Easy",
-          "recipeId": "slow-cooker-asian-sesame-chicken",
-          "recipeTitle": "Slow Cooker Asian Sesame Chicken",
+          "recipeId": "instant-pot-chicken-brown-rice",
+          "recipeTitle": "Instant Pot Chicken and Brown Rice (One-Pot)",
           "notes": ""
         },
         {
@@ -5094,8 +5274,8 @@
           "day": "Tuesday",
           "date": "2026-06-30",
           "theme": "Leftovers / Easy",
-          "recipeId": "slow-cooker-carnitas",
-          "recipeTitle": "Classic Carnitas Recipe (Slow Cooker)",
+          "recipeId": "instant-pot-panera-mac-and-cheese",
+          "recipeTitle": "Instant Pot Panera Mac and Cheese",
           "notes": ""
         },
         {
@@ -5182,8 +5362,8 @@
           "day": "Tuesday",
           "date": "2026-07-07",
           "theme": "Leftovers / Easy",
-          "recipeId": "slow-cooker-salsa-verde-chicken",
-          "recipeTitle": "4-Ingredient Slow Cooker Salsa Verde Chicken",
+          "recipeId": "leftover-turkey-corn-chowder",
+          "recipeTitle": "Leftover Turkey Corn Chowder",
           "notes": ""
         },
         {
@@ -5270,8 +5450,8 @@
           "day": "Tuesday",
           "date": "2026-07-14",
           "theme": "Leftovers / Easy",
-          "recipeId": "baked-chicken-breasts",
-          "recipeTitle": "Baked Chicken Breasts",
+          "recipeId": "rosemary-garlic-white-bean-soup",
+          "recipeTitle": "Easy Rosemary Garlic White Bean Soup",
           "notes": ""
         },
         {
@@ -5358,8 +5538,8 @@
           "day": "Tuesday",
           "date": "2026-07-21",
           "theme": "Leftovers / Easy",
-          "recipeId": "crockpot-creamy-chicken-rice",
-          "recipeTitle": "Crockpot Creamy Chicken + Rice",
+          "recipeId": "slow-cooker-asian-sesame-chicken",
+          "recipeTitle": "Slow Cooker Asian Sesame Chicken",
           "notes": ""
         },
         {
@@ -5446,8 +5626,8 @@
           "day": "Tuesday",
           "date": "2026-07-28",
           "theme": "Leftovers / Easy",
-          "recipeId": "crockpot-mexican-quinoa-tacos",
-          "recipeTitle": "Crockpot Mexican Quinoa Tacos",
+          "recipeId": "slow-cooker-carnitas",
+          "recipeTitle": "Classic Carnitas Recipe (Slow Cooker)",
           "notes": ""
         },
         {
@@ -5534,8 +5714,8 @@
           "day": "Tuesday",
           "date": "2026-08-04",
           "theme": "Leftovers / Easy",
-          "recipeId": "crockpot-pulled-chicken",
-          "recipeTitle": "3-Ingredient Crock Pot Pulled Chicken",
+          "recipeId": "slow-cooker-salsa-verde-chicken",
+          "recipeTitle": "4-Ingredient Slow Cooker Salsa Verde Chicken",
           "notes": ""
         },
         {
@@ -5622,8 +5802,8 @@
           "day": "Tuesday",
           "date": "2026-08-11",
           "theme": "Leftovers / Easy",
-          "recipeId": "crockpot-southwest-2-bean-chicken",
-          "recipeTitle": "Southwest Chicken Crockpot Recipe",
+          "recipeId": "artichoke-chicken",
+          "recipeTitle": "Artichoke Chicken",
           "notes": ""
         },
         {
@@ -5710,8 +5890,8 @@
           "day": "Tuesday",
           "date": "2026-08-18",
           "theme": "Leftovers / Easy",
-          "recipeId": "crockpot-ziti",
-          "recipeTitle": "Crockpot Baked Ziti",
+          "recipeId": "baked-chicken-breasts",
+          "recipeTitle": "Baked Chicken Breasts",
           "notes": ""
         },
         {
@@ -5798,8 +5978,8 @@
           "day": "Tuesday",
           "date": "2026-08-25",
           "theme": "Leftovers / Easy",
-          "recipeId": "filipino-chicken-adobo",
-          "recipeTitle": "Filipino Chicken Adobo (Crockpot Version)",
+          "recipeId": "crockpot-creamy-chicken-rice",
+          "recipeTitle": "Crockpot Creamy Chicken + Rice",
           "notes": ""
         },
         {
@@ -5886,8 +6066,8 @@
           "day": "Tuesday",
           "date": "2026-09-01",
           "theme": "Leftovers / Easy",
-          "recipeId": "garlic-butter-quinoa",
-          "recipeTitle": "5-Ingredient Garlic Butter Quinoa",
+          "recipeId": "crockpot-mexican-quinoa-tacos",
+          "recipeTitle": "Crockpot Mexican Quinoa Tacos",
           "notes": ""
         },
         {
@@ -5974,8 +6154,8 @@
           "day": "Tuesday",
           "date": "2026-09-08",
           "theme": "Leftovers / Easy",
-          "recipeId": "instant-pot-cheesy-cauliflower-potato-soup",
-          "recipeTitle": "Instant Pot Cheesy Cauliflower Potato Soup",
+          "recipeId": "crockpot-pulled-chicken",
+          "recipeTitle": "3-Ingredient Crock Pot Pulled Chicken",
           "notes": ""
         },
         {
@@ -6062,8 +6242,8 @@
           "day": "Tuesday",
           "date": "2026-09-15",
           "theme": "Leftovers / Easy",
-          "recipeId": "instant-pot-chicken-brown-rice",
-          "recipeTitle": "Instant Pot Chicken and Brown Rice (One-Pot)",
+          "recipeId": "crockpot-southwest-2-bean-chicken",
+          "recipeTitle": "Southwest Chicken Crockpot Recipe",
           "notes": ""
         },
         {
@@ -6150,8 +6330,8 @@
           "day": "Tuesday",
           "date": "2026-09-22",
           "theme": "Leftovers / Easy",
-          "recipeId": "instant-pot-panera-mac-and-cheese",
-          "recipeTitle": "Instant Pot Panera Mac and Cheese",
+          "recipeId": "crockpot-ziti",
+          "recipeTitle": "Crockpot Baked Ziti",
           "notes": ""
         },
         {
@@ -6238,8 +6418,8 @@
           "day": "Tuesday",
           "date": "2026-09-29",
           "theme": "Leftovers / Easy",
-          "recipeId": "rosemary-garlic-white-bean-soup",
-          "recipeTitle": "Easy Rosemary Garlic White Bean Soup",
+          "recipeId": "filipino-chicken-adobo",
+          "recipeTitle": "Filipino Chicken Adobo (Crockpot Version)",
           "notes": ""
         },
         {
@@ -6326,8 +6506,8 @@
           "day": "Tuesday",
           "date": "2026-10-06",
           "theme": "Leftovers / Easy",
-          "recipeId": "slow-cooker-asian-sesame-chicken",
-          "recipeTitle": "Slow Cooker Asian Sesame Chicken",
+          "recipeId": "garlic-butter-quinoa",
+          "recipeTitle": "5-Ingredient Garlic Butter Quinoa",
           "notes": ""
         },
         {
@@ -6414,8 +6594,8 @@
           "day": "Tuesday",
           "date": "2026-10-13",
           "theme": "Leftovers / Easy",
-          "recipeId": "slow-cooker-carnitas",
-          "recipeTitle": "Classic Carnitas Recipe (Slow Cooker)",
+          "recipeId": "instant-pot-cheesy-cauliflower-potato-soup",
+          "recipeTitle": "Instant Pot Cheesy Cauliflower Potato Soup",
           "notes": ""
         },
         {
@@ -6502,8 +6682,8 @@
           "day": "Tuesday",
           "date": "2026-10-20",
           "theme": "Leftovers / Easy",
-          "recipeId": "slow-cooker-salsa-verde-chicken",
-          "recipeTitle": "4-Ingredient Slow Cooker Salsa Verde Chicken",
+          "recipeId": "instant-pot-chicken-brown-rice",
+          "recipeTitle": "Instant Pot Chicken and Brown Rice (One-Pot)",
           "notes": ""
         },
         {
@@ -6590,8 +6770,8 @@
           "day": "Tuesday",
           "date": "2026-10-27",
           "theme": "Leftovers / Easy",
-          "recipeId": "baked-chicken-breasts",
-          "recipeTitle": "Baked Chicken Breasts",
+          "recipeId": "instant-pot-panera-mac-and-cheese",
+          "recipeTitle": "Instant Pot Panera Mac and Cheese",
           "notes": ""
         },
         {
@@ -6678,8 +6858,8 @@
           "day": "Tuesday",
           "date": "2026-11-03",
           "theme": "Leftovers / Easy",
-          "recipeId": "crockpot-creamy-chicken-rice",
-          "recipeTitle": "Crockpot Creamy Chicken + Rice",
+          "recipeId": "leftover-turkey-corn-chowder",
+          "recipeTitle": "Leftover Turkey Corn Chowder",
           "notes": ""
         },
         {
@@ -6766,8 +6946,8 @@
           "day": "Tuesday",
           "date": "2026-11-10",
           "theme": "Leftovers / Easy",
-          "recipeId": "crockpot-mexican-quinoa-tacos",
-          "recipeTitle": "Crockpot Mexican Quinoa Tacos",
+          "recipeId": "rosemary-garlic-white-bean-soup",
+          "recipeTitle": "Easy Rosemary Garlic White Bean Soup",
           "notes": ""
         },
         {
@@ -6854,8 +7034,8 @@
           "day": "Tuesday",
           "date": "2026-11-17",
           "theme": "Leftovers / Easy",
-          "recipeId": "crockpot-pulled-chicken",
-          "recipeTitle": "3-Ingredient Crock Pot Pulled Chicken",
+          "recipeId": "slow-cooker-asian-sesame-chicken",
+          "recipeTitle": "Slow Cooker Asian Sesame Chicken",
           "notes": ""
         },
         {
@@ -6942,8 +7122,8 @@
           "day": "Tuesday",
           "date": "2026-11-24",
           "theme": "Leftovers / Easy",
-          "recipeId": "crockpot-southwest-2-bean-chicken",
-          "recipeTitle": "Southwest Chicken Crockpot Recipe",
+          "recipeId": "slow-cooker-carnitas",
+          "recipeTitle": "Classic Carnitas Recipe (Slow Cooker)",
           "notes": ""
         },
         {
@@ -7030,8 +7210,8 @@
           "day": "Tuesday",
           "date": "2026-12-01",
           "theme": "Leftovers / Easy",
-          "recipeId": "crockpot-ziti",
-          "recipeTitle": "Crockpot Baked Ziti",
+          "recipeId": "slow-cooker-salsa-verde-chicken",
+          "recipeTitle": "4-Ingredient Slow Cooker Salsa Verde Chicken",
           "notes": ""
         },
         {
@@ -7118,8 +7298,8 @@
           "day": "Tuesday",
           "date": "2026-12-08",
           "theme": "Leftovers / Easy",
-          "recipeId": "filipino-chicken-adobo",
-          "recipeTitle": "Filipino Chicken Adobo (Crockpot Version)",
+          "recipeId": "artichoke-chicken",
+          "recipeTitle": "Artichoke Chicken",
           "notes": ""
         },
         {
@@ -7206,8 +7386,8 @@
           "day": "Tuesday",
           "date": "2026-12-15",
           "theme": "Leftovers / Easy",
-          "recipeId": "garlic-butter-quinoa",
-          "recipeTitle": "5-Ingredient Garlic Butter Quinoa",
+          "recipeId": "baked-chicken-breasts",
+          "recipeTitle": "Baked Chicken Breasts",
           "notes": ""
         },
         {
@@ -7294,8 +7474,8 @@
           "day": "Tuesday",
           "date": "2026-12-22",
           "theme": "Leftovers / Easy",
-          "recipeId": "instant-pot-cheesy-cauliflower-potato-soup",
-          "recipeTitle": "Instant Pot Cheesy Cauliflower Potato Soup",
+          "recipeId": "crockpot-creamy-chicken-rice",
+          "recipeTitle": "Crockpot Creamy Chicken + Rice",
           "notes": ""
         },
         {

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="recipe-style.xsl"?>
+
+<recipe xmlns="http://www.example.com/recipe" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="recipe.xsd"
+id="artichoke-chicken">
+
+  <title>Artichoke Chicken</title>
+
+  <description>
+    <summary>Chicken marinated in Italian dressing, topped with cheesy artichoke dip, and baked. Six ingredients: chicken, Italian dressing, artichokes, mayonnaise, garlic, and Parmesan cheese. Can be assembled earlier in the day and baked when ready. Ready in under 30 minutes. Low-carb, keto, and gluten-free.</summary>
+    <tags>
+      <tag>easy</tag>
+      <tag>chicken</tag>
+      <tag>artichoke</tag>
+      <tag>baked</tag>
+      <tag>low-carb</tag>
+      <tag>keto</tag>
+      <tag>gluten-free</tag>
+      <tag>main-course</tag>
+    </tags>
+  </description>
+
+  <metadata>
+    <servings>4</servings>
+    <prepTime>5 minutes</prepTime>
+    <cookTime>25 minutes</cookTime>
+    <totalTime>30 minutes</totalTime>
+    <difficulty>easy</difficulty>
+  </metadata>
+
+  <source url="https://www.plainchicken.com/artichoke-chicken/">Plain Chicken</source>
+
+  <category>main-course</category>
+
+  <ingredients>
+    <ingredient quantity="1" unit="cup">bottled Italian dressing</ingredient>
+    <ingredient quantity="4">skinless boneless chicken breast halves</ingredient>
+    <ingredient quantity="1" unit="Tbsp">olive oil</ingredient>
+    <ingredient quantity="1" unit="(15-oz) can">artichoke hearts, drained and chopped</ingredient>
+    <ingredient quantity="3/4" unit="cup">grated Parmesan cheese</ingredient>
+    <ingredient quantity="3/4" unit="cup">mayonnaise</ingredient>
+    <ingredient quantity="1/4" unit="tsp">garlic powder</ingredient>
+  </ingredients>
+
+  <preparation>
+    <step number="1">Marinate chicken breasts in Italian dressing a few hours to overnight.</step>
+    <step number="2">Preheat oven to 375°F.</step>
+    <step number="3">Heat olive oil in non-stick skillet over medium-high heat. Remove chicken from marinade and cook 2 minutes per side. Place chicken on foil lined baking sheet.</step>
+    <step number="4">In a medium bowl, mix together chopped artichoke hearts, Parmesan cheese, mayonnaise, and garlic powder. Spread artichoke mixture evenly on top of chicken.</step>
+    <step number="5">Bake for 20 to 25 minutes, until juices run clear.</step>
+  </preparation>
+
+</recipe>
