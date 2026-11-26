@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="recipe-style.xsl"?>
+
+<recipe xmlns="http://www.example.com/recipe" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="recipe.xsd"
+id="leftover-turkey-corn-chowder">
+
+  <title>Leftover Turkey Corn Chowder</title>
+
+  <description>
+    <summary>This leftover turkey corn chowder comes together in about 30 minutes and is the most delicious way to use up that leftover Thanksgiving turkey. It uses both cream-style corn and whole-kernel sweet corn. Also works with leftover shredded chicken or rotisserie chicken.</summary>
+    <tags>
+      <tag>easy</tag>
+      <tag>soup</tag>
+      <tag>turkey</tag>
+      <tag>corn</tag>
+      <tag>main-course</tag>
+    </tags>
+  </description>
+
+  <metadata>
+    <servings>4</servings>
+    <prepTime>5 minutes</prepTime>
+    <cookTime>30 minutes</cookTime>
+    <totalTime>35 minutes</totalTime>
+    <difficulty>easy</difficulty>
+  </metadata>
+
+  <source url="https://www.lecremedelacrumb.com/leftover-turkey-corn-chowder/">Creme De La Crumb</source>
+
+  <category>soup</category>
+
+  <ingredients>
+    <ingredient quantity="2" unit="cups">shredded leftover fully cooked turkey (may sub shredded leftover fully cooked chicken)</ingredient>
+    <ingredient quantity="2" unit="15-ounce cans">cream style corn</ingredient>
+    <ingredient quantity="1" unit="15-ounce can">sweet yellow whole kernel corn</ingredient>
+    <ingredient quantity="3" unit="cups">low sodium chicken broth or vegetable broth</ingredient>
+    <ingredient quantity="1" unit="rib">celery, chopped</ingredient>
+    <ingredient quantity="1">red bell pepper, diced</ingredient>
+    <ingredient quantity="2" unit="cups">cubed golden or red potatoes</ingredient>
+    <ingredient quantity="1 1/2" unit="teaspoons">Italian seasoning</ingredient>
+    <ingredient quantity="1" unit="teaspoon">garlic powder</ingredient>
+    <ingredient>salt and pepper to taste</ingredient>
+  </ingredients>
+
+  <preparation>
+    <step number="1">In a large stock pot combine cream style corn, whole kernel corn, broth, celery, bell peppers, potatoes, Italian seasoning, and garlic powder.</step>
+    <step number="2">Cover and simmer over medium heat for 20-25 minutes until potatoes are tender and easily pierced with a fork.</step>
+    <step number="3">Stir in turkey and season with salt and pepper. When turkey is heated through, serve and garnish with fresh parsley or thyme as desired.</step>
+    <step number="4">Note: This also works with leftover shredded chicken or rotisserie chicken.</step>
+  </preparation>
+
+</recipe>
